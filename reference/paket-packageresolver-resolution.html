@@ -119,10 +119,10 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '452', 452)" onmouseover="showTip(event, '452', 452)">
-            GetConflicts()
+            GetConflicts(packageRequirement)
           </code>
           <div class="tip" id="452">
-            <strong>Signature:</strong> unit -&gt; PackageRequirement list<br />
+            <strong>Signature:</strong> packageRequirement:PackageRequirement -&gt; PackageRequirement list<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -137,14 +137,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '453', 453)" onmouseover="showTip(event, '453', 453)">
-            GetErrorText(showResolvedPackages)
+            GetErrorText(...)
           </code>
           <div class="tip" id="453">
-            <strong>Signature:</strong> (showResolvedPackages:bool option) -&gt; string<br />
+            <strong>Signature:</strong> (packageRequirement:PackageRequirement option * showResolvedPackages:bool option) -&gt; string<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/PackageResolver.fs#L102-102" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/PackageResolver.fs#L101-101" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
