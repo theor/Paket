@@ -116,9 +116,9 @@ It then proceeds to download the packages and to install them into the projects.
 
 <p><code>--no-install</code>: Skips paket install --hard process afterward generation of <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
 
-<h2><a name="Updating-a-single-package" class="anchor" href="#Updating-a-single-package">Updating a single package</a></h2>
+<h2><a name="Updating-a-single-package-or-packages-matching-a-pattern" class="anchor" href="#Updating-a-single-package-or-packages-matching-a-pattern">Updating a single package, or packages matching a pattern</a></h2>
 
-<p>It's also possible to update only a single package and to keep all other dependencies fixed:</p>
+<p>It's also possible to update only specified packages and to keep all other dependencies fixed:</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
@@ -140,6 +140,8 @@ It then proceeds to download the packages and to install them into the projects.
 <p><code>--redirects</code>: Creates binding redirects for the NuGet packages.</p>
 
 <p><code>--no-install</code>: Skips paket install --hard process afterward generation of <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
+
+<p><code>--filter</code>: Treat PACKAGENAME as a regex pattern to match against, rather than a single package. Enforces a "total" match (i.e. an implicit ^ and $ at beginning and end of PACKAGENAME)</p>
 
 <h2><a name="Updating-a-single-group" class="anchor" href="#Updating-a-single-group">Updating a single group</a></h2>
 
