@@ -78,7 +78,7 @@
             Conflict(...)
           </code>
           <div class="tip" id="455">
-            <strong>Signature:</strong> Map&lt;PackageName,ResolvedPackage&gt; * Set&lt;PackageRequirement&gt; * Set&lt;PackageRequirement&gt; * PackageName -&gt; seq&lt;SemVerInfo&gt;<br />
+            <strong>Signature:</strong> Map&lt;PackageName,ResolvedPackage&gt; * Set&lt;PackageRequirement&gt; * Set&lt;PackageRequirement&gt; * PackageRequirement * PackageName -&gt; seq&lt;SemVerInfo&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -119,10 +119,10 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '457', 457)" onmouseover="showTip(event, '457', 457)">
-            GetConflicts(packageRequirement)
+            GetConflicts()
           </code>
           <div class="tip" id="457">
-            <strong>Signature:</strong> packageRequirement:PackageRequirement -&gt; PackageRequirement list<br />
+            <strong>Signature:</strong> unit -&gt; PackageRequirement list<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -137,10 +137,10 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '458', 458)" onmouseover="showTip(event, '458', 458)">
-            GetErrorText(...)
+            GetErrorText(showResolvedPackages)
           </code>
           <div class="tip" id="458">
-            <strong>Signature:</strong> (packageRequirement:PackageRequirement option * showResolvedPackages:bool option) -&gt; string<br />
+            <strong>Signature:</strong> showResolvedPackages:bool -&gt; string<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -162,7 +162,7 @@
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/PackageResolver.fs#L142-142" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/PackageResolver.fs#L145-145" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
