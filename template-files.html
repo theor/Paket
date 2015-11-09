@@ -60,33 +60,6 @@
 
 <p>The <code>paket.template</code> files are used to specify rules to create nupkgs by using the <a href="paket-pack.html"><code>paket pack</code> command</a>.</p>
 
-<p>An example <code>paket.template</code> file might look like the following:</p>
-
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-<span class="l">3: </span>
-<span class="l">4: </span>
-<span class="l">5: </span>
-<span class="l">6: </span>
-<span class="l">7: </span>
-<span class="l">8: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="t">file</span>
-<span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="f">id</span> <span class="i">Test</span><span class="o">.</span><span class="i">Paket</span><span class="o">.</span><span class="i">Package</span>
-<span class="i">version</span> <span class="n">1.0</span>
-<span class="i">authors</span> <span class="i">Michael</span> <span class="i">Newton</span>
-<span class="i">description</span>
-    <span class="i">description</span> <span class="k">of</span> <span class="i">this</span> <span class="i">test</span> <span class="i">package</span>
-<span class="i">files</span>
-    <span class="i">src</span><span class="o">/</span><span class="i">Test</span><span class="o">.</span><span class="i">Paket</span><span class="o">.</span><span class="i">Package</span><span class="o">/</span><span class="i">bin</span><span class="o">/</span><span class="i">Debug</span> <span class="o">==&gt;</span> <span class="i">lib</span>
-</code></pre></td>
-</tr>
-</table>
-
-<p>This template file will create a nupkg called <code>Test.Paket.Package.[Version].nupkg</code> with the
-contents of the <code>src/Test.Paket.Package/bin/Debug</code> directory in the <code>lib</code> directory
-of the package file.</p>
-
 <p>The <code>type</code> specifier must be the first line of the template file. It has two possible
 values:</p>
 
@@ -110,6 +83,56 @@ can be called <code>paket.template</code>, otherwise the name of the template fi
 </table>
 
 <p>are matching files.</p>
+
+<h3><a name="Sample-1" class="anchor" href="#Sample-1">Sample 1</a></h3>
+
+<p>A <code>paket.template</code> file using <code>type project</code> may look like this:</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="t">project</span>
+<span class="i">licenseUrl</span> <span class="i">http</span><span class="o">:</span><span class="c">//opensource.org/licenses/MIT</span>
+</code></pre></td>
+</tr>
+</table>
+
+<p>This template file will create a nupkg:
+ - Named <code>Test.Paket.Package.[Version].nupkg</code>
+ - Version, Author and Description from assembly attributes
+ - Containing <code>$(OutDir)\$(ProjectName).*</code> (all files matching project name in the output directory) directory in the <code>lib</code> directory of the package.
+ - Referencing all packages referenced by the project.
+   - Package references
+   - Project references, for projects in the sln that has <code>paket.template</code> files.</p>
+
+<h3><a name="Sample-2" class="anchor" href="#Sample-2">Sample 2</a></h3>
+
+<p>A <code>paket.template</code> file using <code>type file</code> may look like this:</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">file</span>
+<span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">id</span> <span class="i">Test</span><span class="o">.</span><span class="i">Paket</span><span class="o">.</span><span class="i">Package</span>
+<span class="i">version</span> <span class="n">1.0</span>
+<span class="i">authors</span> <span class="i">Michael</span> <span class="i">Newton</span>
+<span class="i">description</span>
+    <span class="i">description</span> <span class="k">of</span> <span class="i">this</span> <span class="i">test</span> <span class="i">package</span>
+<span class="i">files</span>
+    <span class="i">src</span><span class="o">/</span><span class="i">Test</span><span class="o">.</span><span class="i">Paket</span><span class="o">.</span><span class="i">Package</span><span class="o">/</span><span class="i">bin</span><span class="o">/</span><span class="i">Debug</span> <span class="o">==&gt;</span> <span class="i">lib</span>
+</code></pre></td>
+</tr>
+</table>
+
+<p>This template file will create a nupkg called <code>Test.Paket.Package.[Version].nupkg</code> with the
+contents of the <code>src/Test.Paket.Package/bin/Debug</code> directory in the <code>lib</code> directory
+of the package file.</p>
 
 <h3><a name="General-Metadata" class="anchor" href="#General-Metadata">General Metadata</a></h3>
 
@@ -189,9 +212,9 @@ to decide on the files and dependencies added.</p>
 <span class="l">4: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">files</span>
-    <span class="i">relative</span><span class="o">/</span><span class="k">to</span><span class="o">/</span><span class="i">template</span><span class="o">/</span><span onmouseout="hideTip(event, 'fs1', 3)" onmouseover="showTip(event, 'fs1', 3)" class="i">file</span> <span class="o">==&gt;</span> <span class="i">folder</span><span class="o">/</span><span class="k">in</span><span class="o">/</span><span class="i">nupkg</span>
+    <span class="i">relative</span><span class="o">/</span><span class="k">to</span><span class="o">/</span><span class="i">template</span><span class="o">/</span><span class="i">file</span> <span class="o">==&gt;</span> <span class="i">folder</span><span class="o">/</span><span class="k">in</span><span class="o">/</span><span class="i">nupkg</span>
     <span class="i">second</span><span class="o">/</span><span class="i">thing</span><span class="o">/</span><span class="k">to</span><span class="o">/</span><span class="i">pack</span> <span class="o">==&gt;</span> <span class="i">folder</span><span class="o">/</span><span class="k">in</span><span class="o">/</span><span class="i">nupkg</span>
-    <span class="i">second</span><span class="o">/</span><span class="i">thing</span><span class="o">/**/</span><span onmouseout="hideTip(event, 'fs1', 4)" onmouseover="showTip(event, 'fs1', 4)" class="i">file</span><span class="o">.</span><span class="o">*</span> <span class="o">==&gt;</span> <span class="i">folder</span><span class="o">/</span><span class="k">in</span><span class="o">/</span><span class="i">nupkg</span>
+    <span class="i">second</span><span class="o">/</span><span class="i">thing</span><span class="o">/**/</span><span class="i">file</span><span class="o">.</span><span class="o">*</span> <span class="o">==&gt;</span> <span class="i">folder</span><span class="o">/</span><span class="k">in</span><span class="o">/</span><span class="i">nupkg</span>
 </code></pre></td>
 </tr>
 </table>
@@ -210,11 +233,11 @@ If you omit the target folder, then the source is copied into the <code>lib</cod
 <span class="l">6: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">files</span>
-    <span class="i">relative</span><span class="o">/</span><span class="k">to</span><span class="o">/</span><span class="i">template</span><span class="o">/</span><span onmouseout="hideTip(event, 'fs1', 5)" onmouseover="showTip(event, 'fs1', 5)" class="i">file</span> <span class="o">==&gt;</span> <span class="i">folder</span><span class="o">/</span><span class="k">in</span><span class="o">/</span><span class="i">nupkg</span>
-    <span class="i">second</span><span class="o">/</span><span class="i">thing</span><span class="o">/**/</span><span onmouseout="hideTip(event, 'fs1', 6)" onmouseover="showTip(event, 'fs1', 6)" class="i">file</span><span class="o">.</span><span class="o">*</span> <span class="o">==&gt;</span> <span class="i">folder</span><span class="o">/</span><span class="k">in</span><span class="o">/</span><span class="i">nupkg</span>
-    <span class="o">!</span><span class="i">second</span><span class="o">/</span><span class="i">thing</span><span class="o">/**/</span><span onmouseout="hideTip(event, 'fs1', 7)" onmouseover="showTip(event, 'fs1', 7)" class="i">file</span><span class="o">.</span><span class="i">zip</span>
-    <span class="o">.</span><span class="o">./</span><span class="i">outside</span><span class="o">/</span><span onmouseout="hideTip(event, 'fs1', 8)" onmouseover="showTip(event, 'fs1', 8)" class="i">file</span><span class="o">.</span><span class="o">*</span> <span class="o">==&gt;</span> <span class="i">folder</span><span class="o">/</span><span class="k">in</span><span class="o">/</span><span class="i">nupkg</span><span class="o">/</span><span class="i">other</span>
-    <span class="o">!../</span><span class="i">outside</span><span class="o">/</span><span onmouseout="hideTip(event, 'fs1', 9)" onmouseover="showTip(event, 'fs1', 9)" class="i">file</span><span class="o">.</span><span class="i">zip</span>
+    <span class="i">relative</span><span class="o">/</span><span class="k">to</span><span class="o">/</span><span class="i">template</span><span class="o">/</span><span class="i">file</span> <span class="o">==&gt;</span> <span class="i">folder</span><span class="o">/</span><span class="k">in</span><span class="o">/</span><span class="i">nupkg</span>
+    <span class="i">second</span><span class="o">/</span><span class="i">thing</span><span class="o">/**/</span><span class="i">file</span><span class="o">.</span><span class="o">*</span> <span class="o">==&gt;</span> <span class="i">folder</span><span class="o">/</span><span class="k">in</span><span class="o">/</span><span class="i">nupkg</span>
+    <span class="o">!</span><span class="i">second</span><span class="o">/</span><span class="i">thing</span><span class="o">/**/</span><span class="i">file</span><span class="o">.</span><span class="i">zip</span>
+    <span class="o">.</span><span class="o">./</span><span class="i">outside</span><span class="o">/</span><span class="i">file</span><span class="o">.</span><span class="o">*</span> <span class="o">==&gt;</span> <span class="i">folder</span><span class="o">/</span><span class="k">in</span><span class="o">/</span><span class="i">nupkg</span><span class="o">/</span><span class="i">other</span>
+    <span class="o">!../</span><span class="i">outside</span><span class="o">/</span><span class="i">file</span><span class="o">.</span><span class="i">zip</span>
 </code></pre></td>
 </tr>
 </table>
@@ -254,8 +277,8 @@ If you omit the target folder, then the source is copied into the <code>lib</cod
 <span class="l">3: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">frameworkAssemblies</span>
-    <span onmouseout="hideTip(event, 'fs3', 10)" onmouseover="showTip(event, 'fs3', 10)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 11)" onmouseover="showTip(event, 'fs4', 11)" class="i">Xml</span>
-    <span onmouseout="hideTip(event, 'fs3', 12)" onmouseover="showTip(event, 'fs3', 12)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 13)" onmouseover="showTip(event, 'fs4', 13)" class="i">Xml</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs5', 14)" onmouseover="showTip(event, 'fs5', 14)" class="i">Linq</span>
+    <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="i">Xml</span>
+    <span onmouseout="hideTip(event, 'fs3', 5)" onmouseover="showTip(event, 'fs3', 5)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 6)" onmouseover="showTip(event, 'fs4', 6)" class="i">Xml</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs5', 7)" onmouseover="showTip(event, 'fs5', 7)" class="i">Linq</span>
 </code></pre></td>
 </tr>
 </table>
@@ -272,7 +295,7 @@ If you omit the target folder, then the source is copied into the <code>lib</cod
 <span class="l">4: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">dependencies</span>
-  <span onmouseout="hideTip(event, 'fs6', 15)" onmouseover="showTip(event, 'fs6', 15)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 16)" onmouseover="showTip(event, 'fs7', 16)" class="i">Core</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">4.3</span><span class="o">.</span><span class="n">1</span>
+  <span onmouseout="hideTip(event, 'fs6', 8)" onmouseover="showTip(event, 'fs6', 8)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 9)" onmouseover="showTip(event, 'fs7', 9)" class="i">Core</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">4.3</span><span class="o">.</span><span class="n">1</span>
   <span class="i">Other</span><span class="o">.</span><span class="i">Dep</span> <span class="o">~&gt;</span> <span class="n">2.5</span>
   <span class="i">Any</span><span class="o">.</span><span class="i">Version</span>
 </code></pre></td>
@@ -288,7 +311,7 @@ If you omit the target folder, then the source is copied into the <code>lib</cod
 <span class="l">3: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">dependencies</span>
-  <span onmouseout="hideTip(event, 'fs6', 17)" onmouseover="showTip(event, 'fs6', 17)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 18)" onmouseover="showTip(event, 'fs7', 18)" class="i">Core</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">4.3</span><span class="o">.</span><span class="n">1</span>
+  <span onmouseout="hideTip(event, 'fs6', 10)" onmouseover="showTip(event, 'fs6', 10)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 11)" onmouseover="showTip(event, 'fs7', 11)" class="i">Core</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">4.3</span><span class="o">.</span><span class="n">1</span>
   <span class="i">Other</span><span class="o">.</span><span class="i">Dep</span> <span class="o">~&gt;</span> <span class="i">CURRENTVERSION</span>
 </code></pre></td>
 </tr>
@@ -301,7 +324,7 @@ If you omit the target folder, then the source is copied into the <code>lib</cod
 <span class="l">3: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">dependencies</span>
-  <span onmouseout="hideTip(event, 'fs6', 19)" onmouseover="showTip(event, 'fs6', 19)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 20)" onmouseover="showTip(event, 'fs7', 20)" class="i">Core</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">4.3</span><span class="o">.</span><span class="n">1</span>
+  <span onmouseout="hideTip(event, 'fs6', 12)" onmouseover="showTip(event, 'fs6', 12)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 13)" onmouseover="showTip(event, 'fs7', 13)" class="i">Core</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">4.3</span><span class="o">.</span><span class="n">1</span>
   <span class="i">Other</span><span class="o">.</span><span class="i">Dep</span> <span class="o">~&gt;</span> <span class="i">LOCKEDVERSION</span>
 </code></pre></td>
 </tr>
@@ -315,11 +338,24 @@ If you omit the target folder, then the source is copied into the <code>lib</cod
 <li>any project reference with a matching paket.template file with a minimum version requirement of the version currently being packaged.</li>
 </ul>
 
+<p>If you need to exclude dependencies from the automatic discovery then you can use the <code>excludeddependencies</code> block:</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">excludeddependencies</span>
+  <span onmouseout="hideTip(event, 'fs6', 14)" onmouseover="showTip(event, 'fs6', 14)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 15)" onmouseover="showTip(event, 'fs7', 15)" class="i">Core</span>
+  <span class="i">Other</span><span class="o">.</span><span class="i">Dep</span>
+</code></pre></td>
+</tr>
+</table>
+
 <h3><a name="Comments" class="anchor" href="#Comments">Comments</a></h3>
 
 <p>A line starting with a # or // is considered a comment and will be ignored by the parser.</p>
 
-<div class="tip" id="fs1">type file<br /><br />Full name: templatefiles.file</div>
+<div class="tip" id="fs1">type project<br /><br />Full name: templatefiles.project</div>
 <div class="tip" id="fs2">val id : x:&#39;T -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.id</div>
 <div class="tip" id="fs3">namespace System</div>
 <div class="tip" id="fs4">namespace System.Xml</div>

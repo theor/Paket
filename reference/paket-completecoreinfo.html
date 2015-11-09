@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>DependenciesGroup - Paket</title>
+    <title>CompleteCoreInfo - Paket</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Steffen Forkmann, Alexander Gross"/>
@@ -58,7 +58,7 @@
 
 
 
-<h1>DependenciesGroup</h1>
+<h1>CompleteCoreInfo</h1>
 <p>
   <span>Namespace: Paket</span><br />
 </p>
@@ -73,15 +73,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '635', 635)" onmouseover="showTip(event, '635', 635)">
-            Name
+          <code onmouseout="hideTip(event, '545', 545)" onmouseover="showTip(event, '545', 545)">
+            Authors
           </code>
-          <div class="tip" id="635">
-            <strong>Signature:</strong> GroupName<br />
+          <div class="tip" id="545">
+            <strong>Signature:</strong> string list<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependenciesFile.fs#L31-31" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/TemplateFile.fs#L95-95" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -91,15 +91,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '636', 636)" onmouseover="showTip(event, '636', 636)">
-            Options
+          <code onmouseout="hideTip(event, '546', 546)" onmouseover="showTip(event, '546', 546)">
+            Description
           </code>
-          <div class="tip" id="636">
-            <strong>Signature:</strong> InstallOptions<br />
+          <div class="tip" id="546">
+            <strong>Signature:</strong> string<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependenciesFile.fs#L33-33" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/TemplateFile.fs#L96-96" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -109,15 +109,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '637', 637)" onmouseover="showTip(event, '637', 637)">
-            Packages
+          <code onmouseout="hideTip(event, '547', 547)" onmouseover="showTip(event, '547', 547)">
+            Id
           </code>
-          <div class="tip" id="637">
-            <strong>Signature:</strong> PackageRequirement list<br />
+          <div class="tip" id="547">
+            <strong>Signature:</strong> string<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependenciesFile.fs#L34-34" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/TemplateFile.fs#L93-93" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -127,33 +127,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '638', 638)" onmouseover="showTip(event, '638', 638)">
-            RemoteFiles
+          <code onmouseout="hideTip(event, '548', 548)" onmouseover="showTip(event, '548', 548)">
+            Version
           </code>
-          <div class="tip" id="638">
-            <strong>Signature:</strong> UnresolvedSourceFile list<br />
+          <div class="tip" id="548">
+            <strong>Signature:</strong> SemVerInfo option<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependenciesFile.fs#L35-35" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '639', 639)" onmouseover="showTip(event, '639', 639)">
-            Sources
-          </code>
-          <div class="tip" id="639">
-            <strong>Signature:</strong> PackageSource list<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependenciesFile.fs#L32-32" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/TemplateFile.fs#L94-94" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -171,41 +153,33 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '640', 640)" onmouseover="showTip(event, '640', 640)">
-            CombineWith(other)
+          <code onmouseout="hideTip(event, '549', 549)" onmouseover="showTip(event, '549', 549)">
+            NuspecFileName
           </code>
-          <div class="tip" id="640">
-            <strong>Signature:</strong> other:DependenciesGroup -&gt; DependenciesGroup<br />
+          <div class="tip" id="549">
+            <strong>Signature:</strong> string<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependenciesFile.fs#L45-45" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/TemplateFile.fs#L101-101" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
         </td>
       </tr>
-    </tbody>
-  </table>
-  <h3>Static members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Static member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '641', 641)" onmouseover="showTip(event, '641', 641)">
-            New(groupName)
+          <code onmouseout="hideTip(event, '550', 550)" onmouseover="showTip(event, '550', 550)">
+            PackageFileName
           </code>
-          <div class="tip" id="641">
-            <strong>Signature:</strong> groupName:GroupName -&gt; DependenciesGroup<br />
+          <div class="tip" id="550">
+            <strong>Signature:</strong> string<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependenciesFile.fs#L38-38" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/TemplateFile.fs#L97-97" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
