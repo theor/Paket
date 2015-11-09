@@ -74,10 +74,20 @@
 
 <h2><a name="NuGet-puts-the-package-version-into-the-path-Is-Paket-doing-the-same" class="anchor" href="#NuGet-puts-the-package-version-into-the-path-Is-Paket-doing-the-same">NuGet puts the package version into the path. Is Paket doing the same?</a></h2>
 
-<p>No, since Paket provides a global view of your dependencies it installs only one version of a package and therefore the version number is not needed in the path.
+<p>No, since Paket provides a global view of your dependencies it usually installs only one version of a package and therefore the version number is not needed in the path.
 This makes it much easier to reference files in the package and you don't have to edit these references when you update a package.</p>
 
 <p>If you really need to have the version in the path for certain packages (like xunit.runners.visualstudio) you <a href="nuget-dependencies.html#Putting-the-version-no-into-the-path">can still do that</a>.</p>
+
+<h2><a name="NuGet-allows-to-use-multiple-versions-of-the-same-package-Can-I-do-that-with-Paket" class="anchor" href="#NuGet-allows-to-use-multiple-versions-of-the-same-package-Can-I-do-that-with-Paket">NuGet allows to use multiple versions of the same package. Can I do that with Paket?</a></h2>
+
+<p>Usually you don't want that to happen. Most solutions that have multiple versions of the same package installed did this by accident. 
+Since NuGet has no global lock file and stores version information in packages.config (per project), it's hard to keep all projects consolidated.
+Paket on the other gives you a global/consolidated view of all your dependencies in the <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
+
+<p>In the very rare cases when you really need to maintain different versions of the same package you can use the <a href="http://fsprojects.github.io/Paket/groups.html">dependency groups feature</a>.
+Every dependency group gets resolved independently so it also deals with the conflict resolution of indirect dependencies, but the most important difference is that using groups is a deliberate action.
+You need to explicitly name the group in <a href="references-files.html"><code>paket.references</code> files</a>, so it won't happen by accident.</p>
 
 <h2><a name="Why-does-Paket-add-references-to-the-libraries-associated-with-each-supported-framework-version-within-a-NuGet-package-to-my-projects" class="anchor" href="#Why-does-Paket-add-references-to-the-libraries-associated-with-each-supported-framework-version-within-a-NuGet-package-to-my-projects">Why does Paket add references to the libraries associated with each supported framework version within a NuGet package to my projects?</a></h2>
 
