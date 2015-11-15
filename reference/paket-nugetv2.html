@@ -83,7 +83,7 @@
             CopyFromCache (...)
           </code>
           <div class="tip" id="146">
-            <strong>Signature:</strong> (root:string * groupName:GroupName * cacheFileName:string * licenseCacheFile:string * packageName:PackageName * version:SemVerInfo * includeVersionInPath:bool * force:bool) -&gt; Async&lt;string&gt;<br />
+            <strong>Signature:</strong> (root:string * groupName:GroupName * cacheFileName:string * licenseCacheFile:string * packageName:PackageName * version:SemVerInfo * includeVersionInPath:bool * force:bool * detailed:bool) -&gt; Async&lt;string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -158,7 +158,7 @@
             DownloadPackage (...)
           </code>
           <div class="tip" id="150">
-            <strong>Signature:</strong> (root:string * auth:Auth option * source:PackageSource * groupName:GroupName * packageName:PackageName * version:SemVerInfo * includeVersionInPath:bool * force:bool) -&gt; Async&lt;string&gt;<br />
+            <strong>Signature:</strong> (root:string * auth:Auth option * source:PackageSource * groupName:GroupName * packageName:PackageName * version:SemVerInfo * includeVersionInPath:bool * force:bool * detailed:bool) -&gt; Async&lt;string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -179,7 +179,7 @@
             ExtractPackage (...)
           </code>
           <div class="tip" id="151">
-            <strong>Signature:</strong> (fileName:string * targetFolder:string * packageName:PackageName * version:SemVerInfo) -&gt; Async&lt;string&gt;<br />
+            <strong>Signature:</strong> (fileName:string * targetFolder:string * packageName:PackageName * version:SemVerInfo * detailed:bool) -&gt; Async&lt;string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
