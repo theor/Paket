@@ -75,6 +75,48 @@
 
 <p><code>--creds-migration &lt;string&gt;</code>: Specify a mode for migrating NuGet source credentials. Possible values are [<code>encrypt</code>|<code>plaintext</code>|<code>selective</code>]. The default mode is <code>encrypt</code>.</p>
 
+<h2><a name="Preparation" class="anchor" href="#Preparation">Preparation</a></h2>
+
+<p>Choose a folder to run the conversion from that is parent to <strong>all</strong> the projects to be converted.</p>
+
+<p>When using nuget package restore, the <code>packages</code> folder is alongside the solution. It is possible with a solution that the folder parent to <code>packages</code> is <strong>not</strong> also parent to all the projects in the solution.</p>
+
+<p>A solution is in effect acting as a symlink but this indirection via the solution is not possible with paket because paket manages projects and not solutions. In the example below, it would not be possible to run the <code>paket convert-from-nuget</code> command from the <code>Build</code> folder but it would be from the root folder.</p>
+
+<pre>
++---Build
+|   |   Numbers.sln
+|   |   
+|   +---.nuget
+|   |   NuGet.Config
+|   |   NuGet.exe
+|   |   NuGet.targets
+|   |   
+|   +---packages
+|   
++---Encoding
+|   |   Encoding.fsproj
+|   |   packages.config
+</pre>
+
+<p>After running the conversion from the root folder;</p>
+
+<pre>
++---.paket
+|   |   paket.bootstrapper.exe
+|   |   paket.exe
+|   |   paket.targets
+|
++---packages
+|
++---Build
+|   |   Numbers.sln
+|   
++---Encoding
+|   |   Encoding.fsproj
+|   |   [`paket.references`](references-files.html)
+</pre>
+
 <h2><a name="Command-steps" class="anchor" href="#Command-steps">Command steps</a></h2>
 
 <p>The <code>paket convert-from-nuget</code> command:</p>
