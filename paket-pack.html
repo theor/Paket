@@ -62,7 +62,7 @@
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="msh">paket pack output &lt;string&gt; [buildconfig &lt;string&gt;] [version &lt;string&gt;] [templatefile &lt;string&gt;] [releaseNotes &lt;string&gt;] [lock-dependencies]
+<td class="snippet"><pre class="fssnip highlighted"><code lang="msh">paket pack output &lt;string&gt; [buildconfig &lt;string&gt;] [buildplatform &lt;string&gt;] [version &lt;string&gt;] [templatefile &lt;string&gt;] [releaseNotes &lt;string&gt;] [lock-dependencies]
 </code></pre></td></tr></table>
 
 <h3><a name="Options" class="anchor" href="#Options">Options:</a></h3>
@@ -70,6 +70,8 @@
 <p><code>output &lt;string&gt;</code>: Output directory to put .nupkg files.</p>
 
 <p><code>buildconfig &lt;string&gt;</code>: Optionally specify build configuration that should be packaged (defaults to Release).</p>
+
+<p><code>buildplatform &lt;string&gt;</code>: Optionally specify build platform that should be packaged (if not provided or empty, checks all known platform targets).</p>
 
 <p><code>version &lt;string&gt;</code>: Specify version of the package.</p>
 
