@@ -147,6 +147,37 @@
 </tr>
 </table>
 
+<h2><a name="Redirects-settings" class="anchor" href="#Redirects-settings">Redirects settings</a></h2>
+
+<p>You can instruct Paket to create assembly binding redirects for NuGet packages:</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">Core</span> <span class="i">redirects</span><span class="o">:</span> <span class="i">on</span>
+</code></pre></td>
+</tr>
+</table>
+
+<p>Redirects are created only if they are required. However, you can instruct Paket to create it regardless:</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs2', 4)" onmouseover="showTip(event, 'fs2', 4)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 5)" onmouseover="showTip(event, 'fs3', 5)" class="i">Core</span> <span class="i">redirects</span><span class="o">:</span> <span class="i">force</span>
+</code></pre></td>
+</tr>
+</table>
+
+<p>In constract, you have the option to force Paket to not create a redirect:</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs2', 6)" onmouseover="showTip(event, 'fs2', 6)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 7)" onmouseover="showTip(event, 'fs3', 7)" class="i">Core</span> <span class="i">redirects</span><span class="o">:</span> <span class="i">off</span>
+</code></pre></td>
+</tr>
+</table>
+
+<p>Redirects settings in <a href="references-files.html#Redirects-settings">references files</a> takes precedence over settings in <a href="nuget-dependencies.html#redirects-settings">dependencies file</a>.</p>
+
 <h2><a name="File-name-conventions" class="anchor" href="#File-name-conventions">File name conventions</a></h2>
 
 <p>If Paket finds <code>paket.references</code> in a folder, the dependencies it specifies will be added to all MSBuild projects in that folder.</p>
@@ -173,7 +204,7 @@
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">/</span>
 <span class="o">/</span><span class="i">paket</span><span class="o">.</span><span class="i">dependencies</span>
-<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">lock</span>
+<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 8)" onmouseover="showTip(event, 'fs4', 8)" class="i">lock</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">csproj</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">fsproj</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">vbproj</span>
@@ -203,7 +234,7 @@
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">/</span>
 <span class="o">/</span><span class="i">paket</span><span class="o">.</span><span class="i">dependencies</span>
-<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="i">lock</span>
+<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 9)" onmouseover="showTip(event, 'fs4', 9)" class="i">lock</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">csproj</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">fsproj</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">vbproj</span>
@@ -233,7 +264,7 @@
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">/</span>
 <span class="o">/</span><span class="i">paket</span><span class="o">.</span><span class="i">dependencies</span>
-<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 4)" onmouseover="showTip(event, 'fs2', 4)" class="i">lock</span>
+<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 10)" onmouseover="showTip(event, 'fs4', 10)" class="i">lock</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">csproj</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">csproj</span><span class="o">.</span><span class="i">paket</span><span class="o">.</span><span class="i">references</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">fsproj</span>
@@ -250,7 +281,9 @@
 </ul>
 
 <div class="tip" id="fs1">namespace Microsoft</div>
-<div class="tip" id="fs2">val lock : lockObject:&#39;Lock -&gt; action:(unit -&gt; &#39;T) -&gt; &#39;T (requires reference type)<br /><br />Full name: Microsoft.FSharp.Core.Operators.lock</div>
+<div class="tip" id="fs2">namespace Microsoft.FSharp</div>
+<div class="tip" id="fs3">namespace Microsoft.FSharp.Core</div>
+<div class="tip" id="fs4">val lock : lockObject:&#39;Lock -&gt; action:(unit -&gt; &#39;T) -&gt; &#39;T (requires reference type)<br /><br />Full name: Microsoft.FSharp.Core.Operators.lock</div>
 
         </div>
         <div class="span3">
