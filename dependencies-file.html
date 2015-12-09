@@ -236,6 +236,52 @@ In <code>strict</code> mode it will <strong>only</strong> reference <em>direct</
 </tr>
 </table>
 
+<p>On the other hand, you can instruct Paket to create no <a href="https://msdn.microsoft.com/en-us/library/433ysdt1(v=vs.110).aspx">Assembly Binding Redirects</a>, regardless a package instructs otherwise.</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">redirects</span><span class="o">:</span> <span class="i">off</span>
+<span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+
+<span class="i">nuget</span> <span class="i">UnionArgParser</span> <span class="o">~&gt;</span> <span class="n">0.7</span> <span class="i">redirects</span><span class="o">:</span> <span class="i">on</span>
+<span class="i">nuget</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">Core</span> <span class="i">redirects</span><span class="o">:</span> <span class="i">force</span>
+</code></pre></td>
+</tr>
+</table>
+
+<p>If you're using multiple groups, you must set <code>redirects: off</code> for each one of them.</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">redirects</span><span class="o">:</span> <span class="i">off</span>
+<span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+
+<span class="i">nuget</span> <span class="i">UnionArgParser</span> <span class="o">~&gt;</span> <span class="n">0.7</span> <span class="i">redirects</span><span class="o">:</span> <span class="i">on</span>
+<span class="i">nuget</span> <span onmouseout="hideTip(event, 'fs2', 4)" onmouseover="showTip(event, 'fs2', 4)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 5)" onmouseover="showTip(event, 'fs3', 5)" class="i">Core</span> <span class="i">redirects</span><span class="o">:</span> <span class="i">force</span>
+
+<span class="i">group</span> <span class="i">Build</span>
+    <span class="i">redirects</span><span class="o">:</span> <span class="i">off</span>
+    <span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+
+    <span class="i">nuget</span> <span class="i">FAKE</span> <span class="i">redirects</span><span class="o">:</span> <span class="i">on</span>
+</code></pre></td>
+</tr>
+</table>
+
 <h3><a name="Strategy-option" class="anchor" href="#Strategy-option">Strategy option</a></h3>
 
 <p>This option tells Paket what resolver strategy it will use by default.</p>
@@ -249,7 +295,7 @@ In <code>strict</code> mode it will <strong>only</strong> reference <em>direct</
 <span class="l">3: </span>
 <span class="l">4: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">strategy</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">min</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">strategy</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs4', 6)" onmouseover="showTip(event, 'fs4', 6)" class="i">min</span>
 <span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
 
 <span class="i">nuget</span> <span class="i">UnionArgParser</span> <span class="o">~&gt;</span> <span class="n">0.7</span>
@@ -270,7 +316,9 @@ In <code>strict</code> mode it will <strong>only</strong> reference <em>direct</
 <p>All lines starting with with <code>//</code> or <code>#</code> are considered comments.</p>
 
 <div class="tip" id="fs1">namespace Microsoft</div>
-<div class="tip" id="fs2">val min : e1:&#39;T -&gt; e2:&#39;T -&gt; &#39;T (requires comparison)<br /><br />Full name: Microsoft.FSharp.Core.Operators.min</div>
+<div class="tip" id="fs2">namespace Microsoft.FSharp</div>
+<div class="tip" id="fs3">namespace Microsoft.FSharp.Core</div>
+<div class="tip" id="fs4">val min : e1:&#39;T -&gt; e2:&#39;T -&gt; &#39;T (requires comparison)<br /><br />Full name: Microsoft.FSharp.Core.Operators.min</div>
 
         </div>
         <div class="span3">
