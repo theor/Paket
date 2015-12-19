@@ -155,8 +155,8 @@
             calcOpenRequirements (...)
           </code>
           <div class="tip" id="154">
-            <strong>Signature:</strong> (exploredPackage:ResolvedPackage * globalFrameworkRestrictions:FrameworkRestrictions * versionToExplore:SemVerInfo * dependency:PackageRequirement * closed:Set&lt;PackageRequirement&gt; * stillOpen:Set&lt;PackageRequirement&gt;) -&gt; Set&lt;PackageRequirement&gt;<br />
-                      </div>
+            <strong>Signature:</strong> (exploredPackage:ResolvedPackage * globalFrameworkRestrictions:FrameworkRestrictions * (SemVerInfo * &#39;?9812) * dependency:PackageRequirement * closed:Set&lt;PackageRequirement&gt; * stillOpen:Set&lt;PackageRequirement&gt;) -&gt; Set&lt;PackageRequirement&gt;<br />
+                          <strong>Type parameters:</strong> '?9812          </div>
         </td>
         <td class="xmldoc">
             <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/PackageResolver.fs#L156-156" class="github-link">
@@ -191,8 +191,8 @@
             Resolve (...)
           </code>
           <div class="tip" id="156">
-            <strong>Signature:</strong> (groupName:GroupName * sources:&#39;c * getVersionsF:(&#39;c -&gt; ResolverStrategy -&gt; GroupName -&gt; PackageName -&gt; seq&lt;SemVerInfo&gt;) * getPackageDetailsF:(&#39;c -&gt; PackageName -&gt; SemVerInfo -&gt; PackageDetails) * strategy:ResolverStrategy option * globalFrameworkRestrictions:FrameworkRestriction list * rootDependencies:Set&lt;PackageRequirement&gt; * updateMode:UpdateMode) -&gt; Resolution<br />
-                          <strong>Type parameters:</strong> 'c          </div>
+            <strong>Signature:</strong> (groupName:GroupName * sources:PackageSource list * getVersionsF:(PackageSource list -&gt; ResolverStrategy -&gt; GroupName -&gt; PackageName -&gt; seq&lt;SemVerInfo * PackageSource list&gt;) * getPackageDetailsF:(PackageSource list -&gt; PackageName -&gt; SemVerInfo -&gt; PackageDetails) * strategy:ResolverStrategy option * globalFrameworkRestrictions:FrameworkRestriction list * rootDependencies:Set&lt;PackageRequirement&gt; * updateMode:UpdateMode) -&gt; Resolution<br />
+                      </div>
         </td>
         <td class="xmldoc">
             <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/PackageResolver.fs#L202-202" class="github-link">

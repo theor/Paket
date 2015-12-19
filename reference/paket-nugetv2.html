@@ -140,8 +140,8 @@
             DownloadLicense (...)
           </code>
           <div class="tip" id="120">
-            <strong>Signature:</strong> (root:&#39;?9993 * force:bool * packageName:PackageName * version:SemVerInfo * licenseUrl:string * targetFileName:string) -&gt; Async&lt;unit&gt;<br />
-                          <strong>Type parameters:</strong> '?9993          </div>
+            <strong>Signature:</strong> (root:&#39;?9995 * force:bool * packageName:PackageName * version:SemVerInfo * licenseUrl:string * targetFileName:string) -&gt; Async&lt;unit&gt;<br />
+                          <strong>Type parameters:</strong> '?9995          </div>
         </td>
         <td class="xmldoc">
             <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NuGetV2.fs#L411-411" class="github-link">
@@ -254,8 +254,8 @@
             getAllVersionsFromLocalPath (...)
           </code>
           <div class="tip" id="126">
-            <strong>Signature:</strong> (localNugetPath:string * package:PackageName * root:string) -&gt; Async&lt;string [] option&gt;<br />
-                      </div>
+            <strong>Signature:</strong> (source:&#39;?9978 * localNugetPath:string * package:PackageName * root:string) -&gt; Async&lt;(&#39;?9978 * string []) option&gt;<br />
+                          <strong>Type parameters:</strong> '?9978          </div>
         </td>
         <td class="xmldoc">
             <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NuGetV2.fs#L100-100" class="github-link">
@@ -434,7 +434,7 @@
             GetVersions root (sources, packageName)
           </code>
           <div class="tip" id="135">
-            <strong>Signature:</strong> root:string -&gt; (sources:seq&lt;PackageSource&gt; * packageName:PackageName) -&gt; SemVerInfo list<br />
+            <strong>Signature:</strong> root:string -&gt; (sources:seq&lt;PackageSource&gt; * packageName:PackageName) -&gt; (SemVerInfo * PackageSource list) list<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -455,8 +455,8 @@
             getVersionsCached (...)
           </code>
           <div class="tip" id="136">
-            <strong>Signature:</strong> key:string -&gt; f:(Auth option * string * &#39;?10002 -&gt; Async&lt;&#39;?10003 option&gt;) -&gt; (auth:Auth option * nugetURL:string * package:&#39;?10002) -&gt; Async&lt;&#39;?10003 option&gt;<br />
-                          <strong>Type parameters:</strong> '?10002, '?10003          </div>
+            <strong>Signature:</strong> key:string -&gt; f:(Auth option * string * &#39;?10004 -&gt; Async&lt;&#39;?10005 option&gt;) -&gt; (source:&#39;?10006 * auth:Auth option * nugetURL:string * package:&#39;?10004) -&gt; Async&lt;(&#39;?10006 * &#39;?10005) option&gt;<br />
+                          <strong>Type parameters:</strong> '?10004, '?10005, '?10006          </div>
         </td>
         <td class="xmldoc">
             <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NuGetV2.fs#L610-610" class="github-link">
@@ -491,8 +491,8 @@
             parseODataDetails (...)
           </code>
           <div class="tip" id="138">
-            <strong>Signature:</strong> (nugetURL:string * packageName:PackageName * version:&#39;?9978 * raw:string) -&gt; NugetPackageCache<br />
-                          <strong>Type parameters:</strong> '?9978          </div>
+            <strong>Signature:</strong> (nugetURL:string * packageName:PackageName * version:&#39;?9980 * raw:string) -&gt; NugetPackageCache<br />
+                          <strong>Type parameters:</strong> '?9980          </div>
         </td>
         <td class="xmldoc">
             <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NuGetV2.fs#L118-118" class="github-link">
@@ -578,11 +578,11 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '143', 143)" onmouseover="showTip(event, '143', 143)">
-            tryNuGetV3 (auth, nugetV3Url, package)
+            tryNuGetV3 (...)
           </code>
           <div class="tip" id="143">
-            <strong>Signature:</strong> (auth:Auth option * nugetV3Url:string * package:PackageName) -&gt; Async&lt;string [] option&gt;<br />
-                      </div>
+            <strong>Signature:</strong> (source:&#39;?9976 * auth:Auth option * nugetV3Url:string * package:PackageName) -&gt; Async&lt;(&#39;?9976 * string []) option&gt;<br />
+                          <strong>Type parameters:</strong> '?9976          </div>
         </td>
         <td class="xmldoc">
             <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NuGetV2.fs#L88-88" class="github-link">
