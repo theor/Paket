@@ -55,14 +55,15 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h4><a name="2-37-0-alpha004-21-12-2015" class="anchor" href="#2-37-0-alpha004-21-12-2015">2.37.0-alpha004 - 21.12.2015</a></h4>
+<h4><a name="2-37-0-21-12-2015" class="anchor" href="#2-37-0-21-12-2015">2.37.0 - 21.12.2015</a></h4>
 
 <ul>
-<li>New "clear-cache" command allows to clear the NuGet cache - <a href="http://fsprojects.github.io/Paket/clear-cache.html">http://fsprojects.github.io/Paket/clear-cache.html</a></li>
+<li>New "clear-cache" command allows to clear the NuGet cache - <a href="http://fsprojects.github.io/Paket/paket-clear-cache.html">http://fsprojects.github.io/Paket/paket-clear-cache.html</a></li>
 <li>Paket checks PackageDetails only for sources that responded with versions for a package - <a href="https://github.com/fsprojects/Paket/issues/1317">https://github.com/fsprojects/Paket/issues/1317</a></li>
 <li>Implemented support for specifying per-template versions in paket pack - <a href="https://github.com/fsprojects/Paket/pull/1314">https://github.com/fsprojects/Paket/pull/1314</a></li>
 <li>Added support for relative src link to package content - <a href="https://github.com/fsprojects/Paket/pull/1311">https://github.com/fsprojects/Paket/pull/1311</a></li>
 <li>BUGFIX: Fix NullReferenceException - <a href="https://github.com/fsprojects/Paket/issues/1307">https://github.com/fsprojects/Paket/issues/1307</a></li>
+<li>BUGFIX: Check that cached NuGet package belongs to requested package</li>
 <li>BUGFIX: NuGet packages with FrameworkAssembly nodes did not work - <a href="https://github.com/fsprojects/Paket/issues/1306">https://github.com/fsprojects/Paket/issues/1306</a></li>
 <li>Paket install did an unnecessary update when framework restriction were present - <a href="https://github.com/fsprojects/Paket/issues/1305">https://github.com/fsprojects/Paket/issues/1305</a></li>
 <li>COSMETICS: No need to show cache warnings</li>
