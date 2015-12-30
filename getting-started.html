@@ -62,7 +62,7 @@
 
 <ul>
 <li><a href="getting-started.html#Manual-setup">how to manually setup Paket</a> in your .NET / mono solutions</li>
-<li>and <a href="getting-started.html#Automatic-NuGet-conversion">how to use the automatic NuGet conversion</a>.</li>
+<li>and <a href="convert-from-nuget-tutorial.html">how to use the automatic NuGet conversion</a>.</li>
 </ul>
 
 <blockquote>The following guide is assuming you are using the paket.exe command line tool. For information on installing the commmand line tool follow the instructions for your operating system for <a href="installation.html">installation</a>.
@@ -218,28 +218,9 @@ By listing the direct dependencies in a <code>paket.references</code> file, Pake
 
 <p>This command will analyze your <a href="dependencies-file.html"><code>paket.dependencies</code> file</a> and update the <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
 
-<h2><a name="Automatic-NuGet-conversion" class="anchor" href="#Automatic-NuGet-conversion">Automatic NuGet conversion</a></h2>
+<h3><a name="Converting-from-NuGet" class="anchor" href="#Converting-from-NuGet">Converting from NuGet</a></h3>
 
-<p>Paket comes with a command that helps to convert existing solution from NuGet's <code>packages.config</code> format to Paket's format.
-If you want to use the command then:</p>
-
-<ul>
-<li>Please start by making a <strong>back-up of your repository</strong></li>
-<li>Download Paket and it's BootStrapper as <a href="getting-started.html#Downloading-Paket-and-it-s-BootStrapper">described above</a></li>
-<li>Run the <code>convert-from-nuget</code> command:</li>
-</ul>
-
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip"><code lang="batchfile">$ .paket/paket.exe convert-from-nuget
-</code></pre></td></tr></table>
-
-<p>You can read more about the details and specific parameters for <code>convert-from-nuget</code> in the <a href="paket-convert-from-nuget.html">docs</a>.</p>
-
-<h3><a name="Partial-NuGet-conversion" class="anchor" href="#Partial-NuGet-conversion">Partial NuGet conversion</a></h3>
-
-<p>The <code>convert-from-nuget</code> will not work if it discovers that the codebase already utilizes Paket (when <a href="dependencies-file.html"><code>paket.dependencies</code> file</a> is found).
-However, if for some reason you happen to have a mixture of projects already migrated to Paket and projects still using NuGet, you can pass the <code>--force</code> flag to <code>convert-from-nuget</code> for the remaining projects.</p>
+<p>If you are already using NuGet and want to learn how to use the automatic NuGet conversion, then read the next <a href="convert-from-nuget-tutorial.html">tutorial</a>.</p>
 
 <div class="tip" id="fs1">namespace Microsoft.FSharp.Core</div>
 
