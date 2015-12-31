@@ -57,23 +57,14 @@
         <div class="span9" id="main">
           
 <h1><a name="NuGet-dependencies" class="anchor" href="#NuGet-dependencies">NuGet dependencies</a></h1>
-
 <p>Paket allows to reference <a href="http://www.nuget.org">NuGet</a> packages in your application.</p>
-
 <h2><a name="Sources" class="anchor" href="#Sources">Sources</a></h2>
-
 <p>Sources are defined by the <code>source "&lt;address&gt;"</code> statement.</p>
-
 <p>Paket supports multiple sources per <code>paket.dependencies</code>. It's recommended to put all <code>source</code> statements at the top of <code>paket.dependencies</code>.</p>
-
 <p>The <a href="lock-file.html"><code>paket.lock</code> file</a> will reflect the sources selected by dependency resolution.</p>
-
 <h3><a name="NuGet-feeds" class="anchor" href="#NuGet-feeds">NuGet feeds</a></h3>
-
 <p>Paket supports NuGet feeds like those provided by <a href="http://www.nuget.org">nuget.org</a>, <a href="https://www.myget.org/">MyGet</a> or <a href="http://www.jetbrains.com/teamcity/">TeamCity</a>.</p>
-
 <p>Please note that you need to specify all NuGet sources, including the default feed from <a href="http://www.nuget.org">nuget.org</a>. Paket does not take the current machine's NuGet Package Sources configuration (that you set up e.g. using Visual Studio) into account.</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 </pre></td>
@@ -82,34 +73,25 @@
 </code></pre></td>
 </tr>
 </table>
-
 <div id="plaintext-credentials"></div>
 It's also possible to provide login information for private NuGet feeds:
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">http</span><span class="o">:</span><span class="c">//myserver/nuget/api/v2 username: &quot;my user&quot; password: &quot;my pw&quot;</span>
 </code></pre></td>
 </tr>
 </table>
-
 <p>If you don't want to check your username and password into source control, you can use environment variables instead:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">http</span><span class="o">:</span><span class="c">//myserver/nuget/api/v2 username: &quot;%PRIVATE_FEED_USER%&quot; password: &quot;%PRIVATE_FEED_PASS%&quot;</span>
 </code></pre></td>
 </tr>
 </table>
-
 <p><code>%PRIVATE_FEED_USER%</code> and <code>%PRIVATE_FEED_PASS%</code> will be expanded with the contents of your <code>PRIVATE_FEED_USER</code> and <code>PRIVATE_FEED_PASS</code> environment variables.</p>
-
 <p>The <a href="lock-file.html"><code>paket.lock</code> file</a> will also reflect these settings.</p>
-
 <h3><a name="Path-sources" class="anchor" href="#Path-sources">Path sources</a></h3>
-
 <p>Paket also supports file paths such as local directories or references to UNC shares:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 </pre></td>
@@ -118,38 +100,24 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <p>As well Paket supports the source directory to be specified relative to the <code>paket.dependencies</code> file:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">ext</span><span class="o">/</span><span class="i">nugets</span>
 </code></pre></td>
 </tr>
 </table>
-
 <h2><a name="Dependencies" class="anchor" href="#Dependencies">Dependencies</a></h2>
-
 <p>The dependencies of your project are defined by the <code>nuget &lt;package ID&gt; &lt;version constraint&gt;</code> statement.</p>
-
 <p>Paket also supports file dependencies, such as <a href="http-dependencies.html">referencing files directly from GitHub repositories</a>.</p>
-
 <div id="package-id"></div>
-
 <h3><a name="Package-ID" class="anchor" href="#Package-ID">Package ID</a></h3>
-
 <p>The <code>package ID</code> parameter is the same as you find in NuGet's <code>packages.config</code> or on <a href="http://www.nuget.org">nuget.org</a>.</p>
-
 <h3><a name="Version-constraints" class="anchor" href="#Version-constraints">Version constraints</a></h3>
-
 <p>One key feature of Paket is that it separates the definition of dependencies from the actual resolution. NuGet stores resolution information in <code>packages.config</code>, where both package IDs and their respective pinned version are combined.</p>
-
 <p>With Paket you do not need to pin specific versions (although you can). Paket allows you to leverage <a href="http://semver.org">semantic versioning</a> and define version constraints in a very flexible manner.</p>
-
 <p>You can also <a href="#Paket-s-NuGet-style-dependency-resolution-for-transitive-dependencies">influence the resolution of transitive dependencies</a>.</p>
-
 <h4><a name="Pinned-version-constraint" class="anchor" href="#Pinned-version-constraint">Pinned version constraint</a></h4>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -162,35 +130,25 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <p>This is the strictest version constraint. Use the <code>=</code> operator to specify an exact version match; the <code>=</code> is optional.</p>
-
 <h4><a name="Omitting-the-version-constraint" class="anchor" href="#Omitting-the-version-constraint">Omitting the version constraint</a></h4>
-
 <p>If you omit the version constraint then Paket will assume <code>&gt;= 0</code>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">nuget</span> <span class="i">Example</span>
 </code></pre></td>
 </tr>
 </table>
-
 <h4><a name="Use-exactly-this-version-constraint" class="anchor" href="#Use-exactly-this-version-constraint">"Use exactly this version" constraint</a></h4>
-
 <p>If your transitive dependencies result in a version conflict you might want to instruct Paket to use a specific version. The <code>==</code> operator allows you to manually resolve the conflict:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">nuget</span> <span class="i">Example</span> <span class="o">==</span> <span class="n">1.2</span><span class="o">.</span><span class="n">3</span> <span class="c">// take exactly this version</span>
 </code></pre></td>
 </tr>
 </table>
-
 <blockquote>Important: If you want to restrict the version to a specific version then use the [= operator](nuget-dependencies.html#Pinned-version-constraint). The == operator should only be used if you need to overwrite a dependency resultion due to a conflict.</blockquote>
-
 <h4><a name="Further-version-constraints" class="anchor" href="#Further-version-constraints">Further version constraints</a></h4>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -205,22 +163,16 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <h4><a name="Pessimistic-version-constraint" class="anchor" href="#Pessimistic-version-constraint">Pessimistic version constraint</a></h4>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">nuget</span> <span class="i">Example</span> <span class="o">~&gt;</span> <span class="n">1.2</span><span class="o">.</span><span class="n">3</span>
 </code></pre></td>
 </tr>
 </table>
-
 <p>The <code>~&gt;</code> "twiddle-wakka" operator is borrowed from <a href="http://bundler.io/">bundler</a>. It is used to specify a version range.</p>
-
 <p>It translates to "use the minimum version specified, but allow upgrades up to, but not including, <version specified>, last part chopped off, last number incremented by 1". In other words, allow the last part stated explicitly to increase, but pin any of the elements before that.</p>
-
 <p>Let us illustrate:</p>
-
 <table>
   <thead>
     <td>Constraint</td>
@@ -251,24 +203,17 @@ It's also possible to provide login information for private NuGet feeds:
     <td><pre>1.2.3-alpha001 <= x < 1.3</pre></td>
   </tr>
 <table>
-
 <h4><a name="Pessimistic-version-constraint-with-compound" class="anchor" href="#Pessimistic-version-constraint-with-compound">Pessimistic version constraint with compound</a></h4>
-
 <p>If want to allow newer backward-compatible versions but also need a specific fix version within the allowed range, use a compound constraint.</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">nuget</span> <span class="i">Example</span> <span class="o">~&gt;</span> <span class="n">1.2</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">1.2</span><span class="o">.</span><span class="n">3</span>
 </code></pre></td>
 </tr>
 </table>
-
 <p>The example above translates to <code>1.2.3 &lt;= x &lt; 2.0</code>.</p>
-
 <h3><a name="PreReleases" class="anchor" href="#PreReleases">PreReleases</a></h3>
-
 <p>If you want to dependend on prereleases then Paket can assist you. In contrast to NuGet, Paket allows you to depend on different prerelease channels:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -281,11 +226,8 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <h3><a name="Framework-restrictions" class="anchor" href="#Framework-restrictions">Framework restrictions</a></h3>
-
 <p>Sometimes you don't want to generate dependencies for older framework versions. You can control this in the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 </pre></td>
@@ -294,11 +236,8 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <h3><a name="Putting-the-version-no-into-the-path" class="anchor" href="#Putting-the-version-no-into-the-path">Putting the version no. into the path</a></h3>
-
 <p>If you need to be NuGet compatible and want to have the version no. in the package path you can do the following:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -311,11 +250,8 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <h3><a name="No-content-option" class="anchor" href="#No-content-option">No content option</a></h3>
-
 <p>This option disables the installation of any content files:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -332,13 +268,9 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <p>The default is <code>content: true</code>.</p>
-
 <h3><a name="copy_local-settings" class="anchor" href="#copy_local-settings">copy_local settings</a></h3>
-
 <p>It's possible to influence the <code>Private</code> property for references in project files:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -349,11 +281,8 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <h3><a name="redirects-settings" class="anchor" href="#redirects-settings">redirects settings</a></h3>
-
 <p>You can instruct Paket to create assembly binding redirects for NuGet packages:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -364,9 +293,7 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <p>Redirects are created only if they are required. However, you can instruct Paket to create it regardless:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -377,9 +304,7 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <p>In constract, you have the option to force Paket to not create a redirect:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -390,13 +315,9 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <p>You can also override the redirects settings per project, from its <a href="references-files.html#Redirects-settings">references file</a>.</p>
-
 <h3><a name="import_targets-settings" class="anchor" href="#import_targets-settings">import_targets settings</a></h3>
-
 <p>If you don't want to import <code>.targets</code> and <code>.props</code> files you can disable it via the <code>import_targets</code> switch:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -409,15 +330,10 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <h3><a name="Strategy-modifiers" class="anchor" href="#Strategy-modifiers">Strategy modifiers</a></h3>
-
 <p>To override a <a href="dependencies-file.html#Strategy-option">strategy option</a> or the default strategy you can use one of the strategy modifiers.</p>
-
 <h4><a name="Max-modifier" class="anchor" href="#Max-modifier">Max modifier</a></h4>
-
 <p>To request Paket to override the resolver strategy for the transitive dependencies of a package, use the <code>@</code> operator in your version constraint.</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -430,13 +346,9 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <p>This effectively will get you the <em>lastest matching versions</em> of <code>Example</code>'s dependencies.</p>
-
 <h4><a name="Min-modifier" class="anchor" href="#Min-modifier">Min modifier</a></h4>
-
 <p>To request Paket to override the resolver strategy for the transitive dependencies of a package, use the <code>!</code> operator in your version constraint.</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -447,11 +359,8 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <p>This effectively will get you the <em>lowest matching versions</em> of <code>Example</code>'s dependencies. Still, you will get the <em>latest matching version</em> of <code>Example</code> itself according to its <a href="#Pessimistic-version-constraint">version constraint of <code>1.2 &lt;= x &lt; 2</code></a>.</p>
-
 <p>The <code>!</code> and <code>@</code> modifiers are applicable to all <a href="#Version-constraints">version constraints</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -466,11 +375,8 @@ It's also possible to provide login information for private NuGet feeds:
 </code></pre></td>
 </tr>
 </table>
-
 <h3><a name="Specifying-multiple-targeting-options" class="anchor" href="#Specifying-multiple-targeting-options">Specifying multiple targeting options</a></h3>
-
 <p>It is possible to apply more than one of the options above to a particular package.  To do so, simply separate them by commas, like so:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>

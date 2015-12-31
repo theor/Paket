@@ -57,10 +57,8 @@
         <div class="span9" id="main">
           
 <h1><a name="Dependency-Groups" class="anchor" href="#Dependency-Groups">Dependency Groups</a></h1>
-
 <p><em>Groups</em> allow for better organization of dependencies and also enable <a href="groups.html#Conflict-resolution-with-groups">easier conflict resolution</a>.
 Let's consider a small example:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -117,14 +115,10 @@ Let's consider a small example:</p>
 </code></pre></td>
 </tr>
 </table>
-
 <p>As you can see we have 3 different groups in the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>.
 The first one is the default group (internally called "Main") and the other two groups contain dependencies that are used for <code>Build</code> and <code>Test</code>.</p>
-
 <blockquote>Notice the indentation in groups is optional.</blockquote>
-
 <p>After <a href="paket-install.html"><code>paket install</code></a> the generated <a href="lock-file.html"><code>paket.lock</code> file</a> looks like the following:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -227,10 +221,8 @@ The first one is the default group (internally called "Main") and the other two 
 </code></pre></td>
 </tr>
 </table>
-
 <p>As you can see every group is listed separately and it's possible to let Paket <a href="paket-restore.html">restore only specific groups</a>.
 If you want to reference dependencies from projects you can do this via the following syntax in the <a href="references-files.html"><code>paket.references</code> file.</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -245,11 +237,8 @@ If you want to reference dependencies from projects you can do this via the foll
 </code></pre></td>
 </tr>
 </table>
-
 <h2><a name="Conflict-resolution-with-groups" class="anchor" href="#Conflict-resolution-with-groups">Conflict resolution with groups</a></h2>
-
 <p>Paket's group feature allows you to use multiple versions of the same package. Let consider the following <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -270,9 +259,7 @@ If you want to reference dependencies from projects you can do this via the foll
 </code></pre></td>
 </tr>
 </table>
-
 <p>Every group will be resolved independently to the following <a href="lock-file.html"><code>paket.lock</code> file</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -297,10 +284,8 @@ If you want to reference dependencies from projects you can do this via the foll
 </code></pre></td>
 </tr>
 </table>
-
 <p>Paket is downloading both version. You will get <code>packages/Newtonsoft.Json</code> with version 7.0.1 and <code>packages/legacy/Newtonsoft.Json</code> with the 6.0.8 bits.
 In your  <a href="references-files.html"><code>paket.references</code> file.</a> you can now decide which version you want to use:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 </pre></td>

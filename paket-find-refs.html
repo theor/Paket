@@ -57,24 +57,16 @@
         <div class="span9" id="main">
           
 <h1><a name="paket-find-refs" class="anchor" href="#paket-find-refs">paket find-refs</a></h1>
-
 <p>Finds all project files that have the given NuGet packages installed.</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="msh">paket find-refs [group &lt;string&gt;] nuget &lt;string&gt; ...
 </code></pre></td></tr></table>
-
 <h3><a name="Options" class="anchor" href="#Options">Options:</a></h3>
-
 <p><code>group &lt;string&gt;</code>: Allows to specify a group. If omited the Main group is used.</p>
-
 <p><code>nuget &lt;string&gt; ...</code>: List of packages.</p>
-
 <h2><a name="Sample" class="anchor" href="#Sample">Sample</a></h2>
-
 <p><em>.src/Paket/paket.references</em> contains:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 </pre></td>
@@ -83,9 +75,7 @@
 </code></pre></td>
 </tr>
 </table>
-
 <p><em>.src/Paket.Core/paket.references</em> contains:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -96,16 +86,12 @@
 </code></pre></td>
 </tr>
 </table>
-
 <p>Now we run</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="msh">paket find-refs DotNetZip FSharp.Core
 </code></pre></td></tr></table>
-
 <p>and paket gives the following output:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>

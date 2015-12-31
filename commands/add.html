@@ -56,20 +56,14 @@
         <div class="span9" id="main">
           
 <h2><a name="Adding-to-a-single-project" class="anchor" href="#Adding-to-a-single-project">Adding to a single project</a></h2>
-
 <p>It's also possible to add a package to a specified project only:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip"><code lang="batchfile">$ paket add nuget PACKAGENAME [version VERSION] [project PROJECT] [--force] [--hard]
 </code></pre></td></tr></table>
-
 <p>See also <a href="paket-remove.html">paket remove</a>.</p>
-
 <h2><a name="Sample" class="anchor" href="#Sample">Sample</a></h2>
-
 <p>Consider the following paket.dependencies file:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -80,13 +74,9 @@
 </code></pre></td>
 </tr>
 </table>
-
 <p>Now we run <code>paket add nuget xunit --interactive</code> to install the package:</p>
-
 <p><img src="img/interactive-add.png" alt="alt text" title="Interactive paket add" /></p>
-
 <p>This will add the package to the selected paket.references files and also to the paket.dependencies file:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>

@@ -56,9 +56,7 @@
         <div class="span9" id="main">
           
 <h2><a name="Creating-NuGet-Packages" class="anchor" href="#Creating-NuGet-Packages">Creating NuGet-Packages</a></h2>
-
 <p>Consider the following <a href="dependencies-file.html"><code>paket.dependencies</code> file</a> in your project's root:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -71,18 +69,14 @@
 </code></pre></td>
 </tr>
 </table>
-
 <p>And one of your projects having a <a href="references-files.html"><code>paket.references</code> file</a> like this:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span>
 </code></pre></td>
 </tr>
 </table>
-
 <p>Now, when you run <code>paket install</code>, your <a href="lock-file.html"><code>paket.lock</code> file</a> would look like this:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -101,23 +95,17 @@
 </code></pre></td>
 </tr>
 </table>
-
 <p>Now, when you are done programming and wish to create a NuGet-Package of your project, create a <a href="template-files.html"><code>paket.template</code></a> file with <code>type project</code> and run:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip"><code lang="batch">paket pack output nugets version 1.0.0
 </code></pre></td></tr></table>
-
 <p>Or, you could run:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip"><code lang="batch">paket pack output nugets version 1.0.0 lock-dependencies
 </code></pre></td></tr></table>
-
 <p>Depending on which command you issue, Paket creates different version requirements of the packages you depend on in the resulting <code>.nuspec</code> file of your package:</p>
-
 <table>
   <thead>
     <th>Dependency</th>
@@ -132,15 +120,11 @@
     </tr>
   </tbody> 
 </table>
-
 <p>As you see here, the first command (without the <code>lock-dependencies</code> parameter) creates version requirements as specified in your <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>. The second command takes the currently resolved versions from your <a href="lock-file.html"><code>paket.lock</code> file</a> and "locks" them to these specific versions.</p>
-
 <h3><a name="Symbol-Packages" class="anchor" href="#Symbol-Packages">Symbol Packages</a></h3>
-
 <p>Visual Studio can be configured to download symbol/source versions of installed packages from a symbol server, allowing the developer to use the debugger to step into the source (see <a href="http://www.symbolsource.org/Public/Home/VisualStudio">SymbolSource</a>).
 These symbol/source packages are the same as the regular packages, but contain the source files (under <code>src</code>) and PDBs alongside the DLLs.
 Paket can build these symbol/source packages, in addition to the regular packages, using the <code>symbols</code> parameter:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip"><code lang="batch">paket pack output nugets symbols

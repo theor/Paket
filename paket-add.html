@@ -57,57 +57,34 @@
         <div class="span9" id="main">
           
 <h1><a name="paket-add" class="anchor" href="#paket-add">paket add</a></h1>
-
 <p>Adds a new package to your <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>.</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="msh">paket add nuget &lt;string&gt; [version &lt;string&gt;] [project &lt;string&gt;] [group &lt;string&gt;] [--force|-f] [--interactive|-i] [--hard] [--redirects] [--createnewbindingfiles] [--no-install] [--keep-major] [--keep-minor] [--keep-patch]
 </code></pre></td></tr></table>
-
 <h3><a name="Options" class="anchor" href="#Options">Options:</a></h3>
-
 <p><code>nuget &lt;string&gt;</code>: NuGet package id.</p>
-
 <p><code>version &lt;string&gt;</code>: Allows to specify version of the package.</p>
-
 <p><code>project &lt;string&gt;</code>: Allows to add the package to a single project only.</p>
-
 <p><code>group &lt;string&gt;</code>: Add the package to the given group. If omited the Main group is used.</p>
-
 <p><code>--force [-f]</code>: Forces the download and reinstallation of all packages.</p>
-
 <p><code>--interactive [-i]</code>: Asks the user for every project if he or she wants to add the package to the projects's <a href="references-files.html"><code>paket.references</code> file</a>.</p>
-
 <p><code>--hard</code>: Replaces package references within project files even if they are not yet adhering to the Paket's conventions (and hence considered manually managed).</p>
-
 <p><code>--redirects</code>: Creates binding redirects for the NuGet packages.</p>
-
 <p><code>--createnewbindingfiles</code>: Creates binding redirect files if needed.</p>
-
 <p><code>--no-install</code>: Skips paket install --hard process afterward generation of dependencies / references files.</p>
-
 <p><code>--keep-major</code>: Allows only updates that are not changing the major version of the NuGet packages.</p>
-
 <p><code>--keep-minor</code>: Allows only updates that are not changing the minor version of the NuGet packages.</p>
-
 <p><code>--keep-patch</code>: Allows only updates that are not changing the patch version of the NuGet packages.</p>
-
 <h2><a name="Adding-to-a-single-project" class="anchor" href="#Adding-to-a-single-project">Adding to a single project</a></h2>
-
 <p>It's also possible to add a package to a specified project only:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="msh">$ paket add nuget PACKAGENAME [version VERSION] [project PROJECT] [--force] [--hard]
 </code></pre></td></tr></table>
-
 <p>See also <a href="paket-remove.html">paket remove</a>.</p>
-
 <h2><a name="Sample" class="anchor" href="#Sample">Sample</a></h2>
-
 <p>Consider the following <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -118,13 +95,9 @@
 </code></pre></td>
 </tr>
 </table>
-
 <p>Now we run <code>paket add nuget xunit --interactive</code> to install the package:</p>
-
 <p><img src="img/interactive-add.png" alt="alt text" title="Interactive paket add" /></p>
-
 <p>This will add the package to the selected <a href="references-files.html"><code>paket.references</code> files</a> and also to the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>

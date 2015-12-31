@@ -57,46 +57,33 @@
         <div class="span9" id="main">
           
 <h1><a name="Package-resolution-algorithm" class="anchor" href="#Package-resolution-algorithm">Package resolution algorithm</a></h1>
-
 <h2><a name="Overview" class="anchor" href="#Overview">Overview</a></h2>
-
 <p>Paket uses the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a> to specify project dependencies.
 Usually only direct dependencies are specified and often a broad range of package versions is allowed.
 During <a href="paket-install.html"><code>paket install</code></a> Paket needs to figure out concrete versions of the specified packages and their transitive dependencies.
 These versions are then persisted to the <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
-
 <p>In order to figure out the concrete versions Paket needs to solve the following constraint satisfaction problem:</p>
-
 <ul>
 <li>Select the latest version for each of the packages in the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>, plus all their transitive dependencies, such that all version constraints are satisfied.</li>
 </ul>
-
 <blockquote>Note:
 <ul>
   <li>In general, more than one solution to this problem can exist and the solver will take the first solution that it finds.</li>
   <li>If you change the <a href="dependencies-file.html#Strategy-option">resolution strategy</a> then Paket needs to find the <i>oldest matching version</i>.</li>
 </ul></blockquote>
-
 <h2><a name="Getting-data" class="anchor" href="#Getting-data">Getting data</a></h2>
-
 <p>The <a href="http://en.wikipedia.org/wiki/Constraint_satisfaction_problem">constraint satisfaction problem</a> is covered by many <a href="resolver.html#Further-reading">scientific papers</a>, but
 a big challenge for Paket's resolver is that it doesn't have the full constraints available.
 The algorithm needs to evaluate the package dependency graph along the way by retrieving data from the <a href="nuget-dependencies.html">NuGet</a> source feeds.</p>
-
 <p>The two important API questions are:</p>
-
 <ul>
 <li>What versions of a package are available?</li>
 <li>Given a concrete version of a package, what further dependencies are required?</li>
 </ul>
-
 <p>Answering these questions is a very expensive operation since it involves a HTTP request and therefore the resolver has to minimize these requests and only access the API when really needed.</p>
-
 <h2><a name="Basic-algorithm" class="anchor" href="#Basic-algorithm">Basic algorithm</a></h2>
-
-<p>Starting from the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a> we have a set of package requirements. 
+<p>Starting from the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a> we have a set of package requirements.
 Every requirement specifies a version range and a resolver strategy for a package:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -125,14 +112,11 @@ Every requirement specifies a version range and a resolver strategy for a packag
 </code></pre></td>
 </tr>
 </table>
-
 <p>The algorithm works as a <a href="https://en.wikipedia.org/wiki/Breadth-first_search">Breadth-first search</a>.
 In every step it selects a requirement from the set of <em>open</em> requirements and checks if the requirement can be satisfied.
 If no conflict arises then a package version gets selected and all it's dependencies are added to the <em>open</em> requirements.
 A set of <em>closed</em> requirements is maintained in order to prevent cycles in the search graph.</p>
-
 <p>If the selected requirement results in a conflict then the algorithm backtracks in the search tree and selects the next version.</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -223,13 +207,10 @@ A set of <em>closed</em> requirements is maintained in order to prevent cycles i
 </code></pre></td>
 </tr>
 </table>
-
 <h3><a name="Sorting-package-requirements" class="anchor" href="#Sorting-package-requirements">Sorting package requirements</a></h3>
-
 <p>In order to make progress in the search tree the algorithm needs to determine the next package.
 Paket uses a heuristic, which tries to process packages with small version ranges and high conflict potential first.
 Therefore, it orders the requirements based on:</p>
-
 <ul>
 <li>Is the <a href="nuget-dependencies.html#Use-exactly-this-version-constraint">version pinned</a>?</li>
 <li>Is it a direct requirement coming from the dependencies file?</li>
@@ -238,38 +219,25 @@ Therefore, it orders the requirements based on:</p>
 <li>How big is the specified version range?</li>
 <li>The package name (alphabetically) as a tie breaker.</li>
 </ul>
-
 <h3><a name="Package-conflict-boost" class="anchor" href="#Package-conflict-boost">Package conflict boost</a></h3>
-
-<p>Whenever Paket encounters a package version conflict in the search tree it increases a boost factor for the involved packages. 
+<p>Whenever Paket encounters a package version conflict in the search tree it increases a boost factor for the involved packages.
 This heuristic influences the <a href="resolver.html#Sorting-package-requirements">package evaluation order</a> and forces the resolver to deal with conflicts much earlier in the search tree.</p>
-
 <h2><a name="Branch-and-bound" class="anchor" href="#Branch-and-bound">Branch and bound</a></h2>
-
 <p>Every known resolution conflict is stored in a HashSet. At every step Paket will always check if the current requirement set (union of <em>open</em> requirements and <em>closed</em> requirements) is
 a superset of a known conflict. In this case Paket can stop evaluating that part of the search tree.</p>
-
 <h2><a name="Caching-and-lazy-evaluation" class="anchor" href="#Caching-and-lazy-evaluation">Caching and lazy evaluation</a></h2>
-
 <p>Since HTTP requests to NuGet are very expensive Paket tries to reduce these calls as much as possible:</p>
-
 <ul>
 <li>The function <code>getAllVersionsFromNuget</code> will call the NuGet API at most once per package and Paket run.</li>
 <li>The function <code>getPackageDetails</code> will only call the NuGet API if package details are not found in the RAM or on disk.</li>
 </ul>
-
 <p>The second caching improvement means that subsequent runs of <code>paket update</code> can get faster since package details are already stored on disk.</p>
-
 <h2><a name="Error-reporting" class="anchor" href="#Error-reporting">Error reporting</a></h2>
-
 <p>If the resolver can't find a valid resolution, then it needs to report an error to the user.
 Since the search tree can be very large and might contain lots of different kinds of failures, reporting a good error message is difficult.
 Paket will only report the last conflict that it can't resolve and also some information about the origin of this conflict.</p>
-
 <p>If you need more information you can try the verbose mode by using the <code>-v</code> parameter.</p>
-
 <h2><a name="Further-reading" class="anchor" href="#Further-reading">Further reading</a></h2>
-
 <ul>
 <li><a href="http://journals.cambridge.org/action/displayAbstract?fromPage=online&amp;aid=83363&amp;fileId=S0956796801004051">Modular lazy search for Constraint Satisfaction Problems</a> by T. Nordin and A. Tolmach (<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.34.4704&amp;rep=rep1&amp;type=pdf">PDF</a>)</li>
 <li><a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.45.2528">On The Forward Checking Algorithm</a> by F. Bacchus and A. Grove (<a href="http://www.cs.toronto.edu/~fbacchus/Papers/BGCP95.pdf">PDF</a>)</li>

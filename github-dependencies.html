@@ -57,22 +57,16 @@
         <div class="span9" id="main">
           
 <h1><a name="GitHub-dependencies" class="anchor" href="#GitHub-dependencies">GitHub dependencies</a></h1>
-
 <p>Paket allows you to automatically manage the linking of files from <a href="http://www.github.com">github.com</a> or <a href="https://gist.github.com/">gist.github.com</a> into your projects.</p>
-
 <h2><a name="Referencing-a-single-file" class="anchor" href="#Referencing-a-single-file">Referencing a single file</a></h2>
-
 <p>You can reference a single file from <a href="http://www.github.com">github.com</a> simply by specifying the source repository and the file name in the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">github</span> <span class="i">forki</span><span class="o">/</span><span class="i">FsUnit</span> <span class="i">FsUnit</span><span class="o">.</span><span class="i">fs</span>
 </code></pre></td>
 </tr>
 </table>
-
 <p>If you run the <a href="paket-update.html"><code>paket update</code> command</a>, it will download the file to a sub folder in <code>paket-files</code> and also add a new section to your <a href="lock-file.html"><code>paket.lock</code> file</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -85,11 +79,8 @@
 </code></pre></td>
 </tr>
 </table>
-
 <p>As you can see the file is pinned to a concrete commit. This allows you to reliably use the same file version in succeeding builds until you elect to perform a <a href="paket-update.html"><code>paket update</code> command</a> at a time of your choosing.</p>
-
 <p>By default the <code>master</code> branch is used to determine the commit to reference, you can specify the desired branch or commit in the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 </pre></td>
@@ -98,46 +89,33 @@
 </code></pre></td>
 </tr>
 </table>
-
 <p>If you want to reference the file in one of your project files then add an entry to the project's <a href="references-files.html"><code>paket.references</code> file.</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">File</span><span class="o">:</span><span class="i">FsUnit</span><span class="o">.</span><span class="i">fs</span>
 </code></pre></td>
 </tr>
 </table>
-
 <p>and run <a href="paket-install.html"><code>paket install</code> command</a>. This will reference the linked file directly into your project and by default, be visible under <code>paket-files</code> folder in project.</p>
-
 <p><img src="img/github_ref_default_link.png" alt="alt text" title="GitHub file referenced in project with default link" /></p>
-
 <p>You can specify custom folder for the file:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">File</span><span class="o">:</span><span class="i">FsUnit</span><span class="o">.</span><span class="i">fs</span> <span class="i">Tests</span>
 </code></pre></td>
 </tr>
 </table>
-
 <p><img src="img/github_ref_custom_link.png" alt="alt text" title="GitHub file referenced in project with custom link" /></p>
-
 <p>Or if you use <code>.</code> for the directory, the file will be placed under the root of the project:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">File</span><span class="o">:</span><span class="i">FsUnit</span><span class="o">.</span><span class="i">fs</span> <span class="o">.</span>
 </code></pre></td>
 </tr>
 </table>
-
 <p><img src="img/github_ref_root.png" alt="alt text" title="GitHub file referenced in project under root of project" /></p>
-
 <h2><a name="Referencing-a-GitHub-repository" class="anchor" href="#Referencing-a-GitHub-repository">Referencing a GitHub repository</a></h2>
-
 <p>You can also reference a complete <a href="http://www.github.com">github.com</a> repository by specifying the repository id in the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 </pre></td>
@@ -146,33 +124,23 @@
 </code></pre></td>
 </tr>
 </table>
-
 <p>This will download the given repository and put it into your <code>paket-files</code> folder. In this case we download the source of <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a>.</p>
-
 <h2><a name="Recognizing-Build-Action" class="anchor" href="#Recognizing-Build-Action">Recognizing Build Action</a></h2>
-
-<p>Paket will recognize build action for referenced file based on the project type. 
-As example, for a <code>*.csproj</code> project file, it will use <code>Compile</code> Build Action if you reference <code>*.cs</code> file 
+<p>Paket will recognize build action for referenced file based on the project type.
+As example, for a <code>*.csproj</code> project file, it will use <code>Compile</code> Build Action if you reference <code>*.cs</code> file
 and <code>Content</code> Build Action if you reference file with any other extension.</p>
-
 <h2><a name="Remote-dependencies" class="anchor" href="#Remote-dependencies">Remote dependencies</a></h2>
-
 <p>If the remote file needs further dependencies then you can just put a <a href="dependencies-file.html"><code>paket.dependencies</code> file.</a> into the same GitHub repo folder.
 Let's look at a sample:</p>
-
 <p><img src="img/octokit-module.png" alt="alt text" title="Octokit module" /></p>
-
 <p>And we reference this in our own <a href="dependencies-file.html"><code>paket.dependencies</code> file.</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">github</span> <span class="i">fsharp</span><span class="o">/</span><span class="i">FAKE</span> <span class="i">modules</span><span class="o">/</span><span class="i">Octokit</span><span class="o">/</span><span class="i">Octokit</span><span class="o">.</span><span class="i">fsx</span>
 </code></pre></td>
 </tr>
 </table>
-
 <p>This generates the following <a href="lock-file.html"><code>paket.lock</code> file</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -193,43 +161,36 @@ Let's look at a sample:</p>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">NUGET</span>
   <span class="i">remote</span><span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
   <span class="i">specs</span><span class="o">:</span>
-    <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span> (<span class="n">1.1</span><span class="o">.</span><span class="n">9</span>)
-      <span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span class="i">Build</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.0</span><span class="o">.</span><span class="n">14</span>)
-    <span onmouseout="hideTip(event, 'fs1', 3)" onmouseover="showTip(event, 'fs1', 3)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span class="i">Build</span> (<span class="n">1.0</span><span class="o">.</span><span class="n">21</span>)
-    <span onmouseout="hideTip(event, 'fs1', 4)" onmouseover="showTip(event, 'fs1', 4)" class="i">Microsoft</span><span class="o">.</span><span class="i">Net</span><span class="o">.</span><span class="i">Http</span> (<span class="n">2.2</span><span class="o">.</span><span class="n">28</span>)
-      <span onmouseout="hideTip(event, 'fs1', 5)" onmouseover="showTip(event, 'fs1', 5)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.1</span><span class="o">.</span><span class="n">9</span>)
-      <span onmouseout="hideTip(event, 'fs1', 6)" onmouseover="showTip(event, 'fs1', 6)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span class="i">Build</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.0</span><span class="o">.</span><span class="n">14</span>)
-    <span class="i">Octokit</span> (<span class="n">0.4</span><span class="o">.</span><span class="n">1</span>)
-      <span onmouseout="hideTip(event, 'fs1', 7)" onmouseover="showTip(event, 'fs1', 7)" class="i">Microsoft</span><span class="o">.</span><span class="i">Net</span><span class="o">.</span><span class="i">Http</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">0</span>)
+	<span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span> (<span class="n">1.1</span><span class="o">.</span><span class="n">9</span>)
+	  <span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span class="i">Build</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.0</span><span class="o">.</span><span class="n">14</span>)
+	<span onmouseout="hideTip(event, 'fs1', 3)" onmouseover="showTip(event, 'fs1', 3)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span class="i">Build</span> (<span class="n">1.0</span><span class="o">.</span><span class="n">21</span>)
+	<span onmouseout="hideTip(event, 'fs1', 4)" onmouseover="showTip(event, 'fs1', 4)" class="i">Microsoft</span><span class="o">.</span><span class="i">Net</span><span class="o">.</span><span class="i">Http</span> (<span class="n">2.2</span><span class="o">.</span><span class="n">28</span>)
+	  <span onmouseout="hideTip(event, 'fs1', 5)" onmouseover="showTip(event, 'fs1', 5)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.1</span><span class="o">.</span><span class="n">9</span>)
+	  <span onmouseout="hideTip(event, 'fs1', 6)" onmouseover="showTip(event, 'fs1', 6)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span class="i">Build</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.0</span><span class="o">.</span><span class="n">14</span>)
+	<span class="i">Octokit</span> (<span class="n">0.4</span><span class="o">.</span><span class="n">1</span>)
+	  <span onmouseout="hideTip(event, 'fs1', 7)" onmouseover="showTip(event, 'fs1', 7)" class="i">Microsoft</span><span class="o">.</span><span class="i">Net</span><span class="o">.</span><span class="i">Http</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">0</span>)
 <span class="i">GITHUB</span>
   <span class="i">remote</span><span class="o">:</span> <span class="i">fsharp</span><span class="o">/</span><span class="i">FAKE</span>
   <span class="i">specs</span><span class="o">:</span>
-    <span class="i">modules</span><span class="o">/</span><span class="i">Octokit</span><span class="o">/</span><span class="i">Octokit</span><span class="o">.</span><span class="i">fsx</span> (<span class="i">a25c2f256a99242c1106b5a3478aae6bb68c7a93</span>)
-      <span class="i">Octokit</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">0</span>)
+	<span class="i">modules</span><span class="o">/</span><span class="i">Octokit</span><span class="o">/</span><span class="i">Octokit</span><span class="o">.</span><span class="i">fsx</span> (<span class="i">a25c2f256a99242c1106b5a3478aae6bb68c7a93</span>)
+	  <span class="i">Octokit</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">0</span>)
 </code></pre></td>
 </tr>
 </table>
-
 <p>As you can see Paket also resolved the Octokit dependency.</p>
-
 <h2><a name="Referencing-a-private-github-repository" class="anchor" href="#Referencing-a-private-github-repository">Referencing a private github repository</a></h2>
-
 <p>To reference a private github repository the syntax is identical to
 above and supports the same branch and file definitions the only extra
 item to add is an identifier which defines which credential key to
 use (see <a href="paket-config.html"><code>paket config</code></a>).</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="i">github</span> <span class="i">fsharp</span><span class="o">/</span><span class="k">private</span> <span class="i">src</span><span class="o">/</span><span class="i">myprivate</span><span class="o">/</span><span class="i">file</span><span class="o">.</span><span class="i">fs</span> <span class="i">githubAuthKey</span>
 </code></pre></td>
 </tr>
 </table>
-
 <h2><a name="Gist" class="anchor" href="#Gist">Gist</a></h2>
-
 <p>Gist works the same way. You can fetch single files or multi-file-gists as well:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 </pre></td>
@@ -238,9 +199,7 @@ use (see <a href="paket-config.html"><code>paket config</code></a>).</p>
 </code></pre></td>
 </tr>
 </table>
-
 <p>If you run the <a href="paket-update.html"><code>paket update</code> command</a>, it will add a new section to your <a href="lock-file.html"><code>paket.lock</code> file</a>:</p>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
