@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>NugetConfig - Paket</title>
+    <title>Handling - Paket</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Steffen Forkmann, Alexander Gross"/>
@@ -58,130 +58,33 @@
 
 
 
-<h1>NugetConfig</h1>
+<h1>Handling</h1>
 <p>
-  <span>Namespace: Paket</span><br />
-  <span>Parent Module: <a href="paket-nugetconvert.html">NuGetConvert</a></span>
+  <span>Namespace: Paket.Git</span><br />
 </p>
 <div class="xmldoc">
 </div>
-  <h3>Record Fields</h3>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Function or value</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '392', 392)" onmouseover="showTip(event, '392', 392)">
-            PackageRestoreAutomatic
+          <code onmouseout="hideTip(event, '302', 302)" onmouseover="showTip(event, '302', 302)">
+            extractUrlParts url
           </code>
-          <div class="tip" id="392">
-            <strong>Signature:</strong> bool<br />
+          <div class="tip" id="302">
+            <strong>Signature:</strong> url:string -&gt; string * string * string * string<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L71-71" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '393', 393)" onmouseover="showTip(event, '393', 393)">
-            PackageRestoreEnabled
-          </code>
-          <div class="tip" id="393">
-            <strong>Signature:</strong> bool<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L70-70" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '394', 394)" onmouseover="showTip(event, '394', 394)">
-            PackageSources
-          </code>
-          <div class="tip" id="394">
-            <strong>Signature:</strong> Map&lt;string,(string * Auth option)&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L69-69" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Static members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Static member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '395', 395)" onmouseover="showTip(event, '395', 395)">
-            Empty
-          </code>
-          <div class="tip" id="395">
-            <strong>Signature:</strong> NugetConfig<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L73-73" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-              <p>CompiledName: <code>get_Empty</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '396', 396)" onmouseover="showTip(event, '396', 396)">
-            GetConfigNode(file)
-          </code>
-          <div class="tip" id="396">
-            <strong>Signature:</strong> file:FileInfo -&gt; Result&lt;XmlNode,DomainMessage&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L78-78" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '397', 397)" onmouseover="showTip(event, '397', 397)">
-            OverrideConfig(nugetConfig configNode)
-          </code>
-          <div class="tip" id="397">
-            <strong>Signature:</strong> nugetConfig:NugetConfig -&gt; configNode:XmlNode -&gt; NugetConfig<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L88-88" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitHandling.fs#L4-4" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

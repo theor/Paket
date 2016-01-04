@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>find-packages</title>
+    <title>Git dependencies
+</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="A package dependency manager for .NET with support for NuGet packages and GitHub repositories."/>
     <meta name="author" content="Steffen Forkmann, Alexander Gross"/>
@@ -55,21 +56,20 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h2><a name="Sample" class="anchor" href="#Sample">Sample</a></h2>
-<p>Running the command:</p>
+<h1><a name="Git-dependencies" class="anchor" href="#Git-dependencies">Git dependencies</a></h1>
+<p>[This feature is only available in Paket 3.0 prereleases]</p>
+<p>Paket allows you to automatically manage the linking of files from any git repo.</p>
+<h2><a name="Referencing-a-Git-repository" class="anchor" href="#Referencing-a-Git-repository">Referencing a Git repository</a></h2>
+<p>You can also reference a complete git repository by specifying the clone url in the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip"><code lang="batchfile">paket find-packages
-</code></pre></td></tr></table>
-<p>and then enter search text and press enter:</p>
-<p><img src="img/paket-find-packages.png" alt="alt text" title="paket find-packages command" /></p>
-<h2><a name="Silent-mode" class="anchor" href="#Silent-mode">Silent mode</a></h2>
-<p>The silent mode can be used for additional tooling support in various editors. It allows to create suggestions for <code>paket add</code>:</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip"><code lang="batchfile">paket find-packages -s
-</code></pre></td></tr></table>
-<p>The command allows runs to suggest package names. It will keep running in a loop until it receives the text ":q".</p>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/Paket.git</span>
+<span class="i">git</span> <span class="i">git</span><span class="o">@</span><span class="i">github</span><span class="o">.</span><span class="i">com</span><span class="o">:</span><span class="i">fsharp</span><span class="o">/</span><span class="i">FAKE</span><span class="o">.</span><span class="i">git</span>
+</code></pre></td>
+</tr>
+</table>
+<p>This will download the given repository and put it into your <code>paket-files</code> folder.</p>
 
 
         </div>
