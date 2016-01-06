@@ -71,7 +71,16 @@ If you don't have git installed then Paket still allows you to <a href="github-d
 </code></pre></td>
 </tr>
 </table>
-<p>This will download the given repository and put it into your <code>paket-files</code> folder.</p>
+<p>This will download the latest version of the default branch of given repositories and put it into your <code>paket-files</code> folder.</p>
+<p>If you want to restrict Paket to a special branch or a concrete commit then this is also possible:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/Paket.git master</span>
+<span class="i">git</span> <span class="i">http</span><span class="o">:</span><span class="c">//github.com/forki/AskMe.git 97ee5ae7074bdb414a3e5dd7d2f2d752547d0542</span>
+</code></pre></td>
+</tr>
+</table>
 
 
         </div>
