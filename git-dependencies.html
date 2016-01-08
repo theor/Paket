@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>paket add
+    <title>Git dependencies
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="A package dependency manager for .NET with support for NuGet packages and GitHub repositories."/>
@@ -56,57 +56,65 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h1><a name="paket-add" class="anchor" href="#paket-add">paket add</a></h1>
-<p>Adds a new package to your <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>.</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="msh">paket add nuget &lt;string&gt; [version &lt;string&gt;] [project &lt;string&gt;] [group &lt;string&gt;] [--force|-f] [--interactive|-i] [--hard] [--redirects] [--createnewbindingfiles] [--no-install] [--keep-major] [--keep-minor] [--keep-patch]
-</code></pre></td></tr></table>
-<h3><a name="Options" class="anchor" href="#Options">Options:</a></h3>
-<p><code>nuget &lt;string&gt;</code>: NuGet package id.</p>
-<p><code>version &lt;string&gt;</code>: Allows to specify version of the package.</p>
-<p><code>project &lt;string&gt;</code>: Allows to add the package to a single project only.</p>
-<p><code>group &lt;string&gt;</code>: Add the package to the given group. If omited the Main group is used.</p>
-<p><code>--force [-f]</code>: Forces the download and reinstallation of all packages.</p>
-<p><code>--interactive [-i]</code>: Asks the user for every project if he or she wants to add the package to the projects's <a href="references-files.html"><code>paket.references</code> file</a>.</p>
-<p><code>--hard</code>: Replaces package references within project files even if they are not yet adhering to the Paket's conventions (and hence considered manually managed).</p>
-<p><code>--redirects</code>: Creates binding redirects for the NuGet packages.</p>
-<p><code>--createnewbindingfiles</code>: Creates binding redirect files if needed.</p>
-<p><code>--no-install</code>: Skips paket install --hard process afterward generation of dependencies / references files.</p>
-<p><code>--keep-major</code>: Allows only updates that are not changing the major version of the NuGet packages.</p>
-<p><code>--keep-minor</code>: Allows only updates that are not changing the minor version of the NuGet packages.</p>
-<p><code>--keep-patch</code>: Allows only updates that are not changing the patch version of the NuGet packages.</p>
-<h2><a name="Adding-to-a-single-project" class="anchor" href="#Adding-to-a-single-project">Adding to a single project</a></h2>
-<p>It's also possible to add a package to a specified project only:</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="msh">$ paket add nuget PACKAGENAME [version VERSION] [project PROJECT] [--force] [--hard]
-</code></pre></td></tr></table>
-<p>See also <a href="paket-remove.html">paket remove</a>.</p>
-<h2><a name="Sample" class="anchor" href="#Sample">Sample</a></h2>
-<p>Consider the following <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
+<h1><a name="Git-dependencies" class="anchor" href="#Git-dependencies">Git dependencies</a></h1>
+<p>[This feature is only available in Paket 3.0 prereleases]</p>
+<p>Paket allows you to automatically manage the linking of files from any git repo.</p>
+<p>This feature assumes that you have <a href="https://git-scm.com/">git</a> installed.
+If you don't have git installed then Paket still allows you to <a href="github-dependencies.html">reference files from github</a>.</p>
+<h2><a name="Referencing-a-Git-repository" class="anchor" href="#Referencing-a-Git-repository">Referencing a Git repository</a></h2>
+<p>You can also reference a complete git repository by specifying the clone url in the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
-<span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
-
-<span class="i">nuget</span> <span class="i">FAKE</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/Paket.git</span>
+<span class="i">git</span> <span class="i">git</span><span class="o">@</span><span class="i">github</span><span class="o">.</span><span class="i">com</span><span class="o">:</span><span class="i">fsharp</span><span class="o">/</span><span class="i">FAKE</span><span class="o">.</span><span class="i">git</span>
 </code></pre></td>
 </tr>
 </table>
-<p>Now we run <code>paket add nuget xunit --interactive</code> to install the package:</p>
-<p><img src="img/interactive-add.png" alt="alt text" title="Interactive paket add" /></p>
-<p>This will add the package to the selected <a href="references-files.html"><code>paket.references</code> files</a> and also to the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
+<p>This will download the latest version of the default branch of given repositories and put it into your <code>paket-files</code> folder.</p>
+<p>If you want to restrict Paket to a special branch, tag or a concrete commit then this is also possible:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 <span class="l">4: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/Paket.git master</span>
+<span class="i">git</span> <span class="i">http</span><span class="o">:</span><span class="c">//github.com/forki/AskMe.git 97ee5ae7074bdb414a3e5dd7d2f2d752547d0542</span>
+<span class="i">git</span> <span class="i">http</span><span class="o">:</span><span class="c">//github.com/forki/AskMe.git 97ee5ae7074b // short hash</span>
+<span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/FsUnit.git 1.0        // tag</span>
+</code></pre></td>
+</tr>
+</table>
+<h2><a name="Using-Git-repositories-as-NuGet-source" class="anchor" href="#Using-Git-repositories-as-NuGet-source">Using Git repositories as NuGet source</a></h2>
+<p>If you have NuGet packages inside a git repository you can easily use the repository as a NuGet source from the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/nupkgtest.git nugetsource Packages: /source/</span>
 
-<span class="i">nuget</span> <span class="i">FAKE</span>
-<span class="i">nuget</span> <span class="i">xunit</span>
+<span class="i">nuget</span> <span class="i">Argu</span>
+</code></pre></td>
+</tr>
+</table>
+<p>The generated <a href="lock-file.html"><code>paket.lock</code> file</a> will look like this:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">NUGET</span>
+  <span class="i">remote</span><span class="o">:</span> <span class="i">paket</span><span class="o">-</span><span class="i">files</span><span class="o">/</span><span class="i">github</span><span class="o">.</span><span class="i">com</span><span class="o">/</span><span class="i">nupkgtest</span><span class="o">/</span><span class="i">source</span>
+  <span class="i">specs</span><span class="o">:</span>
+    <span class="i">Argu</span> (<span class="n">1.1</span><span class="o">.</span><span class="n">3</span>)
+<span class="i">GIT</span>
+  <span class="i">remote</span><span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/nupkgtest.git</span>
+  <span class="i">specs</span><span class="o">:</span>
+     (<span class="n">05366e390e7552a569f3f328a0f3094249f3b93b</span>)
 </code></pre></td>
 </tr>
 </table>
