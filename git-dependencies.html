@@ -85,6 +85,15 @@ If you don't have git installed then Paket still allows you to <a href="github-d
 </code></pre></td>
 </tr>
 </table>
+<h2><a name="Running-a-build-in-git-repositories" class="anchor" href="#Running-a-build-in-git-repositories">Running a build in git repositories</a></h2>
+<p>If your referenced git repository contains a build script then Paket can excute this scipt after restore:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/nupkgtest.git build build:&quot;build.cmd&quot;</span>
+</code></pre></td>
+</tr>
+</table>
+<p>This allows you to excute arbitray commands after restore.</p>
 <h2><a name="Using-Git-repositories-as-NuGet-source" class="anchor" href="#Using-Git-repositories-as-NuGet-source">Using Git repositories as NuGet source</a></h2>
 <p>If you have NuGet packages inside a git repository you can easily use the repository as a NuGet source from the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
@@ -115,6 +124,17 @@ If you don't have git installed then Paket still allows you to <a href="github-d
   <span class="i">remote</span><span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/nupkgtest.git</span>
   <span class="i">specs</span><span class="o">:</span>
      (<span class="n">05366e390e7552a569f3f328a0f3094249f3b93b</span>)
+</code></pre></td>
+</tr>
+</table>
+<p>It's also possible to run build scripts to create the NuGet packages:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/nupkgtest.git build build:&quot;build.cmd&quot;, Packages: /source/</span>
+
+<span class="i">nuget</span> <span class="i">Argu</span>
 </code></pre></td>
 </tr>
 </table>
