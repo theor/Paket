@@ -117,7 +117,7 @@ If you don't have git installed then Paket still allows you to <a href="github-d
 <span class="l">8: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">NUGET</span>
-  <span class="i">remote</span><span class="o">:</span> <span class="i">paket</span><span class="o">-</span><span class="i">files</span><span class="o">/</span><span class="i">github</span><span class="o">.</span><span class="i">com</span><span class="o">/</span><span class="i">nupkgtest</span><span class="o">/</span><span class="i">source</span>
+  <span class="i">remote</span><span class="o">:</span> <span class="i">paket</span><span class="o">-</span><span class="i">files</span><span class="o">/</span><span class="i">github</span><span class="o">.</span><span class="i">com</span><span class="o">/</span><span class="i">forki</span><span class="o">/</span><span class="i">nupkgtest</span><span class="o">/</span><span class="i">source</span>
   <span class="i">specs</span><span class="o">:</span>
     <span class="i">Argu</span> (<span class="n">1.1</span><span class="o">.</span><span class="n">3</span>)
 <span class="i">GIT</span>
@@ -133,8 +133,8 @@ If you don't have git installed then Paket still allows you to <a href="github-d
 <span class="l">3: </span>
 <span class="l">4: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/nupkgtest.git build build:&quot;build.cmd&quot;, Packages: /source/, OS:windows</span>
-<span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/nupkgtest.git build build:&quot;build.sh&quot;, Packages: /source/, OS:mono</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/nupkgtest.git master build:&quot;build.cmd&quot;, Packages: /source/, OS:windows</span>
+<span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/nupkgtest.git master build:&quot;build.sh&quot;, Packages: /source/, OS:mono</span>
 
 <span class="i">nuget</span> <span class="i">Argu</span>
 </code></pre></td>
