@@ -87,8 +87,26 @@ If you don't have git installed then Paket still allows you to <a href="github-d
 </code></pre></td>
 </tr>
 </table>
+<h3><a name="Referencing-Git-tags" class="anchor" href="#Referencing-Git-tags">Referencing Git tags</a></h3>
+<p>Paket allows you to specify version ranges for git tags similar to <a href="nuget-dependencies.html#Version-constraints">NuGet version ranges</a>:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/fsprojects/Paket.git &gt;= 1.0 // at least 1.0</span>
+<span class="i">git</span> <span class="i">http</span><span class="o">:</span><span class="c">//github.com/forki/AskMe.git &lt; 3.0        // lower than version 3.0</span>
+<span class="i">git</span> <span class="i">http</span><span class="o">:</span><span class="c">//github.com/forki/AskMe.git ~&gt; 2.0       // 2.0 &lt;= x &lt; 3.0</span>
+<span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/FsUnit.git 1.0        // exactly 1.0</span>
+<span class="i">git</span> <span class="i">file</span><span class="o">:</span><span class="c">///C:\Users\Steffen\AskMe &gt;= 1 alpha      // at least 1.0 including alpha versions</span>
+<span class="i">git</span> <span class="i">file</span><span class="o">:</span><span class="c">///C:\Users\Steffen\AskMe &gt;= 1 prerelease // at least 1.0 including prereleases</span>
+</code></pre></td>
+</tr>
+</table>
 <h2><a name="Running-a-build-in-git-repositories" class="anchor" href="#Running-a-build-in-git-repositories">Running a build in git repositories</a></h2>
-<p>If your referenced git repository contains a build script then Paket can excute this scipt after restore:</p>
+<p>If your referenced git repository contains a build script then Paket can execute this scipt after restore:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">git</span> <span class="i">https</span><span class="o">:</span><span class="c">//github.com/forki/nupkgtest.git build build:&quot;build.cmd&quot;</span>
