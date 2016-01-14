@@ -76,15 +76,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '268', 268)" onmouseover="showTip(event, '268', 268)">
+          <code onmouseout="hideTip(event, '266', 266)" onmouseover="showTip(event, '266', 266)">
             DirectoryCopy (...)
           </code>
-          <div class="tip" id="268">
+          <div class="tip" id="266">
             <strong>Signature:</strong> (sourceDirName:string * destDirName:string * copySubDirs:bool) -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L149-149" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L120-120" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -94,15 +94,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '269', 269)" onmouseover="showTip(event, '269', 269)">
+          <code onmouseout="hideTip(event, '267', 267)" onmouseover="showTip(event, '267', 267)">
             downloadDependenciesFile (...)
           </code>
-          <div class="tip" id="269">
+          <div class="tip" id="267">
             <strong>Signature:</strong> (force:bool * rootPath:string * groupName:GroupName * parserF:(string -&gt; &#39;c) * remoteFile:ResolvedSourceFile) -&gt; Async&lt;&#39;c&gt;<br />
                           <strong>Type parameters:</strong> 'c          </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L90-90" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L64-64" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -114,71 +114,71 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '270', 270)" onmouseover="showTip(event, '270', 270)">
+          <code onmouseout="hideTip(event, '268', 268)" onmouseover="showTip(event, '268', 268)">
             downloadRemoteFiles (...)
           </code>
-          <div class="tip" id="270">
+          <div class="tip" id="268">
             <strong>Signature:</strong> (remoteFile:ResolvedSourceFile * destination:string) -&gt; Async&lt;unit&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L165-165" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L136-136" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Retrieves RemoteFiles</p>
+          <p>Gets a single file from github.</p>
 
 
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '269', 269)" onmouseover="showTip(event, '269', 269)">
+            DownloadSourceFiles (...)
+          </code>
+          <div class="tip" id="269">
+            <strong>Signature:</strong> (rootPath:string * groupName:GroupName * force:bool * sourceFiles:ResolvedSourceFile list) -&gt; Async&lt;unit []&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L191-191" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '270', 270)" onmouseover="showTip(event, '270', 270)">
+            ExtractZip (fileName, targetFolder)
+          </code>
+          <div class="tip" id="270">
+            <strong>Signature:</strong> (fileName:string * targetFolder:string) -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L116-116" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '271', 271)" onmouseover="showTip(event, '271', 271)">
-            DownloadSourceFiles (...)
-          </code>
-          <div class="tip" id="271">
-            <strong>Signature:</strong> (rootPath:string * groupName:GroupName * force:bool * sourceFiles:ResolvedSourceFile list) -&gt; Async&lt;unit []&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L272-272" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '272', 272)" onmouseover="showTip(event, '272', 272)">
-            ExtractZip (fileName, targetFolder)
-          </code>
-          <div class="tip" id="272">
-            <strong>Signature:</strong> (fileName:string * targetFolder:string) -&gt; unit<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L145-145" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '273', 273)" onmouseover="showTip(event, '273', 273)">
             getSHA1OfBranch (...)
           </code>
-          <div class="tip" id="273">
-            <strong>Signature:</strong> origin:Origin -&gt; owner:string -&gt; project:string -&gt; versionRestriction:VersionRestriction -&gt; authKey:string option -&gt; Async&lt;string&gt;<br />
+          <div class="tip" id="271">
+            <strong>Signature:</strong> origin:SingleSourceFileOrigin -&gt; owner:string -&gt; project:string -&gt; branch:string -&gt; authKey:string option -&gt; Async&lt;string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L31-31" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/RemoteDownload.fs#L30-30" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -221,7 +221,6 @@
             <li><a href="..//resolver.html">Package resolution algorithm</a></li>
             <li><a href="..//groups.html">Dependency Groups</a></li>            
             <li><a href="..//nuget-dependencies.html">NuGet dependencies</a></li>
-            <li><a href="..//git-dependencies.html">Git dependencies</a></li>
             <li><a href="..//github-dependencies.html">GitHub dependencies</a></li>
             <li><a href="..//http-dependencies.html">HTTP dependencies</a></li>
             <li><a href="..//analyzers.html">Analyzers</a></li>            
