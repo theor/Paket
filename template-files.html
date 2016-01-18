@@ -304,6 +304,15 @@ If you omit the target folder, then the source is copied into the <code>lib</cod
 </code></pre></td>
 </tr>
 </table>
+<h4><a name="Pdb-files" class="anchor" href="#Pdb-files">Pdb files</a></h4>
+<p>With the include-pdbs switch you can tell Paket to pack pdbs into the package.</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">include</span><span class="o">-</span><span class="i">pdbs</span>
+</code></pre></td>
+</tr>
+</table>
+<p>This only works for paket.template files of type <code>project</code>.</p>
 <h3><a name="Comments" class="anchor" href="#Comments">Comments</a></h3>
 <p>A line starting with a # or // is considered a comment and will be ignored by the parser.</p>
 
