@@ -66,7 +66,7 @@
 </code></pre></td>
 </tr>
 </table>
-<p>If you run the <a href="paket-update.html"><code>paket update</code> command</a>, it will add a new section to your <a href="lock-file.html"><code>paket.lock</code> file</a>:</p>
+<p>If you run the <a href="paket-install.html"><code>paket install</code> command</a>, it will add a new section to your <a href="lock-file.html"><code>paket.lock</code> file</a>:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -88,6 +88,13 @@
 </table>
 <p>This will reference the linked file directly into your project.
 By default the linked file will be visible under <code>paket-files</code> folder in project.</p>
+<h2><a name="Build-action-conventions" class="anchor" href="#Build-action-conventions">Build action conventions</a></h2>
+<p>The build action is determined depending on the file extension:</p>
+<ul>
+<li>If file extension is equal to project type it is added as compile items. For instance <code>.cs</code> for <code>.csproj</code> projects and <code>.fs</code> for <code>.fsproj</code> projects.</li>
+<li>If file extension is <code>.dll</code> then it is added as reference.</li>
+<li>Otherwise it is added as an <a href="https://msdn.microsoft.com/en-us/library/windows/apps/jj714082(v=vs.105).aspx">'add as link' content file</a>.</li>
+</ul>
 <h2><a name="Options-on-http-dependencies" class="anchor" href="#Options-on-http-dependencies">Options on http dependencies</a></h2>
 <p>When referencing a file using a http dependency, there are several options that help you to deal with things like authentication and file name.
 The pattern expected is</p>
@@ -115,6 +122,21 @@ then each time paket extracts a HTTP dependency with <code>MySource</code> as a 
 then the request will be made without any authentication headers.</p>
 </li>
 </ul>
+<h2><a name="Allowed-http-schemes" class="anchor" href="#Allowed-http-schemes">Allowed http schemes</a></h2>
+<p>All <code>http</code>, <code>https</code> and <code>file protocol</code> <code>URIs</code> are allowed. Examples:</p>
+<ul>
+<li>
+<p>http <a href="https://raw.githubusercontent.com/fsprojects/Paket/master/src/Paket.Core/ProjectFile.fs">https://raw.githubusercontent.com/fsprojects/Paket/master/src/Paket.Core/ProjectFile.fs</a></p>
+<p>will write the file to <code>paket-files\raw.githubusercontent.com\ProjectFile.fs</code></p>
+</li>
+<li>
+<p>http file:///c:/projects/library.dll</p>
+<p>will write the file to <code>paket-files\localhost\library.dll</code></p>
+</li>
+</ul>
+<h2><a name="Updating-http-dependencies" class="anchor" href="#Updating-http-dependencies">Updating http dependencies</a></h2>
+<p>If you want to update a file you need to use the <a href="paket-install.html"><code>paket install</code> command</a> or <a href="paket-update.html"><code>paket update</code> command</a>  with <code>--force [-f]</code> option.</p>
+<p>Using <a href="groups.html">groups</a> for http dependent files can be helpful in order to reduce the number of files that are re-installed.</p>
 
 
         </div>
