@@ -57,11 +57,12 @@
         <div class="span9" id="main">
           
 <h1><a name="paket-bootstrapper-exe" class="anchor" href="#paket-bootstrapper-exe">paket.bootstrapper.exe</a></h1>
-<p>Downloads the latest stable paket.exe from github.com. If the download from github.com fails it tries to download the version from nuget.org instead.</p>
+<p>Downloads the latest stable paket.exe. By default, the bootstrapper caches downloaded versions of paket.exe for the current user across all projects. If the requested version is not present in the cache, it is downloaded from github.com. If the download from github.com fails it tries to download the version from nuget.org instead.</p>
+<p>Cached paket.exe versions are removed when the NuGet cache folder is <a href="paket-clear-cache.html">cleared</a>.</p>
 <p><code>Ctrl+C</code> interrupts the download process. The return value of the bootstrapper is 0 when a paket.exe already exists, so that any subsequent scripts can continue.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip"><code lang="batchfile">$ paket.bootstrapper.exe [prerelease|version] [--prefer-nuget] [--self] [-s]
+<td class="snippet"><pre class="fssnip"><code lang="batchfile">$ paket.bootstrapper.exe [prerelease|version] [--prefer-nuget] [--self] [-s] [-f]
 </code></pre></td></tr></table>
 <p>Options:</p>
 <p><code>prerelease</code>: Downloads the latest paket.exe from github.com and includes prerelease versions.</p>
@@ -71,6 +72,7 @@
 <p><code>--nuget-source</code>: When specified as <code>--nuget-source=http://local.site/path/here</code>, the specified path is used instead of nuget.org when trying to fetch paket.exe as a nuget package. Combine this with either <code>--prefer-nuget</code> or <code>--force-nuget</code> to get paket.exe from a custom source.</p>
 <p><code>--self</code>: Self updating the paket.bootstrapper.exe. When this option is used the download of paket.exe will be skipped. (Can be combined with <code>--prefer-nuget</code>)</p>
 <p><code>-s</code>: If this flag is set the bootstrapper will not perform any output.</p>
+<p><code>-f</code>: Forces the bootstrapper to ignore any cached paket.exe versions and go directly to github.com or nuget.org based on other flags.</p>
 <p>Environment Variables:</p>
 <p><code>PAKET.VERSION</code>: The requested version can also be set using this environment variable. Above options take precedence over the environment variable</p>
 
