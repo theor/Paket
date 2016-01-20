@@ -76,16 +76,14 @@
 <span class="l">6: </span>
 <span class="l">7: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span>
-<span class="i">UnionArgParser</span>
-<span class="i">DotNetZip</span>
-<span class="i">RestSharp</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket">Newtonsoft.Json
+UnionArgParser
+DotNetZip
+RestSharp
 
-<span class="i">group</span> <span class="i">Test</span>
-    <span class="i">NUnit</span>
-</code></pre></td>
-</tr>
-</table>
+<span class="k">group</span> Test
+    NUnit
+</code></pre></td></tr></table>
 <p>For each MSBuild project alongside a <code>paket.references</code>, <a href="paket-install.html"><code>paket install</code></a> and <a href="paket-update.html"><code>paket update</code></a> will add references to the dependencies listed in <code>paket.references</code> <em>and all their transitive dependencies</em> (unless <a href="dependencies-file.html#Strict-references">noted otherwise</a>).</p>
 <p>The references injected into the MSBuild project reflect the complete set of rules specified within the package for each <code>lib</code> and <code>Content</code> item; each reference is <code>Condition</code>al on an MSBuild expression predicated on the project's active framework etc. This allows you to change the target version of the MSBuild project (either within Visual Studio or e.g. as part of a multi-pass build) without reinstalling dependencies or incurring an impenetrable set of diffs.</p>
 <p>Any <a href="analyzers.html">roslyn based analyzer</a> present in the packages will also be installed in the project.</p>
@@ -93,58 +91,44 @@
 <p>It's possible to influence the <code>Private</code> property for references in project files:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span> <span class="i">copy_local</span><span class="o">:</span><span class="k">false</span>
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket">Newtonsoft.Json <span class="k">copy_local</span>:false
+</code></pre></td></tr></table>
 <h2><a name="import_targets-settings" class="anchor" href="#import_targets-settings">import_targets settings</a></h2>
 <p>If you don't want to import <code>.targets</code> and <code>.props</code> files you can disable it via the <code>import_targets</code> switch:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span class="i">Build</span> <span class="i">import_targets</span><span class="o">:</span><span class="k">false</span>
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket">Microsoft.Bcl.Build <span class="k">import_targets</span>:false
+</code></pre></td></tr></table>
 <h2><a name="No-content-option" class="anchor" href="#No-content-option">No content option</a></h2>
 <p>This option disables the installation of any content files for the given package:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">jQuery</span> <span class="i">content</span><span class="o">:</span> <span class="i">none</span>
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket">jQuery <span class="k">content</span>: none
+</code></pre></td></tr></table>
 <h2><a name="Framework-restrictions" class="anchor" href="#Framework-restrictions">Framework restrictions</a></h2>
 <p>Sometimes you don't want to generate dependencies for older framework versions. You can control this in the <a href="nuget-dependencies.html#Framework-restrictions"><code>paket.dependencies</code> file</a> or via the <code>framework</code> switch:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span> <span class="i">framework</span><span class="o">:</span> <span class="i">net35</span>, <span class="i">net40</span> 
-<span class="i">DotNetZip</span> <span class="i">framework</span><span class="o">:</span> <span class="o">&gt;</span><span class="o">=</span> <span class="i">net45</span>           
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket">Newtonsoft.Json <span class="k">framework</span>: net35, net40
+DotNetZip <span class="k">framework</span>: <span class="o">&gt;=</span> net45           
+</code></pre></td></tr></table>
 <h2><a name="Redirects-settings" class="anchor" href="#Redirects-settings">Redirects settings</a></h2>
 <p>You can instruct Paket to create assembly binding redirects for NuGet packages:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">Core</span> <span class="i">redirects</span><span class="o">:</span> <span class="i">on</span>
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket">FSharp.Core <span class="k">redirects</span>: on
+</code></pre></td></tr></table>
 <p>Redirects are created only if they are required. However, you can instruct Paket to create it regardless:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs2', 4)" onmouseover="showTip(event, 'fs2', 4)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 5)" onmouseover="showTip(event, 'fs3', 5)" class="i">Core</span> <span class="i">redirects</span><span class="o">:</span> <span class="i">force</span>
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket">FSharp.Core <span class="k">redirects</span>: force
+</code></pre></td></tr></table>
 <p>In constract, you have the option to force Paket to not create a redirect:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs2', 6)" onmouseover="showTip(event, 'fs2', 6)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 7)" onmouseover="showTip(event, 'fs3', 7)" class="i">Core</span> <span class="i">redirects</span><span class="o">:</span> <span class="i">off</span>
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket">FSharp.Core <span class="k">redirects</span>: off
+</code></pre></td></tr></table>
 <p>Redirects settings in <a href="references-files.html#Redirects-settings">references files</a> takes precedence over settings in <a href="nuget-dependencies.html#redirects-settings">dependencies file</a>.</p>
 <h2><a name="File-name-conventions" class="anchor" href="#File-name-conventions">File name conventions</a></h2>
 <p>If Paket finds <code>paket.references</code> in a folder, the dependencies it specifies will be added to all MSBuild projects in that folder.</p>
@@ -166,7 +150,7 @@
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">/</span>
 <span class="o">/</span><span class="i">paket</span><span class="o">.</span><span class="i">dependencies</span>
-<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 8)" onmouseover="showTip(event, 'fs4', 8)" class="i">lock</span>
+<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">lock</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">csproj</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">fsproj</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">vbproj</span>
@@ -192,7 +176,7 @@
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">/</span>
 <span class="o">/</span><span class="i">paket</span><span class="o">.</span><span class="i">dependencies</span>
-<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 9)" onmouseover="showTip(event, 'fs4', 9)" class="i">lock</span>
+<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">lock</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">csproj</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">fsproj</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">vbproj</span>
@@ -218,7 +202,7 @@
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">/</span>
 <span class="o">/</span><span class="i">paket</span><span class="o">.</span><span class="i">dependencies</span>
-<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 10)" onmouseover="showTip(event, 'fs4', 10)" class="i">lock</span>
+<span class="o">/</span><span class="i">paket</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 3)" onmouseover="showTip(event, 'fs1', 3)" class="i">lock</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">csproj</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">csproj</span><span class="o">.</span><span class="i">paket</span><span class="o">.</span><span class="i">references</span>
 <span class="o">/</span><span class="i">src</span><span class="o">/</span><span class="i">Example</span><span class="o">.</span><span class="i">fsproj</span>
@@ -232,10 +216,7 @@
 <li>the dependencies specified in <code>/src/Example.fsproj.paket.references</code> will be added to <code>/src/Example.fsproj</code></li>
 </ul>
 
-<div class="tip" id="fs1">namespace Microsoft</div>
-<div class="tip" id="fs2">namespace Microsoft.FSharp</div>
-<div class="tip" id="fs3">namespace Microsoft.FSharp.Core</div>
-<div class="tip" id="fs4">val lock : lockObject:&#39;Lock -&gt; action:(unit -&gt; &#39;T) -&gt; &#39;T (requires reference type)<br /><br />Full name: Microsoft.FSharp.Core.Operators.lock</div>
+<div class="tip" id="fs1">val lock : lockObject:&#39;Lock -&gt; action:(unit -&gt; &#39;T) -&gt; &#39;T (requires reference type)<br /><br />Full name: Microsoft.FSharp.Core.Operators.lock</div>
 
         </div>
         <div class="span3">

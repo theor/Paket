@@ -72,13 +72,11 @@
 <span class="l">3: </span>
 <span class="l">4: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
 
-<span class="i">nuget</span> <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">Core</span>
-<span class="i">nuget</span> <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span>
-</code></pre></td>
-</tr>
-</table>
+<span class="k">nuget </span>Castle.Core
+<span class="k">nuget </span>Castle.Windsor
+</code></pre></td></tr></table>
 <p>and the following <a href="lock-file.html"><code>paket.lock</code> file</a>:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
@@ -87,19 +85,16 @@
 <span class="l">5: </span>
 <span class="l">6: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">NUGET</span>
-  <span class="i">remote</span><span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
-  <span class="i">specs</span><span class="o">:</span>
-    <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">Core</span> (<span class="n">2.0</span><span class="o">.</span><span class="n">0</span>)
-    <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span> (<span class="n">2.0</span><span class="o">.</span><span class="n">0</span>)
-      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 3)" onmouseover="showTip(event, 'fs1', 3)" class="i">Core</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">2.0</span><span class="o">.</span><span class="n">0</span>)
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">NUGET</span>
+  <span class="k">remote</span>: https://nuget.org/api/v2
+  <span class="k">specs</span>:
+    Castle.Core (<span class="n">2.0.0</span>)
+    Castle.Windsor (<span class="n">2.0.0</span>)
+      Castle.Core (<span class="o">&gt;=</span> <span class="n">2.0.0</span>)
+</code></pre></td></tr></table>
 <p>Now we run <code>paket outdated</code>:</p>
 <p><img src="img/paket-outdated.png" alt="alt text" title="paket outdated command" /></p>
 
-<div class="tip" id="fs1">namespace Microsoft.FSharp.Core</div>
 
         </div>
         <div class="span3">

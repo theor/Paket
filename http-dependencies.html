@@ -62,30 +62,24 @@
 <p>You can reference a single file from a HTTP resource simply by specifying the url in the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">http</span> <span class="i">http</span><span class="o">:</span><span class="c">//www.fssnip.net/raw/1M/test1.fs</span>
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">http </span>http://www.fssnip.net/raw/1M/test1.fs
+</code></pre></td></tr></table>
 <p>If you run the <a href="paket-install.html"><code>paket install</code> command</a>, it will add a new section to your <a href="lock-file.html"><code>paket.lock</code> file</a>:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 <span class="l">4: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">HTTP</span>
-  <span class="i">remote</span><span class="o">:</span> <span class="i">http</span><span class="o">:</span><span class="c">//www.fssnip.net/raw/1M/test1.fs</span>
-  <span class="i">specs</span><span class="o">:</span>
-    <span class="i">test1</span><span class="o">.</span><span class="i">fs</span>
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket">HTTP
+  <span class="k">remote</span>: http://www.fssnip.net/raw/1M/test1.fs
+  <span class="k">specs</span>:
+    test1.fs
+</code></pre></td></tr></table>
 <p>If you want to reference the file in one of your project files then add an entry to the project's <a href="references-files.html"><code>paket.references</code> file.</a>:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">File</span><span class="o">:</span><span class="i">test1</span><span class="o">.</span><span class="i">fs</span>
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">File</span>:test1.fs
+</code></pre></td></tr></table>
 <p>This will reference the linked file directly into your project.
 By default the linked file will be visible under <code>paket-files</code> folder in project.</p>
 <h2><a name="Build-action-conventions" class="anchor" href="#Build-action-conventions">Build action conventions</a></h2>
@@ -100,19 +94,13 @@ By default the linked file will be visible under <code>paket-files</code> folder
 The pattern expected is</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">http</span> <span class="i">url</span> [<span class="i">FileSpec</span>] [<span class="i">SourceName</span>]
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">http </span>url [FileSpec] [SourceName]
+</code></pre></td></tr></table>
 <ul>
 <li>
 <p><strong>FileSpec</strong> - This allows you to define the path to which the file that is downloaded will be written to. For example specfying the following</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">http</span> <span class="i">http</span><span class="o">:</span><span class="c">//www.fssnip.net/raw/1M/test1.fs src/test1.fs</span>
-</code></pre></td>
-</tr>
-</table>
+<p>[lang=paket]
+http <a href="http://www.fssnip.net/raw/1M/test1.fs">http://www.fssnip.net/raw/1M/test1.fs</a> src/test1.fs</p>
 <p>will write the file to <code>paket-files\www.fssnip.net\src\test.fs</code></p>
 </li>
 <li>

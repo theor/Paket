@@ -89,12 +89,10 @@
 <span class="l">2: </span>
 <span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
 
-<span class="i">nuget</span> <span class="i">FAKE</span>
-</code></pre></td>
-</tr>
-</table>
+<span class="k">nuget </span>FAKE
+</code></pre></td></tr></table>
 <p>Now we run <code>paket add nuget xunit --interactive</code> to install the package:</p>
 <p><img src="img/interactive-add.png" alt="alt text" title="Interactive paket add" /></p>
 <p>This will add the package to the selected <a href="references-files.html"><code>paket.references</code> files</a> and also to the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
@@ -103,13 +101,11 @@
 <span class="l">3: </span>
 <span class="l">4: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
 
-<span class="i">nuget</span> <span class="i">FAKE</span>
-<span class="i">nuget</span> <span class="i">xunit</span>
-</code></pre></td>
-</tr>
-</table>
+<span class="k">nuget </span>FAKE
+<span class="k">nuget </span>xunit
+</code></pre></td></tr></table>
 
 
         </div>

@@ -77,18 +77,16 @@
 <span class="l">3: </span>
 <span class="l">4: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
 
-<span class="i">nuget</span> <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">Core</span> <span class="n">3.3</span><span class="o">.</span><span class="n">1</span>
-<span class="i">nuget</span> <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>
-</code></pre></td>
-</tr>
-</table>
+<span class="k">nuget </span>Castle.Core <span class="n">3.3.1</span>
+<span class="k">nuget </span>Castle.Windsor <span class="n">3.3.0</span>
+</code></pre></td></tr></table>
 <p>and the NuGet <code>packages.config</code> should be converted to following paket.references file:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">Core</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">Core</span>
 <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span>
 </code></pre></td>
 </tr>
@@ -101,12 +99,10 @@ And this is exactly what happens after executing <code>paket simplify</code> com
 <span class="l">2: </span>
 <span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
 
-<span class="i">nuget</span> <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>
-</code></pre></td>
-</tr>
-</table>
+<span class="k">nuget </span>Castle.Windsor <span class="n">3.3.0</span>
+</code></pre></td></tr></table>
 <p>will be the content of your paket.dependencies file, and:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
@@ -128,13 +124,11 @@ which will ask you to confirm before deleting a dependency from a file.</p>
 <span class="l">3: </span>
 <span class="l">4: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
 
-<span class="i">nuget</span> <span class="i">Foo</span> <span class="n">1.0</span><span class="o">.</span><span class="n">0</span>
-<span class="i">nuget</span> <span class="i">Bar</span> <span class="n">1.0</span><span class="o">.</span><span class="n">0</span>
-</code></pre></td>
-</tr>
-</table>
+<span class="k">nuget </span>Foo <span class="n">1.0.0</span>
+<span class="k">nuget </span>Bar <span class="n">1.0.0</span>
+</code></pre></td></tr></table>
 <p>Let us imagine that package Bar has a dependency on package Foo for any version from 1.0 through 2.0. The paket.lock file that results for this combination is:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
@@ -143,26 +137,22 @@ which will ask you to confirm before deleting a dependency from a file.</p>
 <span class="l">5: </span>
 <span class="l">6: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">NUGET</span>
-  <span class="i">remote</span><span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
-  <span class="i">specs</span><span class="o">:</span>
-    <span class="i">Foo</span> (<span class="n">1.0</span><span class="o">.</span><span class="n">0</span>)
-    <span class="i">Bar</span> (<span class="n">1.0</span><span class="o">.</span><span class="n">0</span>)
-      <span class="i">Foo</span> (<span class="o">&lt;=</span> <span class="n">2.0</span><span class="o">.</span><span class="n">0</span>)
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">NUGET</span>
+  <span class="k">remote</span>: https://nuget.org/api/v2
+  <span class="k">specs</span>:
+    Foo (<span class="n">1.0.0</span>)
+    Bar (<span class="n">1.0.0</span>)
+      Foo (<span class="o">&lt;=</span> <span class="n">2.0.0</span>)
+</code></pre></td></tr></table>
 <p>In this situation, if simplify is run, the Foo dependency will be removed, resulting in a paket.dependencies of:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
 
-<span class="i">nuget</span> <span class="i">Bar</span> <span class="n">1.0</span><span class="o">.</span><span class="n">0</span>
-</code></pre></td>
-</tr>
-</table>
+<span class="k">nuget </span>Bar <span class="n">1.0.0</span>
+</code></pre></td></tr></table>
 <p>like we expect.  But now, if an install is run, the Foo dependency will be free to update to the maximum allowed by the Bar dependency, which could have unforseen consequences if the author of Foo has introduced a breaking change.</p>
 
 <div class="tip" id="fs1">namespace Microsoft.FSharp.Core</div>
