@@ -143,7 +143,10 @@ Paket can build these symbol/source packages, in addition to the regular package
 </pre></td>
 <td class="snippet"><pre class="fssnip"><code lang="batch">paket pack output nugets symbols
 </code></pre></td></tr></table>
-<p>You can also include the source of referenced projects, by using the switch <code>include-referenced-projects</code></p>
+<h3><a name="Including-Reference-Projects" class="anchor" href="#Including-Reference-Projects">Including Reference Projects</a></h3>
+<p>The switch <code>include-referenced-projects</code> has several effects.
+1. It iterates referenced projects and adds their dependencies to the package
+2. When combined with the <code>symbols</code> switch, will also include the source code of the referenced projects.</p>
 
 
         </div>
