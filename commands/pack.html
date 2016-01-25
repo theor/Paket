@@ -124,10 +124,11 @@ Paket can build these symbol/source packages, in addition to the regular package
 <td class="snippet"><pre class="fssnip"><code lang="batch">paket pack output nugets symbols
 </code></pre></td></tr></table>
 <h3><a name="Including-Referenced-Projects" class="anchor" href="#Including-Referenced-Projects">Including Referenced Projects</a></h3>
-<p>The switch <code>include-referenced-projects</code> has several effects.</p>
+<p>Paket automatically replaces inter-project dependencies with NuGet dependencies if the dependency has it's own <a href="template-files.html"><code>paket.template</code></a>.
+In addition to this the switch <code>include-referenced-projects</code> instructs Paket to add project output to the package for inter-project dependencies that don't have a paket.template file.</p>
 <ol>
-<li>It recursively iterates referenced projects and adds their dependencies to the package</li>
-<li>When combined with the symbols switch, will also include the source code of the referenced projects.  Also recursively.</li>
+<li>It recursively iterates referenced projects and adds their project output to the package</li>
+<li><p>When combined with the <a href="paket-pack.html#Symbol-Packages">symbols switch</a>, it will also include the source code of the referenced projects.  Also recursively.</p></li>
 <li>Any projects that are encountered in this search that have their own project template are ignored.</li>
 </ol>
 
