@@ -351,6 +351,67 @@ The following code is doing the same by using the <code>!</code> operator in you
 <span class="k">nuget </span>Example-C <span class="o">!</span><span class="o">&gt;=</span> <span class="n">1.2</span> <span class="c">// use "min" version resolution strategy</span>
 <span class="k">nuget </span>Example-C <span class="o">&gt;=</span> <span class="n">1.2</span> <span class="k">strategy</span> min
 </code></pre></td></tr></table>
+<h3><a name="Lowest_matching-option" class="anchor" href="#Lowest_matching-option">Lowest_matching option</a></h3>
+<p>To override the <a href="dependencies-file.html#Lowest_matching-option">lowest_matching option</a> or the default strategy you can use one of the strategy modifiers.</p>
+<h4><a name="Max-modifier-1" class="anchor" href="#Max-modifier-1">Max modifier</a></h4>
+<p>To request Paket to override the resolver strategy for the transitive dependencies of a package, use the <code>strategy:max</code> setting:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">strategy</span>: min
+<span class="k">source</span> https://nuget.org/api/v2
+
+<span class="k">nuget </span>Example <span class="o">~&gt;</span> <span class="n">1.2</span> <span class="k">strategy</span>:max
+</code></pre></td></tr></table>
+<p>This effectively will get you the <em>latest matching versions</em> of <code>Example</code>'s dependencies.
+The following code is doing the same by using the <code>@</code> operator in your version constraint:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">strategy</span>: min
+<span class="k">source</span> https://nuget.org/api/v2
+
+<span class="k">nuget </span>Example <span class="o">@</span><span class="o">~&gt;</span> <span class="n">1.2</span> <span class="c">// use "max" version resolution strategy</span>
+</code></pre></td></tr></table>
+<h4><a name="Min-modifier-1" class="anchor" href="#Min-modifier-1">Min modifier</a></h4>
+<p>To request Paket to override the resolver strategy for the transitive dependencies of a package, use the <code>strategy:min</code> setting:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
+
+<span class="k">nuget </span>Example <span class="o">~&gt;</span> <span class="n">1.2</span> <span class="k">strategy</span>: min
+</code></pre></td></tr></table>
+<p>This effectively will get you the <em>lowest matching versions</em> of <code>Example</code>'s dependencies. Still, you will get the <em>latest matching version</em> of <code>Example</code> itself according to its <a href="#Pessimistic-version-constraint">version constraint of <code>1.2 &lt;= x &lt; 2</code></a>.
+The following code is doing the same by using the <code>!</code> operator in your version constraint:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
+
+<span class="k">nuget </span>Example <span class="o">!</span><span class="o">~&gt;</span> <span class="n">1.2</span> <span class="c">// use "min" version resolution strategy</span>
+</code></pre></td></tr></table>
+<p>The stragey setting and the corresponding <code>!</code> and <code>@</code> modifiers are applicable to all <a href="#Version-constraints">version constraints</a>:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
+
+<span class="k">nuget </span>Example-A <span class="o">@</span><span class="o">&gt;</span> <span class="n">0</span> <span class="c">// use "max" version resolution strategy</span>
+<span class="k">nuget </span>Example-B <span class="o">!</span><span class="o">=</span> <span class="n">1.2</span>  <span class="c">// use "min" version resolution strategy</span>
+<span class="k">nuget </span>Example-C <span class="o">!</span><span class="o">&gt;=</span> <span class="n">1.2</span> <span class="c">// use "min" version resolution strategy</span>
+<span class="k">nuget </span>Example-C <span class="o">&gt;=</span> <span class="n">1.2</span> <span class="k">strategy</span> min
+</code></pre></td></tr></table>
 <h3><a name="Specifying-multiple-targeting-options" class="anchor" href="#Specifying-multiple-targeting-options">Specifying multiple targeting options</a></h3>
 <p>It is possible to apply more than one of the options above to a particular package.  To do so, simply separate them by commas, like so:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
