@@ -81,7 +81,7 @@ If you don't have git installed then Paket still allows you to <a href="github-d
 <span class="k">git </span>http://github.com/forki/AskMe.<span class="k">git </span>97ee5ae7074bdb414a3e5dd7d2f2d752547d0542
 <span class="k">git </span>http://github.com/forki/AskMe.<span class="k">git </span>97ee5ae7074b <span class="c">// short hash</span>
 <span class="k">git </span>https://github.com/forki/FsUnit.<span class="k">git </span><span class="n">1.0</span>        <span class="c">// tag</span>
-<span class="k">git </span>file:/<span class="c">//C:\Users\Steffen\AskMe master          // local git repo</span>
+<span class="k">git </span>file:///C:\Users\Steffen\AskMe master          <span class="c">// local git repo</span>
 </code></pre></td></tr></table>
 <h3><a name="Referencing-Git-tags" class="anchor" href="#Referencing-Git-tags">Referencing Git tags</a></h3>
 <p>Paket allows you to specify version ranges for git tags similar to <a href="nuget-dependencies.html#Version-constraints">NuGet version ranges</a>:</p>
@@ -96,8 +96,8 @@ If you don't have git installed then Paket still allows you to <a href="github-d
 <span class="k">git </span>http://github.com/forki/AskMe.git <span class="o">&lt;</span> <span class="n">3.0</span>        <span class="c">// lower than version 3.0</span>
 <span class="k">git </span>http://github.com/forki/AskMe.git <span class="o">~&gt;</span> <span class="n">2.0</span>       <span class="c">// 2.0 &lt;= x &lt; 3.0</span>
 <span class="k">git </span>https://github.com/forki/FsUnit.<span class="k">git </span><span class="n">1.0</span>        <span class="c">// exactly 1.0</span>
-<span class="k">git </span>file:/<span class="c">//C:\Users\Steffen\AskMe &gt;= 1 alpha      // at least 1.0 including alpha versions</span>
-<span class="k">git </span>file:/<span class="c">//C:\Users\Steffen\AskMe &gt;= 1 prerelease // at least 1.0 including prereleases</span>
+<span class="k">git </span>file:///C:\Users\Steffen\AskMe <span class="o">&gt;=</span> <span class="n">1</span> alpha      <span class="c">// at least 1.0 including alpha versions</span>
+<span class="k">git </span>file:///C:\Users\Steffen\AskMe <span class="o">&gt;=</span> <span class="n">1</span> prerelease <span class="c">// at least 1.0 including prereleases</span>
 </code></pre></td></tr></table>
 <p>You can read more about the version range details in the corresponding <a href="nuget-dependencies.html#Version-constraints">NuGet reference section</a>.</p>
 <h2><a name="Running-a-build-in-git-repositories" class="anchor" href="#Running-a-build-in-git-repositories">Running a build in git repositories</a></h2>

@@ -185,14 +185,32 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '189', 189)" onmouseover="showTip(event, '189', 189)">
-            Resolve (...)
+            getResolverStrategy (...)
           </code>
           <div class="tip" id="189">
-            <strong>Signature:</strong> (groupName:GroupName * sources:PackageSource list * getVersionsF:(PackageSource list -&gt; ResolverStrategy -&gt; GroupName -&gt; PackageName -&gt; seq&lt;SemVerInfo * PackageSource list&gt;) * getPackageDetailsF:(PackageSource list -&gt; PackageName -&gt; SemVerInfo -&gt; PackageDetails) * strategy:ResolverStrategy option * globalFrameworkRestrictions:FrameworkRestriction list * rootDependencies:Set&lt;PackageRequirement&gt; * updateMode:UpdateMode) -&gt; Resolution<br />
+            <strong>Signature:</strong> globalStrategyForDirectDependencies:ResolverStrategy option -&gt; globalStrategyForTransitives:ResolverStrategy option -&gt; allRequirementsOfCurrentPackage:Set&lt;PackageRequirement&gt; -&gt; currentRequirement:PackageRequirement -&gt; ResolverStrategy<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/PackageResolver.fs#L202-202" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/PackageResolver.fs#L196-196" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '190', 190)" onmouseover="showTip(event, '190', 190)">
+            Resolve (...)
+          </code>
+          <div class="tip" id="190">
+            <strong>Signature:</strong> (groupName:GroupName * sources:PackageSource list * getVersionsF:(PackageSource list -&gt; ResolverStrategy -&gt; GroupName -&gt; PackageName -&gt; seq&lt;SemVerInfo * PackageSource list&gt;) * getPackageDetailsF:(PackageSource list -&gt; PackageName -&gt; SemVerInfo -&gt; PackageDetails) * globalStrategyForDirectDependencies:ResolverStrategy option * globalStrategyForTransitives:ResolverStrategy option * globalFrameworkRestrictions:FrameworkRestriction list * rootDependencies:Set&lt;PackageRequirement&gt; * updateMode:UpdateMode) -&gt; Resolution<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/PackageResolver.fs#L220-220" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
