@@ -140,6 +140,19 @@ In <code>strict</code> mode it will <strong>only</strong> reference <em>direct</
 
 <span class="k">nuget </span>Example <span class="o">&gt;=</span> <span class="n">2.0</span> <span class="c">// only .NET 3.5 and .NET 4.0</span>
 </code></pre></td></tr></table>
+<h4><a name="Automatic-framework-detection" class="anchor" href="#Automatic-framework-detection">Automatic framework detection</a></h4>
+<p>Paket can detect the target frameworks from your project and then limit the installation to these target frameworks. You can control this in the <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">framework</span>: auto-detect
+<span class="k">source</span> https://nuget.org/api/v2
+
+<span class="k">nuget </span>Example <span class="o">&gt;=</span> <span class="n">2.0</span> <span class="c">// only the target frameworks that are used in projects</span>
+</code></pre></td></tr></table>
+<p>If you change the target frameworks in the projects then you need to run <code>paket install</code> again.</p>
 <h3><a name="No-content-option" class="anchor" href="#No-content-option">No content option</a></h3>
 <p>This option disables the installation of any content files:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
