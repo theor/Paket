@@ -78,10 +78,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '306', 306)" onmouseover="showTip(event, '306', 306)">
+          <code onmouseout="hideTip(event, '304', 304)" onmouseover="showTip(event, '304', 304)">
             detectProjectFrameworksForDependenciesFile (...)
           </code>
-          <div class="tip" id="306">
+          <div class="tip" id="304">
             <strong>Signature:</strong> dependenciesFile:DependenciesFile -&gt; DependenciesFile<br />
                       </div>
         </td>
@@ -96,11 +96,11 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '307', 307)" onmouseover="showTip(event, '307', 307)">
+          <code onmouseout="hideTip(event, '305', 305)" onmouseover="showTip(event, '305', 305)">
             selectiveUpdate (...)
           </code>
-          <div class="tip" id="307">
-            <strong>Signature:</strong> force:bool -&gt; getSha1:(Origin -&gt; string -&gt; string -&gt; VersionRestriction -&gt; string option -&gt; string) -&gt; getSortedVersionsF:(PackageSource list -&gt; ResolverStrategy -&gt; GroupName -&gt; PackageName -&gt; (SemVerInfo * PackageSource list) list) -&gt; getPackageDetailsF:(PackageSource list -&gt; PackageName -&gt; SemVerInfo -&gt; PackageDetails) -&gt; lockFile:LockFile -&gt; dependenciesFile:DependenciesFile -&gt; updateMode:UpdateMode -&gt; semVerUpdateMode:SemVerUpdateMode -&gt; LockFile * Map&lt;GroupName,DependenciesGroup&gt;<br />
+          <div class="tip" id="305">
+            <strong>Signature:</strong> force:bool -&gt; getSha1:(SingleSourceFileOrigin -&gt; string -&gt; string -&gt; string -&gt; string option -&gt; string) -&gt; getSortedVersionsF:(PackageSource list -&gt; ResolverStrategy -&gt; GroupName -&gt; PackageName -&gt; (SemVerInfo * PackageSource list) list) -&gt; getPackageDetailsF:(PackageSource list -&gt; PackageName -&gt; SemVerInfo -&gt; PackageDetails) -&gt; lockFile:LockFile -&gt; dependenciesFile:DependenciesFile -&gt; updateMode:UpdateMode -&gt; semVerUpdateMode:SemVerUpdateMode -&gt; LockFile<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -114,11 +114,11 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '308', 308)" onmouseover="showTip(event, '308', 308)">
+          <code onmouseout="hideTip(event, '306', 306)" onmouseover="showTip(event, '306', 306)">
             SelectiveUpdate (...)
           </code>
-          <div class="tip" id="308">
-            <strong>Signature:</strong> (dependenciesFile:DependenciesFile * updateMode:UpdateMode * semVerUpdateMode:SemVerUpdateMode * force:bool) -&gt; LockFile * Map&lt;GroupName,DependenciesGroup&gt;<br />
+          <div class="tip" id="306">
+            <strong>Signature:</strong> (dependenciesFile:DependenciesFile * updateMode:UpdateMode * semVerUpdateMode:SemVerUpdateMode * force:bool) -&gt; LockFile * bool<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -132,10 +132,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '309', 309)" onmouseover="showTip(event, '309', 309)">
+          <code onmouseout="hideTip(event, '307', 307)" onmouseover="showTip(event, '307', 307)">
             SmartInstall (...)
           </code>
-          <div class="tip" id="309">
+          <div class="tip" id="307">
             <strong>Signature:</strong> (dependenciesFile:DependenciesFile * updateMode:UpdateMode * options:UpdaterOptions) -&gt; unit<br />
                       </div>
         </td>
@@ -152,10 +152,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '310', 310)" onmouseover="showTip(event, '310', 310)">
+          <code onmouseout="hideTip(event, '308', 308)" onmouseover="showTip(event, '308', 308)">
             Update (dependenciesFileName, options)
           </code>
-          <div class="tip" id="310">
+          <div class="tip" id="308">
             <strong>Signature:</strong> (dependenciesFileName:string * options:UpdaterOptions) -&gt; unit<br />
                       </div>
         </td>
@@ -172,10 +172,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '311', 311)" onmouseover="showTip(event, '311', 311)">
+          <code onmouseout="hideTip(event, '309', 309)" onmouseover="showTip(event, '309', 309)">
             UpdateFilteredPackages (...)
           </code>
-          <div class="tip" id="311">
+          <div class="tip" id="309">
             <strong>Signature:</strong> (dependenciesFileName:string * groupName:GroupName * packageName:PackageName * newVersion:string option * options:UpdaterOptions) -&gt; unit<br />
                       </div>
         </td>
@@ -192,10 +192,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '312', 312)" onmouseover="showTip(event, '312', 312)">
+          <code onmouseout="hideTip(event, '310', 310)" onmouseover="showTip(event, '310', 310)">
             UpdateGroup (...)
           </code>
-          <div class="tip" id="312">
+          <div class="tip" id="310">
             <strong>Signature:</strong> (dependenciesFileName:string * groupName:GroupName * options:UpdaterOptions) -&gt; unit<br />
                       </div>
         </td>
@@ -212,10 +212,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '313', 313)" onmouseover="showTip(event, '313', 313)">
+          <code onmouseout="hideTip(event, '311', 311)" onmouseover="showTip(event, '311', 311)">
             UpdatePackage (...)
           </code>
-          <div class="tip" id="313">
+          <div class="tip" id="311">
             <strong>Signature:</strong> (dependenciesFileName:string * groupName:GroupName * packageName:PackageName * newVersion:string option * options:UpdaterOptions) -&gt; unit<br />
                       </div>
         </td>
