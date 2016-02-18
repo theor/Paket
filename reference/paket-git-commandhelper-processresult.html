@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>BindingRedirect - Paket</title>
+    <title>ProcessResult - Paket</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Steffen Forkmann, Alexander Gross"/>
@@ -58,13 +58,13 @@
 
 
 
-<h1>BindingRedirect</h1>
+<h1>ProcessResult</h1>
 <p>
-  <span>Namespace: Paket</span><br />
-  <span>Parent Module: <a href="paket-bindingredirects.html">BindingRedirects</a></span>
+  <span>Namespace: Paket.Git</span><br />
+  <span>Parent Module: <a href="paket-git-commandhelper.html">CommandHelper</a></span>
 </p>
 <div class="xmldoc">
-<p>Represents a binding redirection</p>
+<p>A process result including error code, message log and errors.</p>
 
 </div>
   <h3>Record Fields</h3>
@@ -76,15 +76,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '417', 417)" onmouseover="showTip(event, '417', 417)">
-            AssemblyName
+          <code onmouseout="hideTip(event, '1073', 1073)" onmouseover="showTip(event, '1073', 1073)">
+            Errors
           </code>
-          <div class="tip" id="417">
-            <strong>Signature:</strong> string<br />
+          <div class="tip" id="1073">
+            <strong>Signature:</strong> List&lt;string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/BindingRedirects.fs#L14-14" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitCommandHelper.fs#L184-184" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -94,15 +94,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '418', 418)" onmouseover="showTip(event, '418', 418)">
-            Culture
+          <code onmouseout="hideTip(event, '1074', 1074)" onmouseover="showTip(event, '1074', 1074)">
+            ExitCode
           </code>
-          <div class="tip" id="418">
-            <strong>Signature:</strong> string option<br />
+          <div class="tip" id="1074">
+            <strong>Signature:</strong> int<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/BindingRedirects.fs#L17-17" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitCommandHelper.fs#L182-182" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -112,33 +112,68 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '419', 419)" onmouseover="showTip(event, '419', 419)">
-            PublicKeyToken
+          <code onmouseout="hideTip(event, '1075', 1075)" onmouseover="showTip(event, '1075', 1075)">
+            Messages
           </code>
-          <div class="tip" id="419">
-            <strong>Signature:</strong> string<br />
+          <div class="tip" id="1075">
+            <strong>Signature:</strong> List&lt;string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/BindingRedirects.fs#L16-16" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitCommandHelper.fs#L183-183" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
         </td>
       </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '420', 420)" onmouseover="showTip(event, '420', 420)">
-            Version
+          <code onmouseout="hideTip(event, '1076', 1076)" onmouseover="showTip(event, '1076', 1076)">
+            OK
           </code>
-          <div class="tip" id="420">
-            <strong>Signature:</strong> string<br />
+          <div class="tip" id="1076">
+            <strong>Signature:</strong> bool<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/BindingRedirects.fs#L15-15" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitCommandHelper.fs#L185-185" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>get_OK</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Static members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Static member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '1077', 1077)" onmouseover="showTip(event, '1077', 1077)">
+            New(exitCode messages errors)
+          </code>
+          <div class="tip" id="1077">
+            <strong>Signature:</strong> exitCode:int -&gt; messages:List&lt;string&gt; -&gt; errors:List&lt;string&gt; -&gt; ProcessResult<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitCommandHelper.fs#L186-186" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
