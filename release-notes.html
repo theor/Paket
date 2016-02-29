@@ -55,50 +55,19 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h4><a name="2-50-16-29-02-2016" class="anchor" href="#2-50-16-29-02-2016">2.50.16 - 29.02.2016</a></h4>
+<h4><a name="2-51-0-29-02-2016" class="anchor" href="#2-51-0-29-02-2016">2.51.0 - 29.02.2016</a></h4>
 <ul>
-<li>USABILITY: Prevent paket holding locks on assemblies during binding redirects</li>
-</ul>
-<h4><a name="2-50-15-29-02-2016" class="anchor" href="#2-50-15-29-02-2016">2.50.15 - 29.02.2016</a></h4>
-<ul>
-<li>USABILITY: Don't fail when we can't turn on auto-restote durin convert</li>
-</ul>
-<h4><a name="2-50-11-18-02-2016" class="anchor" href="#2-50-11-18-02-2016">2.50.11 - 18.02.2016</a></h4>
-<ul>
+<li>Experimental Visual C++ support in binding redirects - <a href="https://github.com/fsprojects/Paket/issues/1467">https://github.com/fsprojects/Paket/issues/1467</a></li>
+<li>Restore: optional --touch-affected-refs to touch refs affected by a restore - <a href="https://github.com/fsprojects/Paket/pull/1485">https://github.com/fsprojects/Paket/pull/1485</a></li>
 <li>BUGFIX: fixed group transitive dependency checking - <a href="https://github.com/fsprojects/Paket/pull/1479">https://github.com/fsprojects/Paket/pull/1479</a></li>
-</ul>
-<h4><a name="2-50-10-15-02-2016" class="anchor" href="#2-50-10-15-02-2016">2.50.10 - 15.02.2016</a></h4>
-<ul>
-<li>USABILITY: Touch project files when paket.lock changed in order to support incremental builds with MsBuild  - <a href="https://github.com/fsprojects/Paket/issues/1471">https://github.com/fsprojects/Paket/issues/1471</a></li>
-<li>REVERT: 3fcac1dfd944ea2d32e5198923d3601b3cbf203c - <a href="https://github.com/fsprojects/Paket/issues/1472">https://github.com/fsprojects/Paket/issues/1472</a></li>
-</ul>
-<h4><a name="2-50-9-14-02-2016" class="anchor" href="#2-50-9-14-02-2016">2.50.9 - 14.02.2016</a></h4>
-<ul>
 <li>BUGFIX: Do not try to pack output folder - <a href="https://github.com/fsprojects/Paket/issues/1473">https://github.com/fsprojects/Paket/issues/1473</a></li>
-</ul>
-<h4><a name="2-50-8-13-02-2016" class="anchor" href="#2-50-8-13-02-2016">2.50.8 - 13.02.2016</a></h4>
-<ul>
-<li>Experimental Visual C++ support in binding redirects - <a href="https://github.com/fsprojects/Paket/issues/1467">https://github.com/fsprojects/Paket/issues/1467</a></li>
-</ul>
-<h4><a name="2-50-7-13-02-2016" class="anchor" href="#2-50-7-13-02-2016">2.50.7 - 13.02.2016</a></h4>
-<ul>
-<li>Do not pack absolute paths - <a href="https://github.com/fsprojects/Paket/issues/1472">https://github.com/fsprojects/Paket/issues/1472</a></li>
-</ul>
-<h4><a name="2-50-6-12-02-2016" class="anchor" href="#2-50-6-12-02-2016">2.50.6 - 12.02.2016</a></h4>
-<ul>
-<li>Keep Auth from dependencies file for fast path - <a href="https://github.com/fsprojects/Paket/issues/1469">https://github.com/fsprojects/Paket/issues/1469</a></li>
-</ul>
-<h4><a name="2-50-5-11-02-2016" class="anchor" href="#2-50-5-11-02-2016">2.50.5 - 11.02.2016</a></h4>
-<ul>
-<li>Fix Platform matching bug in CPP projects - <a href="https://github.com/fsprojects/Paket/issues/1467">https://github.com/fsprojects/Paket/issues/1467</a></li>
-</ul>
-<h4><a name="2-50-4-11-02-2016" class="anchor" href="#2-50-4-11-02-2016">2.50.4 - 11.02.2016</a></h4>
-<ul>
-<li>Fix StackOverflow from <a href="https://github.com/fsprojects/Paket/issues/1432">https://github.com/fsprojects/Paket/issues/1432</a></li>
-</ul>
-<h4><a name="2-50-2-11-02-2016" class="anchor" href="#2-50-2-11-02-2016">2.50.2 - 11.02.2016</a></h4>
-<ul>
-<li>Experimental Visual C++ support in binding redirects - <a href="https://github.com/fsprojects/Paket/issues/1467">https://github.com/fsprojects/Paket/issues/1467</a></li>
+<li>BUGFIX: Fix StackOverflow from <a href="https://github.com/fsprojects/Paket/issues/1432">https://github.com/fsprojects/Paket/issues/1432</a></li>
+<li>BUGFIX: Do not pack absolute paths - <a href="https://github.com/fsprojects/Paket/issues/1472">https://github.com/fsprojects/Paket/issues/1472</a></li>
+<li>BUGFIX: Keep Auth from dependencies file for fast path - <a href="https://github.com/fsprojects/Paket/issues/1469">https://github.com/fsprojects/Paket/issues/1469</a></li>
+<li>BUGFIX: Fix Platform matching bug in CPP projects - <a href="https://github.com/fsprojects/Paket/issues/1467">https://github.com/fsprojects/Paket/issues/1467</a></li>
+<li>USABILITY: Touch project files when paket.lock changed in order to support incremental builds with MsBuild  - <a href="https://github.com/fsprojects/Paket/issues/1471">https://github.com/fsprojects/Paket/issues/1471</a></li>
+<li>USABILITY: Prevent paket holding locks on assemblies during binding redirects</li>
+<li>USABILITY: Don't fail when we can't turn on auto-restote durin convert</li>
 </ul>
 <h4><a name="2-50-0-09-02-2016" class="anchor" href="#2-50-0-09-02-2016">2.50.0 - 09.02.2016</a></h4>
 <ul>
