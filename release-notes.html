@@ -55,12 +55,11 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h4><a name="3-0-0-alpha053-29-02-2016" class="anchor" href="#3-0-0-alpha053-29-02-2016">3.0.0-alpha053 - 29.02.2016</a></h4>
+<h4><a name="2-51-1-01-03-2016" class="anchor" href="#2-51-1-01-03-2016">2.51.1 - 01.03.2016</a></h4>
 <ul>
-<li>Allow to reference git repositories - <a href="http://fsprojects.github.io/Paket/git-dependencies.html">http://fsprojects.github.io/Paket/git-dependencies.html</a></li>
-<li>Allow to run build commands on git repositories - <a href="http://fsprojects.github.io/Paket/git-dependencies.html#Running-a-build-in-git-repositories">http://fsprojects.github.io/Paket/git-dependencies.html#Running-a-build-in-git-repositories</a></li>
-<li>Allow to use git repositories as NuGet source - <a href="http://fsprojects.github.io/Paket/git-dependencies.html#Using-Git-repositories-as-NuGet-source">http://fsprojects.github.io/Paket/git-dependencies.html#Using-Git-repositories-as-NuGet-source</a></li>
-<li>Garbage collection in packages folder - <a href="https://github.com/fsprojects/Paket/pull/1491">https://github.com/fsprojects/Paket/pull/1491</a></li>
+<li>Prevent paket holding locks on assemblies during binding redirects - <a href="https://github.com/fsprojects/Paket/pull/1492">https://github.com/fsprojects/Paket/pull/1492</a></li>
+<li>ProjectFile.save with forceTouch to only modify the last write time without content if unchanged - <a href="https://github.com/fsprojects/Paket/pull/1493">https://github.com/fsprojects/Paket/pull/1493</a></li>
+<li>BUGFIX: Don't accept "Unsupported0.0" as full framework - <a href="https://github.com/fsprojects/Paket/issues/1494">https://github.com/fsprojects/Paket/issues/1494</a></li>
 </ul>
 <h4><a name="2-51-0-29-02-2016" class="anchor" href="#2-51-0-29-02-2016">2.51.0 - 29.02.2016</a></h4>
 <ul>
@@ -74,7 +73,7 @@
 <li>BUGFIX: Fix Platform matching bug in CPP projects - <a href="https://github.com/fsprojects/Paket/issues/1467">https://github.com/fsprojects/Paket/issues/1467</a></li>
 <li>USABILITY: Touch project files when paket.lock changed in order to support incremental builds with MsBuild  - <a href="https://github.com/fsprojects/Paket/issues/1471">https://github.com/fsprojects/Paket/issues/1471</a></li>
 <li>USABILITY: Prevent paket holding locks on assemblies during binding redirects</li>
-<li>USABILITY: Don't fail when we can't turn on auto-restote durin convert</li>
+<li>USABILITY: Don't fail when we can't turn on auto-restote during convert</li>
 </ul>
 <h4><a name="2-50-0-09-02-2016" class="anchor" href="#2-50-0-09-02-2016">2.50.0 - 09.02.2016</a></h4>
 <ul>
