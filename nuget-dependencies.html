@@ -126,6 +126,12 @@ It's also possible to provide login information for private NuGet feeds:
 <td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">nuget </span>Example
 </code></pre></td></tr></table>
 <h4><a name="Use-exactly-this-version-constraint" class="anchor" href="#Use-exactly-this-version-constraint">"Use exactly this version" constraint</a></h4>
+<blockquote>We consider a situation with 3 packages A, B and C.
+<p>A and B are direct (or root level) dependencies, but both have a
+dependency on C. A needs exactly C 1.0 and B wants version 1.1 of C.
+This is a version conflict and Paket will complain during resolution phase.</p>
+<p>If we specify C = 1.1 in the dependencies file then Paket still considers this as a version conflict with the version requirement in A.
+By specifying C == 1.1 we overwrite all other requirements and paket will not complain about the conflict anymore.</blockquote></p>
 <p>If your transitive dependencies result in a version conflict you might want to instruct Paket to use a specific version. The <code>==</code> operator allows you to manually resolve the conflict:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
