@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>AddProcess - Paket</title>
+    <title>Handling - Paket</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Steffen Forkmann, Alexander Gross"/>
@@ -58,13 +58,11 @@
 
 
 
-<h1>AddProcess</h1>
+<h1>Handling</h1>
 <p>
-  <span>Namespace: Paket</span><br />
+  <span>Namespace: Paket.Git</span><br />
 </p>
 <div class="xmldoc">
-<p>Contains methods for addition of new packages</p>
-
 </div>
 
 <!-- Render nested types and modules, if there are any -->
@@ -78,15 +76,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '6', 6)" onmouseover="showTip(event, '6', 6)">
-            Add (...)
+          <code onmouseout="hideTip(event, '416', 416)" onmouseover="showTip(event, '416', 416)">
+            checkoutToPaketFolder (...)
           </code>
-          <div class="tip" id="6">
-            <strong>Signature:</strong> (dependenciesFileName:string * groupName:string option * package:PackageName * version:string * options:InstallerOptions * interactive:bool * installAfter:bool) -&gt; unit<br />
+          <div class="tip" id="416">
+            <strong>Signature:</strong> repoFolder:string -&gt; cloneUrl:string -&gt; cacheCloneUrl:string -&gt; commit:string -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/AddProcess.fs#L56-56" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitHandling.fs#L133-133" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -96,15 +94,105 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '7', 7)" onmouseover="showTip(event, '7', 7)">
-            AddToProject (...)
+          <code onmouseout="hideTip(event, '417', 417)" onmouseover="showTip(event, '417', 417)">
+            extractUrlParts url
           </code>
-          <div class="tip" id="7">
-            <strong>Signature:</strong> (dependenciesFileName:string * groupName:string option * package:PackageName * version:string * options:InstallerOptions * projectName:string * installAfter:bool) -&gt; unit<br />
+          <div class="tip" id="417">
+            <strong>Signature:</strong> url:string -&gt; string * string option * string * string * string option * string option * string option<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/AddProcess.fs#L38-38" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitHandling.fs#L8-8" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '418', 418)" onmouseover="showTip(event, '418', 418)">
+            fetchCache repoCacheFolder cloneUrl
+          </code>
+          <div class="tip" id="418">
+            <strong>Signature:</strong> repoCacheFolder:string -&gt; cloneUrl:string -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitHandling.fs#L111-111" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '419', 419)" onmouseover="showTip(event, '419', 419)">
+            getCurrentHash repoFolder
+          </code>
+          <div class="tip" id="419">
+            <strong>Signature:</strong> repoFolder:string -&gt; string option<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitHandling.fs#L92-92" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '420', 420)" onmouseover="showTip(event, '420', 420)">
+            getHash repoFolder commitish
+          </code>
+          <div class="tip" id="420">
+            <strong>Signature:</strong> repoFolder:string -&gt; commitish:string -&gt; string option<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitHandling.fs#L85-85" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '421', 421)" onmouseover="showTip(event, '421', 421)">
+            getHashFromRemote url branch
+          </code>
+          <div class="tip" id="421">
+            <strong>Signature:</strong> url:string -&gt; branch:string -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitHandling.fs#L95-95" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '422', 422)" onmouseover="showTip(event, '422', 422)">
+            updateCache (...)
+          </code>
+          <div class="tip" id="422">
+            <strong>Signature:</strong> repoCacheFolder:string -&gt; tempBranchName:string -&gt; cloneUrl:string -&gt; commit:string -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GitHandling.fs#L126-126" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
