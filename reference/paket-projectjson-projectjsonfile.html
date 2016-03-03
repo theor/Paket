@@ -81,7 +81,7 @@
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L25-25" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L30-30" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -108,7 +108,7 @@
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L89-89" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L127-127" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -123,11 +123,11 @@
             GetDependencies()
           </code>
           <div class="tip" id="1100">
-            <strong>Signature:</strong> unit -&gt; (PackageName * VersionRequirement) list<br />
+            <strong>Signature:</strong> unit -&gt; Map&lt;string,(PackageName * VersionRequirement) list&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L91-91" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L131-131" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -138,14 +138,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '1101', 1101)" onmouseover="showTip(event, '1101', 1101)">
-            GetInterProjectDependencies()
+            GetGlobalDependencies()
           </code>
           <div class="tip" id="1101">
-            <strong>Signature:</strong> unit -&gt; ProjectJsonReference list<br />
+            <strong>Signature:</strong> unit -&gt; (PackageName * VersionRequirement) list<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L93-93" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L129-129" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -156,14 +156,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '1102', 1102)" onmouseover="showTip(event, '1102', 1102)">
-            Save(forceTouch)
+            GetGlobalInterProjectDependencies()
           </code>
           <div class="tip" id="1102">
-            <strong>Signature:</strong> forceTouch:bool -&gt; unit<br />
+            <strong>Signature:</strong> unit -&gt; ProjectJsonReference list<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L148-148" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L133-133" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -174,14 +174,50 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '1103', 1103)" onmouseover="showTip(event, '1103', 1103)">
-            WithDependencies(dependencies)
+            GetInterProjectDependencies()
           </code>
           <div class="tip" id="1103">
+            <strong>Signature:</strong> unit -&gt; Map&lt;string,ProjectJsonReference list&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L135-135" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '1104', 1104)" onmouseover="showTip(event, '1104', 1104)">
+            Save(forceTouch)
+          </code>
+          <div class="tip" id="1104">
+            <strong>Signature:</strong> forceTouch:bool -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L190-190" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '1105', 1105)" onmouseover="showTip(event, '1105', 1105)">
+            WithDependencies(dependencies)
+          </code>
+          <div class="tip" id="1105">
             <strong>Signature:</strong> (dependencies:(&#39;b * &#39;c) list) -&gt; ProjectJsonFile<br />
                           <strong>Type parameters:</strong> 'b, 'c          </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L95-95" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L137-137" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -199,15 +235,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '1104', 1104)" onmouseover="showTip(event, '1104', 1104)">
+          <code onmouseout="hideTip(event, '1106', 1106)" onmouseover="showTip(event, '1106', 1106)">
             Load(fileName)
           </code>
-          <div class="tip" id="1104">
+          <div class="tip" id="1106">
             <strong>Signature:</strong> fileName:string -&gt; ProjectJsonFile<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L152-152" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectJsonFile.fs#L194-194" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
