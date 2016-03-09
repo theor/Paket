@@ -77,19 +77,25 @@
     <tbody>
         <tr>
           <td class="type-name">
+            <a href="paket-moduleresolver-origin.html">Origin</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="paket-moduleresolver-resolvedsourcefile.html">ResolvedSourceFile</a>
           </td>
           <td class="xmldoc"></td>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="paket-moduleresolver-singlesourcefileorigin.html">SingleSourceFileOrigin</a>
+            <a href="paket-moduleresolver-unresolvedsource.html">UnresolvedSource</a>
           </td>
           <td class="xmldoc"></td>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="paket-moduleresolver-unresolvedsourcefile.html">UnresolvedSourceFile</a>
+            <a href="paket-moduleresolver-versionrestriction.html">VersionRestriction</a>
           </td>
           <td class="xmldoc"></td>
         </tr>
@@ -107,15 +113,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '130', 130)" onmouseover="showTip(event, '130', 130)">
-            resolve getDependencies getSha1 file
+          <code onmouseout="hideTip(event, '139', 139)" onmouseover="showTip(event, '139', 139)">
+            getVersionRequirement version
           </code>
-          <div class="tip" id="130">
-            <strong>Signature:</strong> getDependencies:(ResolvedSourceFile -&gt; PackageRequirement list) -&gt; getSha1:(SingleSourceFileOrigin -&gt; string -&gt; string -&gt; string -&gt; string option -&gt; string) -&gt; file:UnresolvedSourceFile -&gt; ResolvedSourceFile<br />
+          <div class="tip" id="139">
+            <strong>Signature:</strong> version:VersionRestriction -&gt; string<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ModuleResolver.fs#L64-64" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ModuleResolver.fs#L97-97" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -125,15 +131,33 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '131', 131)" onmouseover="showTip(event, '131', 131)">
-            Resolve (...)
+          <code onmouseout="hideTip(event, '140', 140)" onmouseover="showTip(event, '140', 140)">
+            resolve getDependencies getSha1 file
           </code>
-          <div class="tip" id="131">
-            <strong>Signature:</strong> (getDependencies:(ResolvedSourceFile -&gt; PackageRequirement list) * getSha1:(SingleSourceFileOrigin -&gt; string -&gt; string -&gt; string -&gt; string option -&gt; string) * remoteFiles:UnresolvedSourceFile list) -&gt; ResolvedSourceFile list<br />
+          <div class="tip" id="140">
+            <strong>Signature:</strong> getDependencies:(ResolvedSourceFile -&gt; PackageRequirement list) -&gt; getSha1:(Origin -&gt; string -&gt; string -&gt; VersionRestriction -&gt; string option -&gt; string) -&gt; file:UnresolvedSource -&gt; ResolvedSourceFile<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ModuleResolver.fs#L107-107" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ModuleResolver.fs#L103-103" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '141', 141)" onmouseover="showTip(event, '141', 141)">
+            Resolve (...)
+          </code>
+          <div class="tip" id="141">
+            <strong>Signature:</strong> (getDependencies:(ResolvedSourceFile -&gt; PackageRequirement list) * getSha1:(Origin -&gt; string -&gt; string -&gt; VersionRestriction -&gt; string option -&gt; string) * remoteFiles:UnresolvedSource list) -&gt; ResolvedSourceFile list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ModuleResolver.fs#L149-149" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
