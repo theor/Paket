@@ -80,7 +80,7 @@
             beforeAndAfter (...)
           </code>
           <div class="tip" id="303">
-            <strong>Signature:</strong> environment:PaketEnv -&gt; dependenciesFile:DependenciesFile -&gt; projects:(ProjectType * ReferencesFile) list -&gt; PaketEnv * PaketEnv<br />
+            <strong>Signature:</strong> environment:PaketEnv -&gt; dependenciesFile:DependenciesFile -&gt; projects:(ProjectFile * ReferencesFile) list -&gt; PaketEnv * PaketEnv<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -116,8 +116,8 @@
             simplifyDependenciesFile (...)
           </code>
           <div class="tip" id="305">
-            <strong>Signature:</strong> (dependenciesFile:DependenciesFile * groupName:GroupName * flatLookup:Map&lt;(GroupName * PackageName),&#39;?9552&gt; * interactive:bool) -&gt; Result&lt;DependenciesFile,DomainMessage&gt;<br />
-                          <strong>Type parameters:</strong> '?9552          </div>
+            <strong>Signature:</strong> (dependenciesFile:DependenciesFile * groupName:GroupName * flatLookup:Map&lt;(GroupName * PackageName),&#39;?9511&gt; * interactive:bool) -&gt; Result&lt;DependenciesFile,DomainMessage&gt;<br />
+                          <strong>Type parameters:</strong> '?9511          </div>
         </td>
         <td class="xmldoc">
             <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/Simplifier.fs#L30-30" class="github-link">
@@ -134,8 +134,8 @@
             simplifyReferencesFile (...)
           </code>
           <div class="tip" id="306">
-            <strong>Signature:</strong> (refFile:ReferencesFile * groupName:GroupName * flatLookup:Map&lt;(GroupName * PackageName),&#39;?9554&gt; * interactive:bool) -&gt; Result&lt;ReferencesFile,DomainMessage&gt;<br />
-                          <strong>Type parameters:</strong> '?9554          </div>
+            <strong>Signature:</strong> (refFile:ReferencesFile * groupName:GroupName * flatLookup:Map&lt;(GroupName * PackageName),&#39;?9513&gt; * interactive:bool) -&gt; Result&lt;ReferencesFile,DomainMessage&gt;<br />
+                          <strong>Type parameters:</strong> '?9513          </div>
         </td>
         <td class="xmldoc">
             <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/Simplifier.fs#L42-42" class="github-link">
