@@ -61,30 +61,44 @@
 <p>Paket works well with central repositories like nuget.org or myget.org. Under normal circumstances these repositories are always available and allow you to retrieve all packages for the rest of all time.
 Unfortunately there are times when the central repository is not reachable or even worse packages can be permanently removed from the feed.</p>
 <p>This happened in other ecosystems, but also at nuget.org and can lead to breaking builds and a lot of trouble for the users.</p>
-<p>Let's consider a small example:</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
-<span class="l"> 2: </span>
-<span class="l"> 3: </span>
-<span class="l"> 4: </span>
-<span class="l"> 5: </span>
-<span class="l"> 6: </span>
-<span class="l"> 7: </span>
-<span class="l"> 8: </span>
-<span class="l"> 9: </span>
-<span class="l">10: </span>
-<span class="l">11: </span>
+<p>There are different solutions to this problem and one is using "additional caches" with Paket.</p>
+<h2><a name="Caching-on-a-network-share" class="anchor" href="#Caching-on-a-network-share">Caching on a network share</a></h2>
+<p>By using a network share as an additional package cache Paket will store all used packages automatically on that network share.
+Every restore process tries to retrieve the package from the cache before hitting the central repository.
+As long as nobody deletes packages from the network share, package restore will continue to work.</p>
+<p>Configuration of additional network share as caches can be done like:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
-cache ./nupkgs versions:current
-cache <span class="c">//hive/dependencies versions:all</span>
+cache <span class="c">//hive/dependencies</span>
 
 <span class="k">nuget </span>Newtonsoft.Json
 <span class="k">nuget </span>UnionArgParser
 <span class="k">nuget </span>FSharp.Core
+</code></pre></td></tr></table>
+<h2><a name="Caching-locally-inside-the-repository" class="anchor" href="#Caching-locally-inside-the-repository">Caching locally inside the repository</a></h2>
+<p>Many projects decide to commit all dependencies into the version control system. This was always possible with Paket if you commited the <em>packages</em> folder.
+Usually this would commit the zipped packages file and also all unzipped files. With a local dependencies cache you can instruct Paket to store all zipped packages in another folder.
+Optionally it is possible to tell Paket to only store the currently used versions of the packages.</p>
+<p>Let's consider a small example:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
+cache ./nupkgs versions:current
 
-<span class="k">github </span>forki/FsUnit FsUnit.fs
-<span class="k">github </span>fsharp/FAKE src/app/FakeLib/Globbing/Globbing.fs
-<span class="k">github </span>fsprojects/Chessie src/Chessie/ErrorHandling.fs
+<span class="k">nuget </span>Newtonsoft.Json
+<span class="k">nuget </span>UnionArgParser
+<span class="k">nuget </span>FSharp.Core
 </code></pre></td></tr></table>
 
 
