@@ -103,7 +103,7 @@
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GarbageCollection.fs#L54-54" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GarbageCollection.fs#L88-88" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -116,9 +116,27 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '71', 71)" onmouseover="showTip(event, '71', 71)">
-            deleteUnusedPackages root lockFile
+            cleanupCaches dependenciesFile lockFile
           </code>
           <div class="tip" id="71">
+            <strong>Signature:</strong> dependenciesFile:DependenciesFile -&gt; lockFile:LockFile -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GarbageCollection.fs#L72-72" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '72', 72)" onmouseover="showTip(event, '72', 72)">
+            deleteUnusedPackages root lockFile
+          </code>
+          <div class="tip" id="72">
             <strong>Signature:</strong> root:string -&gt; lockFile:LockFile -&gt; unit<br />
                       </div>
         </td>
@@ -135,10 +153,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '72', 72)" onmouseover="showTip(event, '72', 72)">
+          <code onmouseout="hideTip(event, '73', 73)" onmouseover="showTip(event, '73', 73)">
             discoverExtractedPackages root
           </code>
-          <div class="tip" id="72">
+          <div class="tip" id="73">
             <strong>Signature:</strong> root:string -&gt; ExtractedPackage list<br />
                       </div>
         </td>
@@ -148,6 +166,26 @@
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Discover all packages currently available in the packages folder</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '74', 74)" onmouseover="showTip(event, '74', 74)">
+            removeOlderVersionsFromCache (...)
+          </code>
+          <div class="tip" id="74">
+            <strong>Signature:</strong> (cache:Cache * packageName:PackageName * versions:seq&lt;SemVerInfo&gt;) -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/GarbageCollection.fs#L54-54" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Removes older packages from the cache</p>
 
 
         </td>

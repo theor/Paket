@@ -78,10 +78,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '105', 105)" onmouseover="showTip(event, '105', 105)">
+          <code onmouseout="hideTip(event, '107', 107)" onmouseover="showTip(event, '107', 107)">
             contentFileBlackList 
           </code>
-          <div class="tip" id="105">
+          <div class="tip" id="107">
             <strong>Signature:</strong> (FileInfo -&gt; bool) list<br />
                       </div>
         </td>
@@ -96,10 +96,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '106', 106)" onmouseover="showTip(event, '106', 106)">
+          <code onmouseout="hideTip(event, '108', 108)" onmouseover="showTip(event, '108', 108)">
             CreateInstallModel (...)
           </code>
-          <div class="tip" id="106">
+          <div class="tip" id="108">
             <strong>Signature:</strong> (root:string * groupName:GroupName * sources:PackageSource list * caches:Cache list * force:bool * package:ResolvedPackage) -&gt; Async&lt;(GroupName * PackageName) * (ResolvedPackage * InstallModel)&gt;<br />
                       </div>
         </td>
@@ -114,12 +114,12 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '107', 107)" onmouseover="showTip(event, '107', 107)">
+          <code onmouseout="hideTip(event, '109', 109)" onmouseover="showTip(event, '109', 109)">
             CreateModel (...)
           </code>
-          <div class="tip" id="107">
-            <strong>Signature:</strong> (root:string * force:bool * dependenciesFile:DependenciesFile * lockFile:LockFile * packages:Set&lt;GroupName * PackageName&gt; * updatedGroups:Map&lt;GroupName,&#39;?10487&gt;) -&gt; ((GroupName * PackageName) * (ResolvedPackage * InstallModel)) []<br />
-                          <strong>Type parameters:</strong> '?10487          </div>
+          <div class="tip" id="109">
+            <strong>Signature:</strong> (root:string * force:bool * dependenciesFile:DependenciesFile * lockFile:LockFile * packages:Set&lt;GroupName * PackageName&gt; * updatedGroups:Map&lt;GroupName,&#39;?10486&gt;) -&gt; ((GroupName * PackageName) * (ResolvedPackage * InstallModel)) []<br />
+                          <strong>Type parameters:</strong> '?10486          </div>
         </td>
         <td class="xmldoc">
             <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallProcess.fs#L155-155" class="github-link">
@@ -134,10 +134,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '108', 108)" onmouseover="showTip(event, '108', 108)">
+          <code onmouseout="hideTip(event, '110', 110)" onmouseover="showTip(event, '110', 110)">
             findAllReferencesFiles root
           </code>
-          <div class="tip" id="108">
+          <div class="tip" id="110">
             <strong>Signature:</strong> root:string -&gt; Result&lt;(ProjectType * ReferencesFile) list,DomainMessage&gt;<br />
                       </div>
         </td>
@@ -152,10 +152,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '109', 109)" onmouseover="showTip(event, '109', 109)">
+          <code onmouseout="hideTip(event, '111', 111)" onmouseover="showTip(event, '111', 111)">
             findPackageFolder (...)
           </code>
-          <div class="tip" id="109">
+          <div class="tip" id="111">
             <strong>Signature:</strong> root:string -&gt; (groupName:GroupName * packageName:PackageName) -&gt; (version:SemVerInfo * settings:InstallSettings) -&gt; DirectoryInfo<br />
                       </div>
         </td>
@@ -170,10 +170,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '110', 110)" onmouseover="showTip(event, '110', 110)">
+          <code onmouseout="hideTip(event, '112', 112)" onmouseover="showTip(event, '112', 112)">
             Install (...)
           </code>
-          <div class="tip" id="110">
+          <div class="tip" id="112">
             <strong>Signature:</strong> (options:InstallerOptions * forceTouch:bool * dependenciesFile:DependenciesFile * lockFile:LockFile * updatedGroups:Map&lt;GroupName,&#39;a&gt;) -&gt; unit<br />
                           <strong>Type parameters:</strong> 'a          </div>
         </td>
@@ -190,10 +190,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '111', 111)" onmouseover="showTip(event, '111', 111)">
+          <code onmouseout="hideTip(event, '113', 113)" onmouseover="showTip(event, '113', 113)">
             InstallIntoProjects (...)
           </code>
-          <div class="tip" id="111">
+          <div class="tip" id="113">
             <strong>Signature:</strong> (options:InstallerOptions * forceTouch:bool * dependenciesFile:DependenciesFile * lockFile:LockFile * projectsAndReferences:(ProjectType * ReferencesFile) list * updatedGroups:Map&lt;GroupName,&#39;a&gt;) -&gt; unit<br />
                           <strong>Type parameters:</strong> 'a          </div>
         </td>
@@ -210,10 +210,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '112', 112)" onmouseover="showTip(event, '112', 112)">
+          <code onmouseout="hideTip(event, '114', 114)" onmouseover="showTip(event, '114', 114)">
             processContentFiles (...)
           </code>
-          <div class="tip" id="112">
+          <div class="tip" id="114">
             <strong>Signature:</strong> root:string -&gt; project:ProjectFile -&gt; usedPackages:Map&lt;(GroupName * PackageName),(SemVerInfo * InstallSettings)&gt; -&gt; gitRemoteItems:FileItem list -&gt; options:InstallerOptions -&gt; unit<br />
                       </div>
         </td>
@@ -228,10 +228,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '113', 113)" onmouseover="showTip(event, '113', 113)">
+          <code onmouseout="hideTip(event, '115', 115)" onmouseover="showTip(event, '115', 115)">
             updatePackagesConfigFile (...)
           </code>
-          <div class="tip" id="113">
+          <div class="tip" id="115">
             <strong>Signature:</strong> model:Map&lt;(GroupName * PackageName),(SemVerInfo * InstallSettings)&gt; -&gt; packagesConfigFileName:string -&gt; unit<br />
                       </div>
         </td>
