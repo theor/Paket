@@ -106,7 +106,7 @@ cache ./nupkgs versions:current
 <p>Paket allows you two caching options:</p>
 <ul>
 <li><code>versions:all</code> - stores all currently used version of the dependencies.</li>
-<li><code>versions:current</code> - stores only currently used version of the dependencies and deletes all other version. Should not be used with netwok shares.</li>
+<li><code>versions:current</code> - stores only currently used version of the dependencies and deletes all other version. Should not be used with netwok shares since it might affect other projects.</li>
 </ul>
 <h2><a name="Caches-as-package-feeds" class="anchor" href="#Caches-as-package-feeds">Caches as package feeds</a></h2>
 <p>All configured caches are automatically used as additional package feeds. So if a package gets removed from the central repository even "paket update" will work.
