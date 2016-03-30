@@ -85,7 +85,7 @@ cache <span class="c">//hive/dependencies</span>
 <p>Many projects decide to commit all dependencies into the version control system.
 Some people argue that this bloats the version control system, but it also ensures that dependencies are always available after checkout.</p>
 <p>With a local dependencies cache you can instruct Paket to copy dependencies to a local folder.
-This folder will then contain the *.nupkgs files of all dependencies and can be committed to source control.</p>
+This folder will then contain the <code>*.nupkgs files</code> of all dependencies and can be committed to source control.</p>
 <blockquote>In contrast to the default <i>packages</i> folder this new folder will only contain the zipped dependencies. This way the <i>packages</i> folder which contains also the unzipped versions can still be gitignored.</blockquote>
 <p>The configuration can be done in the  <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
