@@ -82,10 +82,12 @@ cache <span class="c">//hive/dependencies</span>
 <span class="k">nuget </span>FSharp.Core
 </code></pre></td></tr></table>
 <h2><a name="Caching-locally-inside-the-repository" class="anchor" href="#Caching-locally-inside-the-repository">Caching locally inside the repository</a></h2>
-<p>Many projects decide to commit all dependencies into the version control system. This was always possible with Paket if you commited the <em>packages</em> folder.
-Usually this would commit the zipped packages file and also all unzipped files. With a local dependencies cache you can instruct Paket to store all zipped packages in another folder.
-Optionally it is possible to tell Paket to only store the currently used versions of the packages.</p>
-<p>Let's consider a small example:</p>
+<p>Many projects decide to commit all dependencies into the version control system.
+Some people argue that this bloats the version control system, but it also ensures that dependencies are always available after checkout.</p>
+<p>With a local dependencies cache you can instruct Paket to copy dependencies to a local folder.
+This folder will then contain the *.nupkgs files of all dependencies and can be committed to source control.</p>
+<blockquote>In contrast to the default <i>packages</i> folder this new folder will only contain the zipped dependencies. This way the <i>packages</i> folder which contains also the unzipped versions can still be gitignored.</blockquote>
+<p>The configuration can be done in the  <a href="dependencies-file.html"><code>paket.dependencies</code> file</a>:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -100,6 +102,12 @@ cache ./nupkgs versions:current
 <span class="k">nuget </span>UnionArgParser
 <span class="k">nuget </span>FSharp.Core
 </code></pre></td></tr></table>
+<h3><a name="Caching-options" class="anchor" href="#Caching-options">Caching options</a></h3>
+<p>Paket allows you two caching options:</p>
+<ul>
+<li><code>versions:all</code> - stores all currently used version of the dependencies.</li>
+<li><code>versions:current</code> - stores only currently used version of the dependencies and deletes all other version. Should not be used with netwok shares.</li>
+</ul>
 <h2><a name="Caches-as-package-feeds" class="anchor" href="#Caches-as-package-feeds">Caches as package feeds</a></h2>
 <p>All configured caches are automatically used as additional package feeds. So if a package gets removed from the central repository even "paket update" will work.
 The fact that it's now only found in the cache will be written to the <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
