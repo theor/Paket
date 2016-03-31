@@ -111,6 +111,7 @@ cache ./nupkgs versions:current
 <h2><a name="Caches-as-package-feeds" class="anchor" href="#Caches-as-package-feeds">Caches as package feeds</a></h2>
 <p>All configured caches are automatically used as additional package feeds. So if a package gets removed from the central repository even "paket update" will work.
 The fact that it's now only found in the cache will be written to the <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
+<p>All packages in the cache are treated as "unlisted". This means Paket's resolver will only use these packages in a new resolution if the central feed has no unlisted packages.</p>
 
 
         </div>
