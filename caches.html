@@ -75,7 +75,7 @@ As long as nobody deletes packages from the network share, package restore will 
 <span class="l">6: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
-cache <span class="c">//hive/dependencies</span>
+<span class="k">cache</span> <span class="c">//hive/dependencies</span>
 
 <span class="k">nuget </span>Newtonsoft.Json
 <span class="k">nuget </span>UnionArgParser
@@ -96,7 +96,7 @@ This folder will then contain the <code>*.nupkgs files</code> of all dependencie
 <span class="l">6: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
-cache ./nupkgs versions:current
+<span class="k">cache</span> ./nupkgs versions:current
 
 <span class="k">nuget </span>Newtonsoft.Json
 <span class="k">nuget </span>UnionArgParser
