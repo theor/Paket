@@ -63,11 +63,12 @@
   <span>Namespace: Paket</span><br />
 </p>
 <div class="xmldoc">
-<p>Force          - Force the download and reinstallation of all packages
-Hard           - Replace package references within project files even if they are not yet adhering
+<p>Force             - Force the download and reinstallation of all packages
+Hard              - Replace package references within project files even if they are not yet adhering
 to the Paket's conventions (and hence considered manually managed)
-Redirects      - Create binding redirects for the NuGet packages
-OnlyReferenced - Only install packages that are referenced in paket.references files.</p>
+Redirects         - Create binding redirects for the NuGet packages
+OnlyReferenced    - Only install packages that are referenced in paket.references files.
+TouchAffectedRefs - Touch projects referencing installed packages even if the project file does not change.</p>
 
 </div>
   <h3>Record Fields</h3>
@@ -79,64 +80,10 @@ OnlyReferenced - Only install packages that are referenced in paket.references f
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '869', 869)" onmouseover="showTip(event, '869', 869)">
+          <code onmouseout="hideTip(event, '800', 800)" onmouseover="showTip(event, '800', 800)">
             CreateNewBindingFiles
           </code>
-          <div class="tip" id="869">
-            <strong>Signature:</strong> bool<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L21-21" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '870', 870)" onmouseover="showTip(event, '870', 870)">
-            Force
-          </code>
-          <div class="tip" id="870">
-            <strong>Signature:</strong> bool<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L17-17" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '871', 871)" onmouseover="showTip(event, '871', 871)">
-            Hard
-          </code>
-          <div class="tip" id="871">
-            <strong>Signature:</strong> bool<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L18-18" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '872', 872)" onmouseover="showTip(event, '872', 872)">
-            OnlyReferenced
-          </code>
-          <div class="tip" id="872">
+          <div class="tip" id="800">
             <strong>Signature:</strong> bool<br />
                       </div>
         </td>
@@ -151,11 +98,83 @@ OnlyReferenced - Only install packages that are referenced in paket.references f
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '873', 873)" onmouseover="showTip(event, '873', 873)">
+          <code onmouseout="hideTip(event, '801', 801)" onmouseover="showTip(event, '801', 801)">
+            Force
+          </code>
+          <div class="tip" id="801">
+            <strong>Signature:</strong> bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L18-18" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '802', 802)" onmouseover="showTip(event, '802', 802)">
+            Hard
+          </code>
+          <div class="tip" id="802">
+            <strong>Signature:</strong> bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L19-19" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '803', 803)" onmouseover="showTip(event, '803', 803)">
+            OnlyReferenced
+          </code>
+          <div class="tip" id="803">
+            <strong>Signature:</strong> bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L23-23" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '804', 804)" onmouseover="showTip(event, '804', 804)">
             Redirects
           </code>
-          <div class="tip" id="873">
+          <div class="tip" id="804">
             <strong>Signature:</strong> bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L21-21" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '805', 805)" onmouseover="showTip(event, '805', 805)">
+            SemVerUpdateMode
+          </code>
+          <div class="tip" id="805">
+            <strong>Signature:</strong> SemVerUpdateMode<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -169,15 +188,15 @@ OnlyReferenced - Only install packages that are referenced in paket.references f
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '874', 874)" onmouseover="showTip(event, '874', 874)">
-            SemVerUpdateMode
+          <code onmouseout="hideTip(event, '806', 806)" onmouseover="showTip(event, '806', 806)">
+            TouchAffectedRefs
           </code>
-          <div class="tip" id="874">
-            <strong>Signature:</strong> SemVerUpdateMode<br />
+          <div class="tip" id="806">
+            <strong>Signature:</strong> bool<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L19-19" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L24-24" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -195,15 +214,15 @@ OnlyReferenced - Only install packages that are referenced in paket.references f
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '875', 875)" onmouseover="showTip(event, '875', 875)">
+          <code onmouseout="hideTip(event, '807', 807)" onmouseover="showTip(event, '807', 807)">
             CreateLegacyOptions(...)
           </code>
-          <div class="tip" id="875">
-            <strong>Signature:</strong> (force:bool * hard:bool * redirects:bool * createNewBindingFiles:bool * semVerUpdateMode:SemVerUpdateMode) -&gt; InstallerOptions<br />
+          <div class="tip" id="807">
+            <strong>Signature:</strong> (force:bool * hard:bool * redirects:bool * createNewBindingFiles:bool * semVerUpdateMode:SemVerUpdateMode * touchAffectedRefs:bool) -&gt; InstallerOptions<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L32-32" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L35-35" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -213,15 +232,15 @@ OnlyReferenced - Only install packages that are referenced in paket.references f
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '876', 876)" onmouseover="showTip(event, '876', 876)">
+          <code onmouseout="hideTip(event, '808', 808)" onmouseover="showTip(event, '808', 808)">
             Default
           </code>
-          <div class="tip" id="876">
+          <div class="tip" id="808">
             <strong>Signature:</strong> InstallerOptions<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L24-24" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L26-26" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
