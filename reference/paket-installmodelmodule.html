@@ -210,7 +210,7 @@
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallModel.fs#L319-319" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallModel.fs#L331-331" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -228,7 +228,7 @@
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallModel.fs#L301-301" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallModel.fs#L313-313" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -264,7 +264,7 @@
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallModel.fs#L344-344" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallModel.fs#L356-356" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -336,7 +336,7 @@
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallModel.fs#L277-277" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallModel.fs#L289-289" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -347,14 +347,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '97', 97)" onmouseover="showTip(event, '97', 97)">
-            filterReferences references this
+            filterExcludes excludes installModel
           </code>
           <div class="tip" id="97">
-            <strong>Signature:</strong> references:Set&lt;string&gt; -&gt; this:InstallModel -&gt; InstallModel<br />
+            <strong>Signature:</strong> excludes:string list -&gt; installModel:InstallModel -&gt; InstallModel<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallModel.fs#L337-337" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallModel.fs#L277-277" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -365,9 +365,27 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '98', 98)" onmouseover="showTip(event, '98', 98)">
-            getFrameworkAssembliesLazy installModel
+            filterReferences references this
           </code>
           <div class="tip" id="98">
+            <strong>Signature:</strong> references:Set&lt;string&gt; -&gt; this:InstallModel -&gt; InstallModel<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/InstallModel.fs#L349-349" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '99', 99)" onmouseover="showTip(event, '99', 99)">
+            getFrameworkAssembliesLazy installModel
+          </code>
+          <div class="tip" id="99">
             <strong>Signature:</strong> installModel:InstallModel -&gt; Lazy&lt;Set&lt;string&gt;&gt;<br />
                       </div>
         </td>
@@ -382,10 +400,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '99', 99)" onmouseover="showTip(event, '99', 99)">
+          <code onmouseout="hideTip(event, '100', 100)" onmouseover="showTip(event, '100', 100)">
             getLibReferences target installModel
           </code>
-          <div class="tip" id="99">
+          <div class="tip" id="100">
             <strong>Signature:</strong> target:TargetProfile -&gt; installModel:InstallModel -&gt; seq&lt;string&gt;<br />
                       </div>
         </td>
@@ -400,10 +418,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '100', 100)" onmouseover="showTip(event, '100', 100)">
+          <code onmouseout="hideTip(event, '101', 101)" onmouseover="showTip(event, '101', 101)">
             getLibReferencesLazy installModel
           </code>
-          <div class="tip" id="100">
+          <div class="tip" id="101">
             <strong>Signature:</strong> installModel:InstallModel -&gt; Lazy&lt;Set&lt;Reference&gt;&gt;<br />
                       </div>
         </td>
@@ -418,10 +436,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '101', 101)" onmouseover="showTip(event, '101', 101)">
+          <code onmouseout="hideTip(event, '102', 102)" onmouseover="showTip(event, '102', 102)">
             getPlatformReferences (...)
           </code>
-          <div class="tip" id="101">
+          <div class="tip" id="102">
             <strong>Signature:</strong> frameworkIdentifier:FrameworkIdentifier -&gt; installModel:InstallModel -&gt; seq&lt;string&gt;<br />
                       </div>
         </td>
@@ -436,10 +454,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '102', 102)" onmouseover="showTip(event, '102', 102)">
+          <code onmouseout="hideTip(event, '103', 103)" onmouseover="showTip(event, '103', 103)">
             getTargetsFiles target installModel
           </code>
-          <div class="tip" id="102">
+          <div class="tip" id="103">
             <strong>Signature:</strong> target:TargetProfile -&gt; installModel:InstallModel -&gt; seq&lt;string&gt;<br />
                       </div>
         </td>
@@ -454,10 +472,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '103', 103)" onmouseover="showTip(event, '103', 103)">
+          <code onmouseout="hideTip(event, '104', 104)" onmouseover="showTip(event, '104', 104)">
             getTargetsFilesLazy installModel
           </code>
-          <div class="tip" id="103">
+          <div class="tip" id="104">
             <strong>Signature:</strong> installModel:InstallModel -&gt; Lazy&lt;Set&lt;Reference&gt;&gt;<br />
                       </div>
         </td>
@@ -472,10 +490,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '104', 104)" onmouseover="showTip(event, '104', 104)">
+          <code onmouseout="hideTip(event, '105', 105)" onmouseover="showTip(event, '105', 105)">
             mapFiles mapfn installModel
           </code>
-          <div class="tip" id="104">
+          <div class="tip" id="105">
             <strong>Signature:</strong> mapfn:(InstallFiles -&gt; InstallFiles) -&gt; installModel:InstallModel -&gt; InstallModel<br />
                       </div>
         </td>
@@ -490,10 +508,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '105', 105)" onmouseover="showTip(event, '105', 105)">
+          <code onmouseout="hideTip(event, '106', 106)" onmouseover="showTip(event, '106', 106)">
             mapFolders mapfn installModel
           </code>
-          <div class="tip" id="105">
+          <div class="tip" id="106">
             <strong>Signature:</strong> mapfn:(LibFolder -&gt; LibFolder) -&gt; installModel:InstallModel -&gt; InstallModel<br />
                       </div>
         </td>
@@ -508,10 +526,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '106', 106)" onmouseover="showTip(event, '106', 106)">
+          <code onmouseout="hideTip(event, '107', 107)" onmouseover="showTip(event, '107', 107)">
             removeIfCompletelyEmpty this
           </code>
-          <div class="tip" id="106">
+          <div class="tip" id="107">
             <strong>Signature:</strong> this:InstallModel -&gt; InstallModel<br />
                       </div>
         </td>
