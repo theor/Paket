@@ -151,6 +151,21 @@ Dapper
 NUnit
   exclude nunit.<span class="k">framework</span>.dll
 </code></pre></td></tr></table>
+<h2><a name="Library-aliases" class="anchor" href="#Library-aliases">Library aliases</a></h2>
+<blockquote>This feature is only available in Paket 3.0 alpha versions.</blockquote>
+<p>This option allows you to specify library aliases:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket">PackageA
+  alias A1.dll Name2,Name3
+  alias A2.dll MyAlias1
+Dapper
+NUnit
+</code></pre></td></tr></table>
 <h2><a name="File-name-conventions" class="anchor" href="#File-name-conventions">File name conventions</a></h2>
 <p>If Paket finds <code>paket.references</code> in a folder, the dependencies it specifies will be added to all MSBuild projects in that folder.</p>
 <p>If you have multiple MSBuild projects in a folder that require a non-homogenous set of references, you have two options:</p>
