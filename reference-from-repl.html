@@ -168,6 +168,12 @@ Alternativly you can just reference any paket.exe that you have on your system.<
 <span class="l">22: </span>
 <span class="l">23: </span>
 <span class="l">24: </span>
+<span class="l">25: </span>
+<span class="l">26: </span>
+<span class="l">27: </span>
+<span class="l">28: </span>
+<span class="l">29: </span>
+<span class="l">30: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// install some packages</span>
 <span onmouseout="hideTip(event, 'fs20', 35)" onmouseover="showTip(event, 'fs20', 35)" class="i">dependencies</span><span class="o">.</span><span class="i">Add</span> <span class="s">&quot;FSharp.Data&quot;</span>
@@ -193,6 +199,12 @@ Alternativly you can just reference any paket.exe that you have on your system.<
 <span class="fsi">found: D:\code\Paket\paket.dependencies</span>
 <span onmouseout="hideTip(event, 'fs21', 45)" onmouseover="showTip(event, 'fs21', 45)" class="i">paketDependencies</span><span class="o">.</span><span class="i">FindReferencesFor</span> <span class="s">&quot;UnionArgParser&quot;</span>
 <span class="fsi">val it : string list = [&quot;D:\code\Paket\src\Paket\Paket.fsproj&quot;]</span>
+
+
+<span class="c">// list direct dependencies for the given package</span>
+<span onmouseout="hideTip(event, 'fs20', 46)" onmouseover="showTip(event, 'fs20', 46)" class="i">dependencies</span><span class="o">.</span><span class="i">GetDirectDependenciesForPackage</span>(<span class="s">&quot;Main&quot;</span>, <span class="s">&quot;FSharp.Compiler.Service&quot;</span>)
+<span class="fsi">val it : (string * string * string) list =</span>
+<span class="fsi">  ...</span>
 </code></pre></td>
 </tr>
 </table>
