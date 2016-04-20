@@ -124,18 +124,6 @@
         </tr>
         <tr>
           <td class="type-name">
-            <a href="paket-cache.html">Cache</a>
-          </td>
-          <td class="xmldoc"></td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="paket-cachetype.html">CacheType</a>
-          </td>
-          <td class="xmldoc"></td>
-        </tr>
-        <tr>
-          <td class="type-name">
             <a href="paket-compileitem.html">CompileItem</a>
           </td>
           <td class="xmldoc"><p>Compile items inside of project files.</p>
@@ -239,6 +227,8 @@
             <a href="paket-installeroptions.html">InstallerOptions</a>
           </td>
           <td class="xmldoc"><p>Force             - Force the download and reinstallation of all packages
+Hard              - Replace package references within project files even if they are not yet adhering
+to the Paket's conventions (and hence considered manually managed)
 Redirects         - Create binding redirects for the NuGet packages
 OnlyReferenced    - Only install packages that are referenced in paket.references files.
 TouchAffectedRefs - Touch projects referencing installed packages even if the project file does not change.</p>
@@ -354,18 +344,6 @@ TouchAffectedRefs - Touch projects referencing installed packages even if the pr
           <td class="xmldoc"><p>Project references inside of project files.</p>
 
 </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="paket-projecttype.html">ProjectType</a>
-          </td>
-          <td class="xmldoc"></td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="paket-projecttypereference.html">ProjectTypeReference</a>
-          </td>
-          <td class="xmldoc"></td>
         </tr>
         <tr>
           <td class="type-name">
@@ -546,14 +524,6 @@ TouchAffectedRefs - Touch projects referencing installed packages even if the pr
         </tr>
         <tr>
           <td class="module-name">
-            <a href="paket-garbagecollection.html">GarbageCollection</a>
-          </td>
-          <td class="xmldoc"><p>Contains methods for the garbage collection of no longer needed files.</p>
-
-</td>
-        </tr>
-        <tr>
-          <td class="module-name">
             <a href="paket-installfilesmodule.html">InstallFiles</a>
           </td>
           <td class="xmldoc"></td>
@@ -682,6 +652,12 @@ TouchAffectedRefs - Touch projects referencing installed packages even if the pr
         </tr>
         <tr>
           <td class="module-name">
+            <a href="paket-platformdetection.html">PlatformDetection</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
             <a href="paket-platformmatching.html">PlatformMatching</a>
           </td>
           <td class="xmldoc"></td>
@@ -779,68 +755,6 @@ TouchAffectedRefs - Touch projects referencing installed packages even if the pr
             <a href="paket-utils.html">utils</a>
           </td>
           <td class="xmldoc"></td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-  <h2>Paket.Git Namespace</h2>
-    <div>
-      <table class="table table-bordered module-list">
-    <thead>
-      <tr><td>Module</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="module-name">
-            <a href="paket-git-commandhelper.html">CommandHelper</a>
-          </td>
-          <td class="xmldoc"><p>Contains helpers which allow to interact with <a href="http://git-scm.com/">git</a> via the command line.</p>
-
-</td>
-        </tr>
-        <tr>
-          <td class="module-name">
-            <a href="paket-git-handling.html">Handling</a>
-          </td>
-          <td class="xmldoc"></td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-  <h2>Paket.ProjectJson Namespace</h2>
-    <div>
-      <table class="table table-bordered type-list">
-    <thead>
-      <tr><td>Type</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="type-name">
-            <a href="paket-projectjson-projectjsonfile.html">ProjectJsonFile</a>
-          </td>
-          <td class="xmldoc"></td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="paket-projectjson-projectjsonframeworks.html">ProjectJsonFrameworks</a>
-          </td>
-          <td class="xmldoc"></td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="paket-projectjson-projectjsonproperties.html">ProjectJsonProperties</a>
-          </td>
-          <td class="xmldoc"></td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="paket-projectjson-projectjsonreference.html">ProjectJsonReference</a>
-          </td>
-          <td class="xmldoc"><p>Project references inside of project.json files.</p>
-
-</td>
         </tr>
     </tbody>
   </table>

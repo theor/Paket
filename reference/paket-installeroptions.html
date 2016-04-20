@@ -64,6 +64,8 @@
 </p>
 <div class="xmldoc">
 <p>Force             - Force the download and reinstallation of all packages
+Hard              - Replace package references within project files even if they are not yet adhering
+to the Paket's conventions (and hence considered manually managed)
 Redirects         - Create binding redirects for the NuGet packages
 OnlyReferenced    - Only install packages that are referenced in paket.references files.
 TouchAffectedRefs - Touch projects referencing installed packages even if the project file does not change.</p>
@@ -78,15 +80,15 @@ TouchAffectedRefs - Touch projects referencing installed packages even if the pr
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '891', 891)" onmouseover="showTip(event, '891', 891)">
+          <code onmouseout="hideTip(event, '825', 825)" onmouseover="showTip(event, '825', 825)">
             CreateNewBindingFiles
           </code>
-          <div class="tip" id="891">
+          <div class="tip" id="825">
             <strong>Signature:</strong> bool<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L19-19" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L22-22" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -96,46 +98,10 @@ TouchAffectedRefs - Touch projects referencing installed packages even if the pr
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '892', 892)" onmouseover="showTip(event, '892', 892)">
+          <code onmouseout="hideTip(event, '826', 826)" onmouseover="showTip(event, '826', 826)">
             Force
           </code>
-          <div class="tip" id="892">
-            <strong>Signature:</strong> bool<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L16-16" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '893', 893)" onmouseover="showTip(event, '893', 893)">
-            OnlyReferenced
-          </code>
-          <div class="tip" id="893">
-            <strong>Signature:</strong> bool<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L20-20" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '894', 894)" onmouseover="showTip(event, '894', 894)">
-            Redirects
-          </code>
-          <div class="tip" id="894">
+          <div class="tip" id="826">
             <strong>Signature:</strong> bool<br />
                       </div>
         </td>
@@ -150,15 +116,15 @@ TouchAffectedRefs - Touch projects referencing installed packages even if the pr
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '895', 895)" onmouseover="showTip(event, '895', 895)">
-            SemVerUpdateMode
+          <code onmouseout="hideTip(event, '827', 827)" onmouseover="showTip(event, '827', 827)">
+            Hard
           </code>
-          <div class="tip" id="895">
-            <strong>Signature:</strong> SemVerUpdateMode<br />
+          <div class="tip" id="827">
+            <strong>Signature:</strong> bool<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L17-17" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L19-19" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -168,15 +134,69 @@ TouchAffectedRefs - Touch projects referencing installed packages even if the pr
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '896', 896)" onmouseover="showTip(event, '896', 896)">
-            TouchAffectedRefs
+          <code onmouseout="hideTip(event, '828', 828)" onmouseover="showTip(event, '828', 828)">
+            OnlyReferenced
           </code>
-          <div class="tip" id="896">
+          <div class="tip" id="828">
+            <strong>Signature:</strong> bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L23-23" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '829', 829)" onmouseover="showTip(event, '829', 829)">
+            Redirects
+          </code>
+          <div class="tip" id="829">
             <strong>Signature:</strong> bool<br />
                       </div>
         </td>
         <td class="xmldoc">
             <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L21-21" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '830', 830)" onmouseover="showTip(event, '830', 830)">
+            SemVerUpdateMode
+          </code>
+          <div class="tip" id="830">
+            <strong>Signature:</strong> SemVerUpdateMode<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L20-20" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '831', 831)" onmouseover="showTip(event, '831', 831)">
+            TouchAffectedRefs
+          </code>
+          <div class="tip" id="831">
+            <strong>Signature:</strong> bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L24-24" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -194,15 +214,15 @@ TouchAffectedRefs - Touch projects referencing installed packages even if the pr
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '897', 897)" onmouseover="showTip(event, '897', 897)">
+          <code onmouseout="hideTip(event, '832', 832)" onmouseover="showTip(event, '832', 832)">
             CreateLegacyOptions(...)
           </code>
-          <div class="tip" id="897">
-            <strong>Signature:</strong> (force:bool * redirects:bool * createNewBindingFiles:bool * semVerUpdateMode:SemVerUpdateMode * touchAffectedRefs:bool) -&gt; InstallerOptions<br />
+          <div class="tip" id="832">
+            <strong>Signature:</strong> (force:bool * hard:bool * redirects:bool * createNewBindingFiles:bool * semVerUpdateMode:SemVerUpdateMode * touchAffectedRefs:bool) -&gt; InstallerOptions<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L31-31" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L35-35" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -212,15 +232,15 @@ TouchAffectedRefs - Touch projects referencing installed packages even if the pr
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '898', 898)" onmouseover="showTip(event, '898', 898)">
+          <code onmouseout="hideTip(event, '833', 833)" onmouseover="showTip(event, '833', 833)">
             Default
           </code>
-          <div class="tip" id="898">
+          <div class="tip" id="833">
             <strong>Signature:</strong> InstallerOptions<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L23-23" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProcessOptions.fs#L26-26" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
