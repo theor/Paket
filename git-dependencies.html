@@ -103,8 +103,10 @@ If you don't have git installed then Paket still allows you to <a href="github-d
 <h2><a name="Running-a-build-in-git-repositories" class="anchor" href="#Running-a-build-in-git-repositories">Running a build in git repositories</a></h2>
 <p>If your referenced git repository contains a build script then Paket can execute this scipt after restore:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">git </span>https://github.com/forki/nupkgtest.<span class="k">git </span>build build:<span class="s">"build.cmd"</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">git </span>https://github.com/forki/nupkgtest.<span class="k">git </span>master build:<span class="s">"build.cmd"</span>, OS:windows
+<span class="k">git </span>https://github.com/forki/nupkgtest.<span class="k">git </span>master build:<span class="s">"build.sh"</span>, OS:mono
 </code></pre></td></tr></table>
 <p>This allows you to excute arbitray commands after restore.</p>
 <h2><a name="Using-Git-repositories-as-NuGet-source" class="anchor" href="#Using-Git-repositories-as-NuGet-source">Using Git repositories as NuGet source</a></h2>
