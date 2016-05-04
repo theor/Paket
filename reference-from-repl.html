@@ -168,11 +168,6 @@ Alternativly you can just reference any paket.exe that you have on your system.<
 <span class="l">22: </span>
 <span class="l">23: </span>
 <span class="l">24: </span>
-<span class="l">25: </span>
-<span class="l">26: </span>
-<span class="l">27: </span>
-<span class="l">28: </span>
-<span class="l">29: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// install some packages</span>
 <span onmouseout="hideTip(event, 'fs20', 35)" onmouseover="showTip(event, 'fs20', 35)" class="i">dependencies</span><span class="o">.</span><span class="i">Add</span> <span class="s">&quot;FSharp.Data&quot;</span>
@@ -193,15 +188,10 @@ Alternativly you can just reference any paket.exe that you have on your system.<
 <span class="fsi">  [(&quot;Main&quot;, &quot;FSharp.Data&quot;, &quot;2.1.0&quot;); (&quot;Main&quot;, &quot;FSharp.Formatting&quot;, &quot;2.4.36&quot;);</span>
 <span class="fsi">   (&quot;Main&quot;, &quot;FsUnit&quot;, &quot;1.3.0.1&quot;)]</span>
 
-<span class="c">// list direct dependencies for the given package</span>
-<span onmouseout="hideTip(event, 'fs20', 40)" onmouseover="showTip(event, 'fs20', 40)" class="i">dependencies</span><span class="o">.</span><span class="i">GetDirectDependenciesForPackage</span>(<span class="s">&quot;Main&quot;</span>, <span class="s">&quot;FSharp.Compiler.Service&quot;</span>)
-<span class="fsi">val it : (string * string * string) list =</span>
-<span class="fsi">  ...</span>
-
 <span class="c">// list all usages of a package in Paket</span>
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs21', 41)" onmouseover="showTip(event, 'fs21', 41)" class="i">paketDependencies</span> <span class="o">=</span> <span class="i">Dependencies</span><span class="o">.</span><span class="i">Locate</span>(<span onmouseout="hideTip(event, 'fs1', 42)" onmouseover="showTip(event, 'fs1', 42)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 43)" onmouseover="showTip(event, 'fs2', 43)" class="i">IO</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs13', 44)" onmouseover="showTip(event, 'fs13', 44)" class="i">Path</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs22', 45)" onmouseover="showTip(event, 'fs22', 45)" class="i">Combine</span>(<span class="k">__SOURCE_DIRECTORY__</span>,<span class="s">&quot;..&quot;</span>))
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs21', 40)" onmouseover="showTip(event, 'fs21', 40)" class="i">paketDependencies</span> <span class="o">=</span> <span class="i">Dependencies</span><span class="o">.</span><span class="i">Locate</span>(<span onmouseout="hideTip(event, 'fs1', 41)" onmouseover="showTip(event, 'fs1', 41)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 42)" onmouseover="showTip(event, 'fs2', 42)" class="i">IO</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs13', 43)" onmouseover="showTip(event, 'fs13', 43)" class="i">Path</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs22', 44)" onmouseover="showTip(event, 'fs22', 44)" class="i">Combine</span>(<span class="k">__SOURCE_DIRECTORY__</span>,<span class="s">&quot;..&quot;</span>))
 <span class="fsi">found: D:\code\Paket\paket.dependencies</span>
-<span onmouseout="hideTip(event, 'fs21', 46)" onmouseover="showTip(event, 'fs21', 46)" class="i">paketDependencies</span><span class="o">.</span><span class="i">FindReferencesFor</span> <span class="s">&quot;UnionArgParser&quot;</span>
+<span onmouseout="hideTip(event, 'fs21', 45)" onmouseover="showTip(event, 'fs21', 45)" class="i">paketDependencies</span><span class="o">.</span><span class="i">FindReferencesFor</span> <span class="s">&quot;UnionArgParser&quot;</span>
 <span class="fsi">val it : string list = [&quot;D:\code\Paket\src\Paket\Paket.fsproj&quot;]</span>
 </code></pre></td>
 </tr>
