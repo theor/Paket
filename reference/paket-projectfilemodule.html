@@ -76,15 +76,33 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '254', 254)" onmouseover="showTip(event, '254', 254)">
+          <code onmouseout="hideTip(event, '253', 253)" onmouseover="showTip(event, '253', 253)">
             addImportForPaketTargets (...)
           </code>
-          <div class="tip" id="254">
+          <div class="tip" id="253">
             <strong>Signature:</strong> relativeTargetsPath:string -&gt; project:ProjectFile -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1148-1148" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1146-1146" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '254', 254)" onmouseover="showTip(event, '254', 254)">
+            createNode name project
+          </code>
+          <div class="tip" id="254">
+            <strong>Signature:</strong> name:string -&gt; project:ProjectFile -&gt; XmlElement<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L193-193" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -95,14 +113,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '255', 255)" onmouseover="showTip(event, '255', 255)">
-            createNode name project
+            createNodeSet name text project
           </code>
           <div class="tip" id="255">
-            <strong>Signature:</strong> name:string -&gt; project:ProjectFile -&gt; XmlElement<br />
+            <strong>Signature:</strong> name:string -&gt; text:string -&gt; project:ProjectFile -&gt; XmlElement<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L195-195" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L196-196" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -113,14 +131,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '256', 256)" onmouseover="showTip(event, '256', 256)">
-            createNodeSet name text project
+            deleteCustomModelNodes model project
           </code>
           <div class="tip" id="256">
-            <strong>Signature:</strong> name:string -&gt; text:string -&gt; project:ProjectFile -&gt; XmlElement<br />
+            <strong>Signature:</strong> model:InstallModel -&gt; project:ProjectFile -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L198-198" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L568-568" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -131,14 +149,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '257', 257)" onmouseover="showTip(event, '257', 257)">
-            deleteCustomModelNodes model project
+            deleteIfEmpty name project
           </code>
           <div class="tip" id="257">
-            <strong>Signature:</strong> model:InstallModel -&gt; project:ProjectFile -&gt; unit<br />
+            <strong>Signature:</strong> name:string -&gt; project:ProjectFile -&gt; bool<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L570-570" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L421-421" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -149,14 +167,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '258', 258)" onmouseover="showTip(event, '258', 258)">
-            deleteIfEmpty name project
+            deletePaketNodes name project
           </code>
           <div class="tip" id="258">
-            <strong>Signature:</strong> name:string -&gt; project:ProjectFile -&gt; bool<br />
+            <strong>Signature:</strong> name:string -&gt; project:ProjectFile -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L423-423" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L456-456" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -167,14 +185,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '259', 259)" onmouseover="showTip(event, '259', 259)">
-            deletePaketNodes name project
+            determineBuildAction fileName project
           </code>
           <div class="tip" id="259">
-            <strong>Signature:</strong> name:string -&gt; project:ProjectFile -&gt; unit<br />
+            <strong>Signature:</strong> fileName:string -&gt; project:ProjectFile -&gt; BuildAction<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L458-458" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1161-1161" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -185,14 +203,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '260', 260)" onmouseover="showTip(event, '260', 260)">
-            determineBuildAction fileName project
+            determineBuildActionForRemoteItems (...)
           </code>
           <div class="tip" id="260">
             <strong>Signature:</strong> fileName:string -&gt; project:ProjectFile -&gt; BuildAction<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1163-1163" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1173-1173" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -203,118 +221,10 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '261', 261)" onmouseover="showTip(event, '261', 261)">
-            determineBuildActionForRemoteItems (...)
-          </code>
-          <div class="tip" id="261">
-            <strong>Signature:</strong> fileName:string -&gt; project:ProjectFile -&gt; BuildAction<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1175-1175" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '262', 262)" onmouseover="showTip(event, '262', 262)">
             findPaketNodes name project
           </code>
-          <div class="tip" id="262">
+          <div class="tip" id="261">
             <strong>Signature:</strong> name:string -&gt; project:ProjectFile -&gt; XmlNode list<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L447-447" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '263', 263)" onmouseover="showTip(event, '263', 263)">
-            generateAnalyzersXml model project
-          </code>
-          <div class="tip" id="263">
-            <strong>Signature:</strong> model:InstallModel -&gt; project:ProjectFile -&gt; XmlElement<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L587-587" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '264', 264)" onmouseover="showTip(event, '264', 264)">
-            generateXml (...)
-          </code>
-          <div class="tip" id="264">
-            <strong>Signature:</strong> model:InstallModel -&gt; aliases:Map&lt;string,string&gt; -&gt; copyLocal:bool -&gt; importTargets:bool -&gt; referenceCondition:string option -&gt; project:ProjectFile -&gt; XmlElement list * XmlElement list * XmlElement * XmlElement * XmlElement<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L613-613" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '265', 265)" onmouseover="showTip(event, '265', 265)">
-            getAssemblyName project
-          </code>
-          <div class="tip" id="265">
-            <strong>Signature:</strong> project:ProjectFile -&gt; string<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1180-1180" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '266', 266)" onmouseover="showTip(event, '266', 266)">
-            getCustomModelNodes model project
-          </code>
-          <div class="tip" id="266">
-            <strong>Signature:</strong> model:InstallModel -&gt; project:ProjectFile -&gt; XmlNode list<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L560-560" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '267', 267)" onmouseover="showTip(event, '267', 267)">
-            getCustomReferenceAndFrameworkNodes (...)
-          </code>
-          <div class="tip" id="267">
-            <strong>Signature:</strong> project:ProjectFile -&gt; XmlNode list<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -328,15 +238,123 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '268', 268)" onmouseover="showTip(event, '268', 268)">
+          <code onmouseout="hideTip(event, '262', 262)" onmouseover="showTip(event, '262', 262)">
+            generateAnalyzersXml model project
+          </code>
+          <div class="tip" id="262">
+            <strong>Signature:</strong> model:InstallModel -&gt; project:ProjectFile -&gt; XmlElement<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L585-585" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '263', 263)" onmouseover="showTip(event, '263', 263)">
+            generateXml (...)
+          </code>
+          <div class="tip" id="263">
+            <strong>Signature:</strong> model:InstallModel -&gt; aliases:Map&lt;string,string&gt; -&gt; copyLocal:bool -&gt; importTargets:bool -&gt; referenceCondition:string option -&gt; project:ProjectFile -&gt; XmlElement list * XmlElement list * XmlElement * XmlElement * XmlElement<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L611-611" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '264', 264)" onmouseover="showTip(event, '264', 264)">
+            getAssemblyName project
+          </code>
+          <div class="tip" id="264">
+            <strong>Signature:</strong> project:ProjectFile -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1178-1178" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '265', 265)" onmouseover="showTip(event, '265', 265)">
+            getCustomModelNodes model project
+          </code>
+          <div class="tip" id="265">
+            <strong>Signature:</strong> model:InstallModel -&gt; project:ProjectFile -&gt; XmlNode list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L558-558" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '266', 266)" onmouseover="showTip(event, '266', 266)">
+            getCustomReferenceAndFrameworkNodes (...)
+          </code>
+          <div class="tip" id="266">
+            <strong>Signature:</strong> project:ProjectFile -&gt; XmlNode list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L443-443" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '267', 267)" onmouseover="showTip(event, '267', 267)">
             getFrameworkAssemblies project
           </code>
-          <div class="tip" id="268">
+          <div class="tip" id="267">
             <strong>Signature:</strong> project:ProjectFile -&gt; string list<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L449-449" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L447-447" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '268', 268)" onmouseover="showTip(event, '268', 268)">
+            getInterProjectDependencies project
+          </code>
+          <div class="tip" id="268">
+            <strong>Signature:</strong> project:ProjectFile -&gt; ProjectReference list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1020-1020" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -347,14 +365,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '269', 269)" onmouseover="showTip(event, '269', 269)">
-            getInterProjectDependencies project
+            getOutputDirectory (...)
           </code>
           <div class="tip" id="269">
-            <strong>Signature:</strong> project:ProjectFile -&gt; ProjectReference list<br />
+            <strong>Signature:</strong> buildConfiguration:string -&gt; buildPlatform:string -&gt; project:ProjectFile -&gt; string<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1022-1022" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1196-1196" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -365,14 +383,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '270', 270)" onmouseover="showTip(event, '270', 270)">
-            getOutputDirectory (...)
+            getPaketFileItems project
           </code>
           <div class="tip" id="270">
-            <strong>Signature:</strong> buildConfiguration:string -&gt; buildPlatform:string -&gt; project:ProjectFile -&gt; string<br />
+            <strong>Signature:</strong> project:ProjectFile -&gt; FileInfo list<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1198-1198" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1002-1002" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -383,14 +401,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '271', 271)" onmouseover="showTip(event, '271', 271)">
-            getPaketFileItems project
+            getProjectGuid project
           </code>
           <div class="tip" id="271">
-            <strong>Signature:</strong> project:ProjectFile -&gt; FileInfo list<br />
+            <strong>Signature:</strong> project:ProjectFile -&gt; Guid<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1004-1004" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1008-1008" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -401,14 +419,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '272', 272)" onmouseover="showTip(event, '272', 272)">
-            getProjectGuid project
+            getProperty propertyName projectFile
           </code>
           <div class="tip" id="272">
-            <strong>Signature:</strong> project:ProjectFile -&gt; Guid<br />
+            <strong>Signature:</strong> propertyName:string -&gt; projectFile:ProjectFile -&gt; string option<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1010-1010" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L416-416" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -419,14 +437,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '273', 273)" onmouseover="showTip(event, '273', 273)">
-            getProperty propertyName projectFile
+            getPropertyWithDefaults (...)
           </code>
           <div class="tip" id="273">
-            <strong>Signature:</strong> propertyName:string -&gt; projectFile:ProjectFile -&gt; string option<br />
+            <strong>Signature:</strong> propertyName:string -&gt; defaultProperties:Map&lt;string,string&gt; -&gt; projectFile:ProjectFile -&gt; string option<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L418-418" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L203-203" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -437,14 +455,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '274', 274)" onmouseover="showTip(event, '274', 274)">
-            getPropertyWithDefaults (...)
+            getTargetFramework project
           </code>
           <div class="tip" id="274">
-            <strong>Signature:</strong> propertyName:string -&gt; defaultProperties:Map&lt;string,string&gt; -&gt; projectFile:ProjectFile -&gt; string option<br />
+            <strong>Signature:</strong> project:ProjectFile -&gt; FrameworkIdentifier option<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L205-205" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L818-818" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -455,14 +473,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '275', 275)" onmouseover="showTip(event, '275', 275)">
-            getTargetFramework project
+            getTargetFrameworkIdentifier project
           </code>
           <div class="tip" id="275">
-            <strong>Signature:</strong> project:ProjectFile -&gt; FrameworkIdentifier option<br />
+            <strong>Signature:</strong> project:ProjectFile -&gt; string option<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L820-820" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L814-814" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -473,7 +491,7 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '276', 276)" onmouseover="showTip(event, '276', 276)">
-            getTargetFrameworkIdentifier project
+            getTargetFrameworkProfile project
           </code>
           <div class="tip" id="276">
             <strong>Signature:</strong> project:ProjectFile -&gt; string option<br />
@@ -491,14 +509,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '277', 277)" onmouseover="showTip(event, '277', 277)">
-            getTargetFrameworkProfile project
+            getTargetProfile project
           </code>
           <div class="tip" id="277">
-            <strong>Signature:</strong> project:ProjectFile -&gt; string option<br />
+            <strong>Signature:</strong> project:ProjectFile -&gt; TargetProfile<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L818-818" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1126-1126" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -509,27 +527,9 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '278', 278)" onmouseover="showTip(event, '278', 278)">
-            getTargetProfile project
-          </code>
-          <div class="tip" id="278">
-            <strong>Signature:</strong> project:ProjectFile -&gt; TargetProfile<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1128-1128" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '279', 279)" onmouseover="showTip(event, '279', 279)">
             loadFromFile fileName
           </code>
-          <div class="tip" id="279">
+          <div class="tip" id="278">
             <strong>Signature:</strong> fileName:string -&gt; ProjectFile<br />
                       </div>
         </td>
@@ -544,10 +544,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '280', 280)" onmouseover="showTip(event, '280', 280)">
+          <code onmouseout="hideTip(event, '279', 279)" onmouseover="showTip(event, '279', 279)">
             loadFromStream fullName stream
           </code>
-          <div class="tip" id="280">
+          <div class="tip" id="279">
             <strong>Signature:</strong> fullName:string -&gt; stream:Stream -&gt; ProjectFile<br />
                       </div>
         </td>
@@ -562,10 +562,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '281', 281)" onmouseover="showTip(event, '281', 281)">
+          <code onmouseout="hideTip(event, '280', 280)" onmouseover="showTip(event, '280', 280)">
             name projectFile
           </code>
-          <div class="tip" id="281">
+          <div class="tip" id="280">
             <strong>Signature:</strong> projectFile:ProjectFile -&gt; string<br />
                       </div>
         </td>
@@ -580,10 +580,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '282', 282)" onmouseover="showTip(event, '282', 282)">
+          <code onmouseout="hideTip(event, '281', 281)" onmouseover="showTip(event, '281', 281)">
             nameWithoutExtension projectFile
           </code>
-          <div class="tip" id="282">
+          <div class="tip" id="281">
             <strong>Signature:</strong> projectFile:ProjectFile -&gt; string<br />
                       </div>
         </td>
@@ -598,15 +598,33 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '283', 283)" onmouseover="showTip(event, '283', 283)">
+          <code onmouseout="hideTip(event, '282', 282)" onmouseover="showTip(event, '282', 282)">
             outputType project
           </code>
-          <div class="tip" id="283">
+          <div class="tip" id="282">
             <strong>Signature:</strong> project:ProjectFile -&gt; ProjectOutputType<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1120-1120" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1118-1118" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '283', 283)" onmouseover="showTip(event, '283', 283)">
+            removeImportAndTargetEntries (...)
+          </code>
+          <div class="tip" id="283">
+            <strong>Signature:</strong> packages:(string * SemVerInfo) list -&gt; project:ProjectFile -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1088-1088" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -617,14 +635,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '284', 284)" onmouseover="showTip(event, '284', 284)">
-            removeImportAndTargetEntries (...)
+            removeImportForPaketTargets (...)
           </code>
           <div class="tip" id="284">
-            <strong>Signature:</strong> packages:(string * SemVerInfo) list -&gt; project:ProjectFile -&gt; unit<br />
+            <strong>Signature:</strong> relativeTargetsPath:string -&gt; project:ProjectFile -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1090-1090" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1155-1155" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -635,14 +653,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '285', 285)" onmouseover="showTip(event, '285', 285)">
-            removeImportForPaketTargets (...)
+            removeNuGetTargetsEntries project
           </code>
           <div class="tip" id="285">
-            <strong>Signature:</strong> relativeTargetsPath:string -&gt; project:ProjectFile -&gt; unit<br />
+            <strong>Signature:</strong> project:ProjectFile -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1157-1157" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1065-1065" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -653,14 +671,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '286', 286)" onmouseover="showTip(event, '286', 286)">
-            removeNuGetTargetsEntries project
+            removePaketNodes project
           </code>
           <div class="tip" id="286">
             <strong>Signature:</strong> project:ProjectFile -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1067-1067" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L780-780" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -671,14 +689,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '287', 287)" onmouseover="showTip(event, '287', 287)">
-            removePaketNodes project
+            replaceNuGetPackagesFile project
           </code>
           <div class="tip" id="287">
             <strong>Signature:</strong> project:ProjectFile -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L782-782" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1049-1049" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -689,14 +707,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '288', 288)" onmouseover="showTip(event, '288', 288)">
-            replaceNuGetPackagesFile project
+            save forceTouch project
           </code>
           <div class="tip" id="288">
-            <strong>Signature:</strong> project:ProjectFile -&gt; unit<br />
+            <strong>Signature:</strong> forceTouch:bool -&gt; project:ProjectFile -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L1051-1051" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L995-995" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -707,27 +725,9 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '289', 289)" onmouseover="showTip(event, '289', 289)">
-            save forceTouch project
-          </code>
-          <div class="tip" id="289">
-            <strong>Signature:</strong> forceTouch:bool -&gt; project:ProjectFile -&gt; unit<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L997-997" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '290', 290)" onmouseover="showTip(event, '290', 290)">
             tryLoad fileName
           </code>
-          <div class="tip" id="290">
+          <div class="tip" id="289">
             <strong>Signature:</strong> fileName:string -&gt; ProjectFile option<br />
                       </div>
         </td>
@@ -742,15 +742,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '291', 291)" onmouseover="showTip(event, '291', 291)">
+          <code onmouseout="hideTip(event, '290', 290)" onmouseover="showTip(event, '290', 290)">
             updateFileItems fileItems project
           </code>
-          <div class="tip" id="291">
+          <div class="tip" id="290">
             <strong>Signature:</strong> fileItems:FileItem list -&gt; project:ProjectFile -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L466-466" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L464-464" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -760,15 +760,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '292', 292)" onmouseover="showTip(event, '292', 292)">
+          <code onmouseout="hideTip(event, '291', 291)" onmouseover="showTip(event, '291', 291)">
             updateReferences (...)
           </code>
-          <div class="tip" id="292">
-            <strong>Signature:</strong> rootPath:string -&gt; completeModel:Map&lt;(GroupName * PackageName),(&#39;?9827 * InstallModel)&gt; -&gt; usedPackages:Map&lt;(GroupName * PackageName),(&#39;?9828 * InstallSettings)&gt; -&gt; project:ProjectFile -&gt; unit<br />
-                          <strong>Type parameters:</strong> '?9827, '?9828          </div>
+          <div class="tip" id="291">
+            <strong>Signature:</strong> rootPath:string -&gt; completeModel:Map&lt;(GroupName * PackageName),(&#39;?9754 * InstallModel)&gt; -&gt; usedPackages:Map&lt;(GroupName * PackageName),(&#39;?9755 * InstallSettings)&gt; -&gt; project:ProjectFile -&gt; unit<br />
+                          <strong>Type parameters:</strong> '?9754, '?9755          </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L825-825" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/ProjectFile.fs#L823-823" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

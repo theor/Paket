@@ -77,15 +77,33 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '168', 168)" onmouseover="showTip(event, '168', 168)">
+          <code onmouseout="hideTip(event, '167', 167)" onmouseover="showTip(event, '167', 167)">
             create (...)
           </code>
-          <div class="tip" id="168">
-            <strong>Signature:</strong> rootDirectory:DirectoryInfo -&gt; configFiles:FileInfo list -&gt; targets:FileInfo option -&gt; exe:FileInfo option -&gt; config:NugetConfig -&gt; packagesFiles:(ProjectType * NugetPackagesConfig) list -&gt; projectJsonFiles:ProjectType list -&gt; NugetEnv<br />
+          <div class="tip" id="167">
+            <strong>Signature:</strong> rootDirectory:DirectoryInfo -&gt; configFiles:FileInfo list -&gt; targets:FileInfo option -&gt; exe:FileInfo option -&gt; config:NugetConfig -&gt; packagesFiles:(ProjectFile * NugetPackagesConfig) list -&gt; NugetEnv<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L147-147" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L146-146" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '168', 168)" onmouseover="showTip(event, '168', 168)">
+            read rootDirectory
+          </code>
+          <div class="tip" id="168">
+            <strong>Signature:</strong> rootDirectory:DirectoryInfo -&gt; Result&lt;NugetEnv,DomainMessage&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L189-189" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -96,14 +114,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '169', 169)" onmouseover="showTip(event, '169', 169)">
-            read rootDirectory
+            readNugetConfig rootDirectory
           </code>
           <div class="tip" id="169">
-            <strong>Signature:</strong> rootDirectory:DirectoryInfo -&gt; Result&lt;NugetEnv,DomainMessage&gt;<br />
+            <strong>Signature:</strong> rootDirectory:DirectoryInfo -&gt; Result&lt;NugetConfig,DomainMessage&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L201-201" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L155-155" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -114,32 +132,14 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '170', 170)" onmouseover="showTip(event, '170', 170)">
-            readNugetConfig rootDirectory
-          </code>
-          <div class="tip" id="170">
-            <strong>Signature:</strong> rootDirectory:DirectoryInfo -&gt; Result&lt;NugetConfig,DomainMessage&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L157-157" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '171', 171)" onmouseover="showTip(event, '171', 171)">
             readNuGetPackages rootDirectory
           </code>
-          <div class="tip" id="171">
-            <strong>Signature:</strong> rootDirectory:DirectoryInfo -&gt; Result&lt;(ProjectType list * (ProjectType * NugetPackagesConfig) list),DomainMessage&gt;<br />
+          <div class="tip" id="170">
+            <strong>Signature:</strong> rootDirectory:DirectoryInfo -&gt; Result&lt;(ProjectFile * NugetPackagesConfig) list,DomainMessage&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L174-174" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/NugetConvert.fs#L172-172" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
