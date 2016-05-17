@@ -64,7 +64,7 @@
 </blockquote>
 <h2><a name="Sample-use-case" class="anchor" href="#Sample-use-case">Sample use case</a></h2>
 <p>In this tutorial you will learn how <code>paket.local</code> can help you to speed up your development process.</p>
-<p>The Paket porjetc uses <a href="http://fsprojects.github.io/Argu/">Argu</a> as one of its own dependencies. Argu is a library that allows to manage command line parameters:</p>
+<p>The Paket project uses <a href="http://fsprojects.github.io/Argu/">Argu</a> as one of its own dependencies. Argu is a library that allows to manage command line parameters:</p>
 <p><code>paket.dependencies</code> (<a href="https://github.com/fsprojects/Paket/blob/master/paket.dependencies">browse</a>)</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
@@ -90,7 +90,7 @@
 ...
 </code></pre></td></tr></table>
 <p>Now let's assume that we want to contribute to Paket by adding a new feature.
-The new feature however requires a change to Argu, so we'll need to contribute to the Argu project first.</p>
+The new feature, however, requires a change to Argu, so we'll need to contribute to the Argu project first.</p>
 <p>Before we create a Pull Request to Argu, we might want to test the change locally by running Paket with the applied change in the Argu package.<br />
 Up until now, there was no convenient mechanism to do so, and e.g. we would manually copy updated Argu libraries to the packages folder in Paket's project after each rebuild.</p>
 <p>With the <code>paket.local</code> file, we can improve this process, by <strong>temporarily overriding</strong> the source for a specific package. We create a <code>paket.local</code> file in the root of own Paket source code copy:</p>
