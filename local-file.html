@@ -60,10 +60,11 @@
 <blockquote>This feature is only available in Paket 3.0 prereleases.</blockquote>
 <p>The <code>paket.local</code> file is used for testing changes before releasing new version of a dependent project.</p>
 <blockquote>
-<p>Note: you <strong>shouldn't commit</strong> <code>paket.local</code>. This file should always be added to <code>.gitignore</code>, because it specifies paths accessible only on your machine.</p>
+<p>Note: you <strong>shouldn't commit</strong> <code>paket.local</code>. This file should always be added to <code>.gitignore</code>, because it specifies file paths that are only accessible on your machine.</p>
 </blockquote>
-<h2><a name="Use-case" class="anchor" href="#Use-case">Use case</a></h2>
-<p>Among its dependencies, Paket uses <a href="http://fsprojects.github.io/Argu/">Argu</a> - a utility to manage command line parameters:</p>
+<h2><a name="Sample-use-case" class="anchor" href="#Sample-use-case">Sample use case</a></h2>
+<p>In this tutorial you will learn how <code>paket.local</code> can help you to speed up your development process.</p>
+<p>The Paket porjetc uses <a href="http://fsprojects.github.io/Argu/">Argu</a> as one of its own dependencies. Argu is a library that allows to manage command line parameters:</p>
 <p><code>paket.dependencies</code> (<a href="https://github.com/fsprojects/Paket/blob/master/paket.dependencies">browse</a>)</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
@@ -75,8 +76,7 @@
 <span class="k">nuget </span>Argu
 ...
 </code></pre></td></tr></table>
-<p>When running <a href="file:///C:/github/Paket/docs/output/paket-restore.html"><code>paket restore</code></a>, Argu package is always restored from the NuGet source that it was installed:</p>
-<p><code>paket.lock</code> (<a href="https://github.com/fsprojects/Paket/blob/master/paket.lock">browse</a>)</p>
+<p>When running <a href="file:///C:/github/Paket/docs/output/paket-restore.html"><code>paket restore</code></a>, the Argu package is always restored from the NuGet source tha was specified in Paket's own <code>paket.lock</code> file:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -90,16 +90,15 @@
 ...
 </code></pre></td></tr></table>
 <p>Now let's assume that we want to contribute to Paket by adding a new feature.
-The new feature however requires a change to Argu, so we'll need to contribute to Argu project first.</p>
-<p>Before we create a Pull Request to Argu, we might want to test the change locally by running Paket with the applied change in Argu package.<br />
-Up until now, there was no convenient mechanism to do so, and e.g. we would manually copy updated Argu libraries to packages folder in Paket project after each rebuild.</p>
-<p>With <code>paket.local</code> file, we can improve this process, by <strong>temporarily overriding</strong> source for a specific package:</p>
-<p><code>paket.local</code></p>
+The new feature however requires a change to Argu, so we'll need to contribute to the Argu project first.</p>
+<p>Before we create a Pull Request to Argu, we might want to test the change locally by running Paket with the applied change in the Argu package.<br />
+Up until now, there was no convenient mechanism to do so, and e.g. we would manually copy updated Argu libraries to the packages folder in Paket's project after each rebuild.</p>
+<p>With the <code>paket.local</code> file, we can improve this process, by <strong>temporarily overriding</strong> the source for a specific package. We create a <code>paket.local</code> file in the root of own Paket source code copy:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">nuget </span>Argu -<span class="o">&gt;</span> <span class="k">git </span>file:///c:\github\Argu feature_branch build:<span class="s">"build.cmd NuGet"</span>, Packages: /bin/
 </code></pre></td></tr></table>
-<p>The above line basically says: whenever <code>paket restore</code> is run, <strong>override</strong> source of Argu package with the source given after <code>-&gt;</code>.</p>
+<p>The line above basically says: whenever <code>paket restore</code> is run, <strong>override</strong> the source of the Argu package with the source given after <code>-&gt;</code>.</p>
 <p>Now when running <code>paket restore</code>, we get the following:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
@@ -117,9 +116,9 @@ Running "C:\github\Paket\paket-files\localfilesystem\Argu\build.cmd NuGet"
 </code></pre></td></tr></table>
 <p>As a result:</p>
 <ul>
-<li>build command <code>build.cmd NuGet</code> is triggered for Argu on <code>feature_branch</code></li>
-<li>Argu NuGet package is built by this command in <code>/bin/</code> directory</li>
-<li>the Argu NuGet package is extracted to <code>packages/Argu</code> directory in Paket project</li>
+<li>the build command <code>build.cmd NuGet</code> is triggered for Argu on <code>feature_branch</code></li>
+<li>a new Argu NuGet package is built by this command in the <code>/bin/</code> directory</li>
+<li>the Argu NuGet package is extracted to <code>packages/Argu</code> directory in the Paket project folder</li>
 <li>Paket can be run and tested with the updated Argu library</li>
 </ul>
 <blockquote>
