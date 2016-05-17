@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>paket update
+    <title>The paket.local file
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="A dependency manager for .NET with support for NuGet packages and git repositories."/>
@@ -56,69 +56,104 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h1><a name="paket-update" class="anchor" href="#paket-update">paket update</a></h1>
-<p>Update one or all dependencies to their latest version and update projects.</p>
+<h1><a name="The-paket-local-file" class="anchor" href="#The-paket-local-file">The paket.local file</a></h1>
+<p>The <code>paket.local</code> file is used for testing changes before releasing new version of a dependent project.</p>
+<blockquote>
+<p>Note: you <strong>shouldn't commit</strong> <code>paket.local</code>. This file should always be added to <code>.gitignore</code>, because it specifies paths accessible only on your machine.</p>
+</blockquote>
+<h2><a name="Use-case" class="anchor" href="#Use-case">Use case</a></h2>
+<p>Among its dependencies, Paket uses <a href="http://fsprojects.github.io/Argu/">Argu</a> - a utility to manage command line parameters:</p>
+<p><code>paket.dependencies</code> (<a href="https://github.com/fsprojects/Paket/blob/master/paket.dependencies">browse</a>)</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
+
+<span class="k">nuget </span>Argu
+...
+</code></pre></td></tr></table>
+<p>When running <a href="file:///C:/github/Paket/docs/output/paket-restore.html"><code>paket restore</code></a>, Argu package is always restored from the NuGet source that it was installed:</p>
+<p><code>paket.lock</code> (<a href="https://github.com/fsprojects/Paket/blob/master/paket.lock">browse</a>)</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">NUGET</span>
+  <span class="k">remote</span>: https://www.nuget.org/api/v2
+  <span class="k">specs</span>:
+    Argu (<span class="n">2.1</span>)
+...
+</code></pre></td></tr></table>
+<p>Now let's assume that we want to contribute to Paket by adding a new feature.
+The new feature however requires a change to Argu, so we'll need to contribute to Argu project first.</p>
+<p>Before we create a Pull Request to Argu, we might want to test the change locally by running Paket with the applied change in Argu package.<br />
+Up until now, there was no convenient mechanism to do so, and e.g. we would manually copy updated Argu libraries to packages folder in Paket project after each rebuild.</p>
+<p>With <code>paket.local</code> file, we can improve this process, by <strong>temporarily overriding</strong> source for a specific package:</p>
+<p><code>paket.local</code></p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="msh">paket update [nuget &lt;string&gt;] [version &lt;string&gt;] [group &lt;string&gt;] [--force|-f] [--redirects] [--createnewbindingfiles] [--no-install] [--keep-major] [--keep-minor] [--keep-patch] [--<span class="k">filter</span>] [--touch-affected-refs]
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">nuget </span>Argu -<span class="o">&gt;</span> <span class="k">git </span>file:///c:\github\Argu feature_branch build:<span class="s">"build.cmd NuGet"</span>, Packages: /bin/
 </code></pre></td></tr></table>
-<h3><a name="Options" class="anchor" href="#Options">Options:</a></h3>
-<p><code>nuget &lt;string&gt;</code>: NuGet package id.</p>
-<p><code>version &lt;string&gt;</code>: Allows to specify version of the package.</p>
-<p><code>group &lt;string&gt;</code>: Allows to specify the dependency group.</p>
-<p><code>--force [-f]</code>: Forces the download and reinstallation of all packages.</p>
-<p><code>--redirects</code>: Creates binding redirects for the NuGet packages.</p>
-<p><code>--createnewbindingfiles</code>: Creates binding redirect files if needed.</p>
-<p><code>--no-install</code>: Skips paket install process (patching of csproj, fsproj, ... files) after the generation of <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
-<p><code>--keep-major</code>: Allows only updates that are not changing the major version of the NuGet packages.</p>
-<p><code>--keep-minor</code>: Allows only updates that are not changing the minor version of the NuGet packages.</p>
-<p><code>--keep-patch</code>: Allows only updates that are not changing the patch version of the NuGet packages.</p>
-<p><code>--filter</code>: Treat the nuget parameter as a regex to filter packages rather than an exact match.</p>
-<p><code>--touch-affected-refs</code>: Touches project files referencing packages which are affected, to help incremental build tools detecting the change.</p>
-<p>If you add the <code>-v</code> flag, then Paket will run in verbose mode and show detailed information.</p>
-<p>With <code>--log-file [FileName]</code> you can trace the logged information into a file.</p>
-<h2><a name="Updating-all-packages" class="anchor" href="#Updating-all-packages">Updating all packages</a></h2>
-<p>If you do not specify a package, then all packages from <a href="dependencies-file.html"><code>paket.dependencies</code></a> are updated.</p>
+<p>The above line basically says: whenever <code>paket restore</code> is run, <strong>override</strong> source of Argu package with the source given after <code>-&gt;</code>.</p>
+<p>Now when running <code>paket restore</code>, we get the following:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang="bash">$ .paket\paket.exe restore
+Paket version 3.0.0.0
+paket.local override: nuget Argu -&gt; file:///c:\github\Argu feature_branch build:"build.cmd NuGet", Packages: /bin/
+Setting C:\github\Paket\paket-files\localfilesystem\Argu to b14ea1a00431335ca3b60d49573b3831cd2deeb4
+Running "C:\github\Paket\paket-files\localfilesystem\Argu\build.cmd NuGet"
+11 seconds - ready.
+</code></pre></td></tr></table>
+<p>As a result:</p>
+<ul>
+<li>build command <code>build.cmd NuGet</code> is triggered for Argu on <code>feature_branch</code></li>
+<li>Argu NuGet package is built by this command in <code>/bin/</code> directory</li>
+<li>the Argu NuGet package is extracted to <code>packages/Argu</code> directory in Paket project</li>
+<li>Paket can be run and tested with the updated Argu library</li>
+</ul>
+<blockquote>
+<p>Note: Any override specified in <code>paket.local</code> will result in a <strong>warning</strong> upon running <code>restore</code> as in the above example.
+This is to emphasize that we have a local override, and the build might not be reproducible on any other machine.</p>
+</blockquote>
+<h2><a name="Format" class="anchor" href="#Format">Format</a></h2>
+<p>Each line in <code>paket.local</code> means one override - you can have multiple overrides at once:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">nuget </span>Argu -<span class="o">&gt;</span> <span class="k">git </span>file:///c:\github\Argu feature_branch build:<span class="s">"build.cmd NuGet"</span>, Packages: /bin/
+<span class="k">nuget </span>Fake -<span class="o">&gt;</span> <span class="k">source</span> c:\github\FAKE\bin
+</code></pre></td></tr></table>
+<blockquote>
+<p>Note: <a href="groups.html">groups</a> are not supported yet. Override applies only to "Main" group.</p>
+</blockquote>
+<h3><a name="Git-override" class="anchor" href="#Git-override">Git override</a></h3>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="msh">paket update [--force|-f] [--redirects] [--no-install]
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">nuget </span>Argu -<span class="o">&gt;</span> <span class="k">git </span>file:///c:\github\Argu feature_branch build:<span class="s">"build.cmd NuGet"</span>, Packages: /bin/
 </code></pre></td></tr></table>
-<p>First, the current <a href="lock-file.html"><code>paket.lock</code> file</a> is deleted. <code>paket update</code> then recomputes the current dependency resolution,
-as explained under <a href="http://fsprojects.github.io/Paket/resolver.html">Package resolution algorithm</a>, and writes it to <a href="lock-file.html"><code>paket.lock</code></a>.
-It then proceeds to download the packages and to install them into the projects.</p>
-<p>Please see <a href="paket-install.html"><code>paket install</code></a> if you want to keep the current versions from your <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
-<h3><a name="Options-1" class="anchor" href="#Options-1">Options:</a></h3>
-<p><code>--force [-f]</code>: Forces the download and reinstallation of all packages.</p>
-<p><code>--redirects</code>: Creates binding redirects for the NuGet packages.</p>
-<p><code>--no-install</code>: Skips paket install process afterward generation of <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
-<h2><a name="Updating-a-single-package-or-packages-matching-a-pattern" class="anchor" href="#Updating-a-single-package-or-packages-matching-a-pattern">Updating a single package, or packages matching a pattern</a></h2>
-<p>It's also possible to update only specified packages and to keep all other dependencies fixed:</p>
+<p>Format of git source is the same as used in <code>paket.dependencies</code> for specifying <a href="git-dependencies.html#Using-Git-repositories-as-NuGet-source">git repositories</a>.</p>
+<blockquote>
+<p>Note: only <strong>git repositories as NuGet source</strong> (with <code>Packages: ...</code>) are currently supported</p>
+</blockquote>
+<h3><a name="Source-override" class="anchor" href="#Source-override">Source override</a></h3>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="msh">paket update nuget PACKAGENAME [version VERSION] [group GROUPNAME] [--force|-f] [--redirects] [--no-install]
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">nuget </span>Fake -<span class="o">&gt;</span> <span class="k">source</span> c:\github\FAKE\bin
 </code></pre></td></tr></table>
-<h3><a name="Options-2" class="anchor" href="#Options-2">Options:</a></h3>
-<p><code>nuget &lt;string&gt;</code>: Nuget package id</p>
-<p><code>version &lt;string&gt;</code>: Allows to specify version of the package.</p>
-<p><code>group &lt;string&gt;</code>: Allows to specify the group where the package is located. If omitted then Paket defaults to the Main group.</p>
-<p><code>--force [-f]</code>: Forces the download and reinstallation of all packages.</p>
-<p><code>--redirects</code>: Creates binding redirects for the NuGet packages.</p>
-<p><code>--no-install</code>: Skips paket install process afterward generation of <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
-<p><code>--filter</code>: Treat PACKAGENAME as a regex pattern to match against, rather than a single package. Enforces a "total" match (i.e. an implicit ^ and $ at beginning and end of PACKAGENAME)</p>
-<h2><a name="Updating-a-single-group" class="anchor" href="#Updating-a-single-group">Updating a single group</a></h2>
-<p>If you want to update a single group you can use the following command:</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="msh">paket update group GROUPNAME [--force|-f] [--redirects] [--no-install]
-</code></pre></td></tr></table>
-<h3><a name="Options-3" class="anchor" href="#Options-3">Options:</a></h3>
-<p><code>group &lt;string&gt;</code>: Group name</p>
-<p><code>--force [-f]</code>: Forces the download and reinstallation of all packages.</p>
-<p><code>--redirects</code>: Creates binding redirects for the NuGet packages.</p>
-<p><code>--no-install</code>: Skips paket install process afterward generation of <a href="lock-file.html"><code>paket.lock</code> file</a>.</p>
-<h2><a name="Updating-http-dependencies" class="anchor" href="#Updating-http-dependencies">Updating http dependencies</a></h2>
-<p>If you want to update a file you need to use the <a href="paket-install.html"><code>paket install</code> command</a> or <a href="paket-update.html"><code>paket update</code> command</a> with <code>--force [-f]</code> option.</p>
-<p>Using <a href="groups.html">groups</a> for http dependent files can be helpful in order to reduce the number of files that are re-installed.</p>
+<p>Format of source is the same as <a href="nuget-dependencies.html#Path-sources">path sources</a></p>
+<blockquote>
+<p>Note: In case of source override, <code>paket restore</code> assumes the NuGet package <strong>already exists</strong> in   pointed directory - no build is going to be triggered.</p>
+</blockquote>
 
 
         </div>

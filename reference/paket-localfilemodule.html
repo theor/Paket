@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>RemoteFileChange - Paket</title>
+    <title>LocalFile - Paket</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Steffen Forkmann, Alexander Gross"/>
@@ -58,31 +58,33 @@
 
 
 
-<h1>RemoteFileChange</h1>
+<h1>LocalFile</h1>
 <p>
   <span>Namespace: Paket</span><br />
-  <span>Parent Module: <a href="paket-dependencychangedetection.html">DependencyChangeDetection</a></span>
 </p>
 <div class="xmldoc">
 </div>
-  <h3>Record Fields</h3>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Function or value</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '465', 465)" onmouseover="showTip(event, '465', 465)">
-            AuthKey
+          <code onmouseout="hideTip(event, '134', 134)" onmouseover="showTip(event, '134', 134)">
+            empty 
           </code>
-          <div class="tip" id="465">
-            <strong>Signature:</strong> string option<br />
+          <div class="tip" id="134">
+            <strong>Signature:</strong> LocalFile<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependencyChangeDetection.fs#L76-76" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/LocalFile.fs#L49-49" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -92,15 +94,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '466', 466)" onmouseover="showTip(event, '466', 466)">
-            Commit
+          <code onmouseout="hideTip(event, '135', 135)" onmouseover="showTip(event, '135', 135)">
+            overrideDependency lockFile
           </code>
-          <div class="tip" id="466">
-            <strong>Signature:</strong> string option<br />
+          <div class="tip" id="135">
+            <strong>Signature:</strong> lockFile:LockFile -&gt; LocalOverride -&gt; LockFile<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependencyChangeDetection.fs#L75-75" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/LocalFile.fs#L69-69" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -110,15 +112,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '467', 467)" onmouseover="showTip(event, '467', 467)">
-            Name
+          <code onmouseout="hideTip(event, '136', 136)" onmouseover="showTip(event, '136', 136)">
+            overrideLockFile arg1 lockFile
           </code>
-          <div class="tip" id="467">
-            <strong>Signature:</strong> string<br />
+          <div class="tip" id="136">
+            <strong>Signature:</strong> LocalFile -&gt; lockFile:LockFile -&gt; LockFile<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependencyChangeDetection.fs#L73-73" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/LocalFile.fs#L121-121" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -128,15 +130,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '468', 468)" onmouseover="showTip(event, '468', 468)">
-            Origin
+          <code onmouseout="hideTip(event, '137', 137)" onmouseover="showTip(event, '137', 137)">
+            overrides arg1 package
           </code>
-          <div class="tip" id="468">
-            <strong>Signature:</strong> Origin<br />
+          <div class="tip" id="137">
+            <strong>Signature:</strong> LocalFile -&gt; package:PackageName -&gt; bool<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependencyChangeDetection.fs#L74-74" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/LocalFile.fs#L124-124" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -146,15 +148,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '469', 469)" onmouseover="showTip(event, '469', 469)">
-            Owner
+          <code onmouseout="hideTip(event, '138', 138)" onmouseover="showTip(event, '138', 138)">
+            parse 
           </code>
-          <div class="tip" id="469">
-            <strong>Signature:</strong> string<br />
+          <div class="tip" id="138">
+            <strong>Signature:</strong> string list -&gt; Result&lt;LocalFile,string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependencyChangeDetection.fs#L71-71" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/LocalFile.fs#L38-38" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -164,77 +166,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '470', 470)" onmouseover="showTip(event, '470', 470)">
-            Project
+          <code onmouseout="hideTip(event, '139', 139)" onmouseover="showTip(event, '139', 139)">
+            readFile 
           </code>
-          <div class="tip" id="470">
-            <strong>Signature:</strong> string<br />
+          <div class="tip" id="139">
+            <strong>Signature:</strong> string -&gt; Result&lt;LocalFile,string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependencyChangeDetection.fs#L72-72" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Static members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Static member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '471', 471)" onmouseover="showTip(event, '471', 471)">
-            Compare(x, y)
-          </code>
-          <div class="tip" id="471">
-            <strong>Signature:</strong> (x:RemoteFileChange * y:RemoteFileChange) -&gt; int<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependencyChangeDetection.fs#L91-91" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '472', 472)" onmouseover="showTip(event, '472', 472)">
-            CreateResolvedVersion(resolved)
-          </code>
-          <div class="tip" id="472">
-            <strong>Signature:</strong> resolved:ResolvedSourceFile -&gt; RemoteFileChange<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependencyChangeDetection.fs#L114-114" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '473', 473)" onmouseover="showTip(event, '473', 473)">
-            CreateUnresolvedVersion(unresolved)
-          </code>
-          <div class="tip" id="473">
-            <strong>Signature:</strong> unresolved:UnresolvedSource -&gt; RemoteFileChange<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/DependencyChangeDetection.fs#L101-101" class="github-link">
+            <a href="http://github.com/fsprojects/Paket/tree/master/src/Paket.Core/LocalFile.fs#L44-44" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
