@@ -55,7 +55,7 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h4><a name="3-0-0-beta046-17-05-2016" class="anchor" href="#3-0-0-beta046-17-05-2016">3.0.0-beta046 - 17.05.2016</a></h4>
+<h4><a name="3-0-0-beta047-18-05-2016" class="anchor" href="#3-0-0-beta047-18-05-2016">3.0.0-beta047 - 18.05.2016</a></h4>
 <ul>
 <li>Allow to reference git repositories - <a href="http://fsprojects.github.io/Paket/git-dependencies.html">http://fsprojects.github.io/Paket/git-dependencies.html</a></li>
 <li>Allow to run build commands on git repositories - <a href="http://fsprojects.github.io/Paket/git-dependencies.html#Running-a-build-in-git-repositories">http://fsprojects.github.io/Paket/git-dependencies.html#Running-a-build-in-git-repositories</a></li>
@@ -68,7 +68,14 @@
 <li>Allows to use aliases for libraries - <a href="http://fsprojects.github.io/Paket/references-files.html#Library-aliases">http://fsprojects.github.io/Paket/references-files.html#Library-aliases</a></li>
 <li>Create Choose nodes for .NET Standard</li>
 <li>USABILITY: Removed "specs:" from paket.lock since it was copied from Bundler and had no meaning in Paket - <a href="https://github.com/fsprojects/Paket/pull/1608">https://github.com/fsprojects/Paket/pull/1608</a></li>
-<li>BREAKING CHANGE: Removed --hard parameter from all commands. Paket threads all commands as if --hard would have been set - <a href="https://github.com/fsprojects/Paket/pull/1567">https://github.com/fsprojects/Paket/pull/1567</a></li>
+<li>
+BREAKING CHANGE:
+<ul>
+<li>Removed --hard parameter from all commands.</li>
+<li>Paket threads all commands as if --hard would have been set - <a href="https://github.com/fsprojects/Paket/pull/1567">https://github.com/fsprojects/Paket/pull/1567</a></li>
+<li>For the --hard use in the binding redirects there is a new parameter --clean-redirects - <a href="https://github.com/fsprojects/Paket/pull/1692">https://github.com/fsprojects/Paket/pull/1692</a></li>
+</ul>
+</li>
 </ul>
 <h4><a name="2-64-8-17-05-2016" class="anchor" href="#2-64-8-17-05-2016">2.64.8 - 17.05.2016</a></h4>
 <ul>
