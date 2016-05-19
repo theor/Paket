@@ -154,6 +154,21 @@ This is to emphasize that we have a local override, and the build might not be r
 <blockquote>
 <p>Note: In case of source override, <code>paket restore</code> assumes the NuGet package <strong>already exists</strong> in   pointed directory - no build is going to be triggered.</p>
 </blockquote>
+<h3><a name="Comments" class="anchor" href="#Comments">Comments</a></h3>
+<p>All lines starting with with <code>//</code> or <code>#</code> are considered comments.</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="c">// this line is treated as comment</span>
+<span class="k">nuget </span>Fake -<span class="o">&gt;</span> <span class="k">source</span> c:\github\FAKE\bin
+</code></pre></td></tr></table>
+<p>Comments might prove helpful if you use <code>paket.local</code> override on regular basis - instead of typing the override by hand, you can just comment/uncomment relevant line:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="c">// uncomment below to override FAKE package</span>
+<span class="c">// nuget FAKE -&gt; source C:\github\FAKE\bin</span>
+</code></pre></td></tr></table>
 
 
         </div>
