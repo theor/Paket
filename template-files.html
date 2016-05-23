@@ -304,6 +304,17 @@ If you omit the target folder, then the source is copied into the <code>lib</cod
 </code></pre></td>
 </tr>
 </table>
+<p>Another way to exclude dependencies is to exclude a whole dependency group with the <code>excludedgroups</code> block:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">excludedgroups</span>
+  <span class="i">build</span>
+  <span class="i">test</span>
+</code></pre></td>
+</tr>
+</table>
 <h4><a name="Pdb-files" class="anchor" href="#Pdb-files">Pdb files</a></h4>
 <p>With the include-pdbs switch you can tell Paket to pack pdbs into the package.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
@@ -351,7 +362,6 @@ If you omit the target folder, then the source is copied into the <code>lib</cod
             <li><a href="./lock-file.html">paket.lock</a></li>
             <li><a href="./references-files.html">paket.references</a></li>
             <li><a href="./template-files.html">paket.template</a></li>            
-            <li><a href="./local-file.html">paket.local</a></li>            
             <li><a href="./paket-folder.html">.paket folder</a></li>
             <li><a href="./bootstrapper.html">paket.bootstrapper.exe</a></li>
             <li class="divider"></li>
@@ -379,7 +389,6 @@ If you omit the target folder, then the source is copied into the <code>lib</cod
             <li><a href="./paket-find-refs.html">paket find-refs</a></li>
             <li><a href="./paket-find-packages.html">paket find-packages</a></li>
             <li><a href="./paket-find-package-versions.html">paket find-package-versions</a></li>
-            <li><a href="./paket-generate-include-scripts.html">paket generate-include-scripts</a></li>
             <li><a href="./paket-init.html">paket init</a></li>          
             <li><a href="./paket-install.html">paket install</a></li>
             <li><a href="./paket-outdated.html">paket outdated</a></li>
